@@ -1,0 +1,312 @@
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-distance: 26px;
+  --hover-shadow: 0 26px 60px rgba(0, 89, 187, 0.16);
+  --hover-border: rgba(0, 89, 187, 0.22);
+}
+
+.motion-transform {
+  --reveal-x: 0px;
+  --reveal-y: 0px;
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+  --hover-x: 0px;
+  --hover-y: 0px;
+  --motion-scale-x: 1;
+  --motion-scale-y: 1;
+  transform:
+    translate3d(
+      calc(var(--tw-translate-x, 0px) + var(--reveal-x) + var(--parallax-x) + var(--hover-x)),
+      calc(var(--tw-translate-y, 0px) + var(--reveal-y) + var(--parallax-y) + var(--hover-y)),
+      0
+    )
+    rotate(var(--tw-rotate, 0deg))
+    skewX(var(--tw-skew-x, 0deg))
+    skewY(var(--tw-skew-y, 0deg))
+    scaleX(calc(var(--tw-scale-x, 1) * var(--motion-scale-x)))
+    scaleY(calc(var(--tw-scale-y, 1) * var(--motion-scale-y)));
+  transform-origin: center;
+}
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-progress, 0));
+  background: linear-gradient(
+    90deg,
+    rgba(0, 89, 187, 0.96),
+    rgba(0, 112, 234, 0.92),
+    rgba(45, 219, 222, 0.85)
+  );
+  box-shadow: 0 0 24px rgba(0, 89, 187, 0.28);
+  z-index: 80;
+  pointer-events: none;
+}
+
+.motion-shell {
+  animation: motion-shell-enter 720ms var(--motion-emphasis) both;
+}
+
+.motion-shell-side {
+  animation-name: motion-shell-enter-side;
+}
+
+@keyframes motion-shell-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -16px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes motion-shell-enter-side {
+  from {
+    opacity: 0;
+    transform: translate3d(-18px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+html.motion-ready [data-reveal] {
+  opacity: 0;
+  filter: blur(8px);
+  transition:
+    opacity 220ms var(--motion-ease) var(--reveal-delay, 0ms),
+    filter 260ms var(--motion-ease) var(--reveal-delay, 0ms),
+    transform 340ms var(--motion-emphasis) var(--reveal-delay, 0ms),
+    box-shadow 320ms var(--motion-ease),
+    border-color 320ms var(--motion-ease),
+    background-color 240ms ease,
+    color 220ms ease;
+  will-change: opacity, transform, filter;
+}
+
+html.motion-ready [data-reveal="up"] {
+  --reveal-y: var(--reveal-distance);
+  --motion-scale-x: 0.985;
+  --motion-scale-y: 0.985;
+}
+
+html.motion-ready [data-reveal="left"] {
+  --reveal-x: calc(var(--reveal-distance) * -0.8);
+  --motion-scale-x: 0.985;
+  --motion-scale-y: 0.985;
+}
+
+html.motion-ready [data-reveal="right"] {
+  --reveal-x: calc(var(--reveal-distance) * 0.8);
+  --motion-scale-x: 0.985;
+  --motion-scale-y: 0.985;
+}
+
+html.motion-ready [data-reveal="scale"] {
+  --reveal-y: 10px;
+  --motion-scale-x: 0.975;
+  --motion-scale-y: 0.975;
+}
+
+html.motion-ready [data-reveal].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  --reveal-x: 0px;
+  --reveal-y: 0px;
+  --motion-scale-x: 1;
+  --motion-scale-y: 1;
+}
+
+.motion-card,
+.motion-button,
+.motion-row,
+.motion-nav-link,
+.motion-media,
+.motion-visual {
+  transition:
+    transform 320ms var(--motion-ease),
+    box-shadow 360ms var(--motion-ease),
+    border-color 320ms var(--motion-ease),
+    background-color 240ms ease,
+    color 220ms ease,
+    filter 280ms ease;
+}
+
+.motion-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.motion-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background: linear-gradient(
+      135deg,
+      rgba(0, 89, 187, 0.18),
+      transparent 45%,
+      rgba(45, 219, 222, 0.16)
+    )
+    border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.motion-card:hover,
+.motion-card:focus-within {
+  --hover-y: -10px;
+  box-shadow: var(--hover-shadow);
+  border-color: var(--hover-border);
+  filter: saturate(1.02);
+}
+
+.motion-card:hover::after,
+.motion-card:focus-within::after {
+  opacity: 1;
+}
+
+.motion-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.motion-button::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.34) 50%,
+    transparent 65%
+  );
+  transform: translateX(-130%);
+  transition: transform 760ms var(--motion-ease);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.motion-button:hover,
+.motion-button:focus-visible {
+  --hover-y: -3px;
+  box-shadow: 0 18px 34px rgba(0, 89, 187, 0.18);
+  filter: saturate(1.03);
+}
+
+.motion-button:hover::after,
+.motion-button:focus-visible::after {
+  transform: translateX(130%);
+}
+
+.motion-nav-link {
+  position: relative;
+}
+
+.motion-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.45rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0059bb, #2ddbde);
+  opacity: 0;
+  transform: scaleX(0.3);
+  transform-origin: left center;
+  transition: opacity 240ms ease, transform 320ms var(--motion-ease);
+  pointer-events: none;
+}
+
+a.motion-nav-link:not([class*="px-"])::after {
+  left: 0;
+  right: 0;
+  bottom: -0.35rem;
+}
+
+.motion-nav-link:hover,
+.motion-nav-link:focus-visible {
+  --hover-y: -2px;
+}
+
+.motion-nav-link:hover::after,
+.motion-nav-link:focus-visible::after,
+.motion-nav-link.is-current::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.motion-row:hover,
+.motion-row:focus-within {
+  --hover-x: 6px;
+  background-color: rgba(0, 89, 187, 0.04);
+  box-shadow: inset 3px 0 0 rgba(0, 89, 187, 0.42);
+}
+
+.motion-media:hover,
+.motion-media:focus-within {
+  box-shadow: 0 32px 60px rgba(13, 28, 50, 0.18);
+  filter: saturate(1.02);
+}
+
+.motion-visual {
+  transform-origin: center;
+}
+
+.motion-media:hover .motion-visual,
+.motion-visual:hover {
+  transform: scale(1.045);
+  filter: saturate(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+
+  .motion-shell,
+  .motion-card,
+  .motion-button,
+  .motion-row,
+  .motion-nav-link,
+  .motion-media,
+  .motion-visual {
+    animation: none !important;
+    transition-duration: 1ms !important;
+  }
+
+  html.motion-ready [data-reveal] {
+    opacity: 1 !important;
+    filter: none !important;
+    --reveal-x: 0px !important;
+    --reveal-y: 0px !important;
+    --parallax-x: 0px !important;
+    --parallax-y: 0px !important;
+    --hover-x: 0px !important;
+    --hover-y: 0px !important;
+    --motion-scale-x: 1 !important;
+    --motion-scale-y: 1 !important;
+  }
+}

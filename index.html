@@ -89,7 +89,8 @@
       .hero-gradient {
         background: radial-gradient(circle at top right, #d6e3ff 0%, #f9f9ff 100%);
       }
-    </style>
+</style>
+<link href="site-motion.css" rel="stylesheet"/>
 </head>
 <body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- Top Navigation Shell -->
@@ -274,18 +275,18 @@
 <a class="text-primary font-bold inline-flex items-center gap-2 group" href="security.html#permission-aware-workflows">Explore Permission Logic <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span></a>
 </div>
 <div class="hidden lg:flex flex-col gap-2">
-<div class="bg-white p-3 rounded-lg shadow-sm border border-outline-variant/20 flex items-center gap-3">
+<a class="bg-white p-3 rounded-lg shadow-sm border border-outline-variant/20 flex items-center gap-3 transition-transform hover:-translate-y-0.5 hover:shadow-md" href="manager_dashboard.html">
 <div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center">
 <span class="material-symbols-outlined text-sm">admin_panel_settings</span>
 </div>
-<span class="text-xs font-bold">Admin View</span>
-</div>
-<div class="bg-white p-3 rounded-lg shadow-sm border border-outline-variant/20 translate-x-4 flex items-center gap-3">
+<span class="text-xs font-bold">Manager View</span>
+</a>
+<a class="bg-white p-3 rounded-lg shadow-sm border border-outline-variant/20 translate-x-4 flex items-center gap-3 transition-transform hover:-translate-y-0.5 hover:shadow-md" href="employee_dashboard.html">
 <div class="w-8 h-8 rounded bg-tertiary/10 text-tertiary flex items-center justify-center">
 <span class="material-symbols-outlined text-sm">badge</span>
 </div>
-<span class="text-xs font-bold">Employee Portal</span>
-</div>
+<span class="text-xs font-bold">Employee View</span>
+</a>
 </div>
 </div>
 </div>
@@ -470,4 +471,5 @@
 <p class="text-slate-500 dark:text-slate-400 text-sm font-body">© 2024 Team Manage. All rights reserved.</p>
 </div>
 </footer>
+<script src="site-motion.js"></script>
 </body></html>
