@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Tour | Team Manage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0059bb 0%, #0070ea 100%);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#c1c6d7",
+                        "primary-container": "#0070ea",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f0f3ff",
+                        "secondary": "#515f78",
+                        "on-secondary-container": "#55637d",
+                        "tertiary-fixed-dim": "#2ddbde",
+                        "surface": "#f9f9ff",
+                        "inverse-primary": "#adc7ff",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-tertiary-fixed": "#002020",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-container-highest": "#d6e3ff",
+                        "secondary-container": "#d2e0fe",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#001a41",
+                        "inverse-on-surface": "#ecf0ff",
+                        "on-surface-variant": "#414754",
+                        "on-background": "#0d1c32",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004f51",
+                        "background": "#f9f9ff",
+                        "outline": "#717786",
+                        "on-secondary-fixed": "#0d1c32",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "tertiary-fixed": "#5af8fb",
+                        "on-tertiary-container": "#f3fffe",
+                        "surface-tint": "#005bc0",
+                        "tertiary": "#006768",
+                        "surface-variant": "#d6e3ff",
+                        "surface-container": "#e8eeff",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-dim": "#ccdaf8",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-surface": "#0d1c32",
+                        "primary": "#0059bb",
+                        "surface-bright": "#f9f9ff",
+                        "on-primary-container": "#fefcff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dfe8ff",
+                        "tertiary-container": "#008284",
+                        "inverse-surface": "#233148"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-[0_10px_30px_rgba(13,28,50,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto relative">
+<div class="text-xl font-bold text-[#0d1c32] tracking-tighter font-headline">Team Manage</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline font-semibold text-sm tracking-tight text-[#0d1c32] hover:text-[#0059bb] transition-colors" href="#">Features</a>
+<a class="font-headline font-semibold text-sm tracking-tight text-[#0d1c32] hover:text-[#0059bb] transition-colors" href="#">Solutions</a>
+<a class="font-headline font-semibold text-sm tracking-tight text-[#0d1c32] hover:text-[#0059bb] transition-colors" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 rounded-full hero-gradient text-white font-headline font-bold text-sm hover:scale-[1.02] transition-all duration-200 shadow-lg">Book a Demo</button>
+</div>
+<div class="bg-[#f0f3ff] h-[1px] w-full absolute bottom-0 left-0"></div>
+</div>
+</nav>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="px-8 py-20 max-w-7xl mx-auto lg:flex lg:items-center gap-16">
+<div class="lg:w-1/2 space-y-8">
+<h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-on-surface tracking-tight leading-[1.1] text-balance">
+                    Experience the Future of <span class="text-primary">Team Operations</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    Team Manage centralizes task assignment, employee coordination, and strategic planning into one powerful, unified workspace.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 rounded-full hero-gradient text-white font-headline font-bold text-lg hover:scale-[1.05] transition-all duration-200 shadow-xl flex items-center gap-2">
+                        Book a Demo <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="px-8 py-4 rounded-full border-2 border-primary text-primary font-headline font-bold text-lg hover:bg-surface-container-low transition-all duration-200">
+                        Get Started
+                    </button>
+</div>
+</div>
+<div class="lg:w-1/2 mt-16 lg:mt-0 relative h-[500px]">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10 transform scale-150"></div>
+<!-- Layered Collage Mockup -->
+<div class="relative w-full h-full">
+<!-- Manager Dashboard Snippet -->
+<div class="absolute top-0 right-0 w-[85%] bg-surface-container-lowest rounded-lg shadow-2xl overflow-hidden border border-outline-variant/10 transform rotate-2 z-20">
+<div class="bg-surface-container-low px-4 py-2 flex items-center gap-2 border-b border-outline-variant/5">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="ml-4 text-[10px] font-label font-bold text-outline uppercase tracking-widest">Manager Dashboard</div>
+</div>
+<img class="w-full h-64 object-cover" data-alt="Modern high-level management dashboard with complex charts and data visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiWOgG9pYD6JByxk-14GLRBngiQA3gd6cJ1QY1L238HCxI_R0wVw_4TKODYmNO1Tcx85ZaEBa-zH_LuwgX7lC57PSiOGEIfxzHZvA6pzq2Jaa1muJ362FlywoimDzpHZu39P_xUk83W-S5yJZircJLfg5JLbpJVPsU1qCoq8rb-AGdUyAXp99n8GbHSP_iRaphYaIj8n4-dQn4AttdD_34RXDN8_OQ-t3lvPTAhmjIJm-_LMB5wzhKU4_3v-fKxtm5q7h16OvAqi3P"/>
+</div>
+<!-- Employee Dashboard Snippet -->
+<div class="absolute bottom-4 left-0 w-[80%] bg-surface-container-lowest rounded-lg shadow-2xl overflow-hidden border border-outline-variant/10 transform -rotate-3 z-30">
+<div class="bg-surface-container-low px-4 py-2 flex items-center gap-2 border-b border-outline-variant/5">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="ml-4 text-[10px] font-label font-bold text-outline uppercase tracking-widest">Employee Workspace</div>
+</div>
+<img class="w-full h-64 object-cover" data-alt="Clean minimal focused task list interface for employees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGuvrCcBIEZmQmn43M-g3cPs95K-G6Q0n-aRRztabir4TARjFo3mOCjLFsszmzZTgbIIKqS8ewGEjJljaUWlc9B236FOhIq_cdyjER3MvHTAWTJFZmqVzmIWL57bwFFipzT-Av6W4CwxLTFmbOYjdKY7hT_y00QHKGy1hjNCdjK2ReCprUgsbQTgImpVhjlLYUwdncI1l6_VV5tzqwSiXj3S48dsOCD1cIJ4xS0PHlt3v8dL3G5obnO-2-vCHQ-4ATT5_RapNJiL0C"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Tour Intro -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-4xl mx-auto text-center space-y-6">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-[11px] font-extrabold uppercase tracking-widest">The Core Vision</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface">Dual Experience, One Platform</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    Great teams aren't just managed—they're orchestrated. We've built two distinct, interconnected environments tailored to the unique psychological and operational needs of leaders and their contributors.
+                </p>
+</div>
+</section>
+<!-- Tour Flow Storytelling -->
+<section class="py-24 px-8 space-y-32 max-w-7xl mx-auto">
+<!-- Step 1: Manager Assigns -->
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6 order-2 lg:order-1">
+<div class="flex items-center gap-4 text-primary">
+<span class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold font-headline text-xl">01</span>
+<h3 class="text-2xl font-bold font-headline">Manager Assigns Work</h3>
+</div>
+<p class="text-on-surface-variant text-lg">
+                        Leaders can create complex initiatives and break them into actionable tasks. Use advanced logic to assign work based on capacity, skillset, and priority in seconds.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-on-surface font-medium"><span class="material-symbols-outlined text-tertiary">check_circle</span> Smart Capacity Mapping</li>
+<li class="flex items-center gap-2 text-on-surface font-medium"><span class="material-symbols-outlined text-tertiary">check_circle</span> Multi-stage Task Templates</li>
+</ul>
+</div>
+<div class="order-1 lg:order-2 bg-white rounded-lg p-6 shadow-xl border border-surface-container-highest">
+<div class="space-y-4">
+<div class="flex justify-between items-center mb-6">
+<span class="font-headline font-bold">New Initiative</span>
+<span class="material-symbols-outlined">close</span>
+</div>
+<div class="space-y-4">
+<div class="p-3 bg-surface-container-low rounded border-l-4 border-primary">
+<p class="text-[10px] text-primary font-bold uppercase mb-1">Task Title</p>
+<p class="font-medium">Q3 Product Marketing Strategy</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-3 bg-surface-container-low rounded">
+<p class="text-[10px] text-outline font-bold uppercase mb-1">Assignee</p>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container"></div>
+<span class="text-sm">Sarah Jenkins</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded">
+<p class="text-[10px] text-outline font-bold uppercase mb-1">Priority</p>
+<span class="text-xs bg-error/10 text-error px-2 py-0.5 rounded font-bold uppercase">Urgent</span>
+</div>
+</div>
+</div>
+<button class="w-full py-3 hero-gradient text-white rounded-lg font-bold mt-4">Assign Task</button>
+</div>
+</div>
+</div>
+<!-- Step 2: Employees Execute -->
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="bg-surface rounded-lg shadow-xl overflow-hidden border border-surface-container-highest lg:order-1 order-2">
+<div class="bg-white p-6 border-b border-surface-container">
+<h4 class="font-headline font-bold text-lg mb-4">My Today's Focus</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group hover:bg-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-outline">check_box_outline_blank</span>
+<div class="flex-1">
+<p class="font-bold text-sm">Review final wireframes</p>
+<p class="text-[11px] text-outline">Due today • 2:00 PM</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">play_arrow</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-primary-fixed rounded-xl border border-primary/20">
+<span class="material-symbols-outlined text-primary">check_box</span>
+<div class="flex-1">
+<p class="font-bold text-sm text-on-primary-fixed">Update project roadmap</p>
+<p class="text-[11px] text-on-primary-fixed-variant">Completed • 10:45 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-outline">check_box_outline_blank</span>
+<div class="flex-1">
+<p class="font-bold text-sm opacity-50">Monthly sync preparation</p>
+<p class="text-[11px] text-outline opacity-50">Tomorrow • 11:00 AM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6 order-1 lg:order-2">
+<div class="flex items-center gap-4 text-primary">
+<span class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold font-headline text-xl">02</span>
+<h3 class="text-2xl font-bold font-headline">Employees Execute</h3>
+</div>
+<p class="text-on-surface-variant text-lg">
+                        The employee workspace is a distraction-free environment. No clutter, just the priority list, clear deadlines, and the tools needed to get the job done.
+                    </p>
+</div>
+</div>
+<!-- Step 3: Real-Time Tracking -->
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6 order-2 lg:order-1">
+<div class="flex items-center gap-4 text-primary">
+<span class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold font-headline text-xl">03</span>
+<h3 class="text-2xl font-bold font-headline">Real-Time Tracking</h3>
+</div>
+<p class="text-on-surface-variant text-lg">
+                        Never guess status again. Interactive progress bars and automated milestones give managers instant visibility into bottlenecks before they become blockers.
+                    </p>
+</div>
+<div class="order-1 lg:order-2 space-y-4">
+<div class="bg-white p-6 rounded-lg shadow-lg border border-surface-container-highest">
+<div class="flex justify-between items-center mb-4">
+<span class="font-headline font-bold text-sm">Product Launch Progress</span>
+<span class="text-primary font-bold">68%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden">
+<div class="h-full hero-gradient w-[68%]"></div>
+</div>
+<div class="grid grid-cols-3 gap-4 mt-6">
+<div class="text-center">
+<p class="text-[10px] text-outline font-bold uppercase">Done</p>
+<p class="text-xl font-bold">12</p>
+</div>
+<div class="text-center border-x border-surface-container">
+<p class="text-[10px] text-outline font-bold uppercase">Pending</p>
+<p class="text-xl font-bold">4</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-outline font-bold uppercase">Delayed</p>
+<p class="text-xl font-bold text-error">1</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Steps 4, 5, 6: Bento Grid Style -->
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Step 4: Centralized Comms -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-xl border border-surface-container-highest flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<h4 class="font-headline font-bold text-xl">Centralized Comms</h4>
+<p class="text-on-surface-variant text-sm">Keep discussions contextually linked to tasks. No more digging through threads.</p>
+</div>
+<div class="mt-8 space-y-3">
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+<div class="w-8 h-8 rounded-full bg-secondary"></div>
+<div class="flex-1">
+<p class="text-[10px] font-bold">Alex Rivera</p>
+<p class="text-[11px] truncate">Updated the assets for review...</p>
+</div>
+<span class="w-4 h-4 rounded-full bg-primary text-[8px] flex items-center justify-center text-white">2</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg opacity-60">
+<div class="w-8 h-8 rounded-full bg-tertiary"></div>
+<div class="flex-1 text-[11px]">
+<p class="font-bold">Jordan Smith</p>
+<p class="truncate">Meeting link sent to client.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 5: Visual Planning -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-xl border border-surface-container-highest flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<h4 class="font-headline font-bold text-xl">Visual Planning</h4>
+<p class="text-on-surface-variant text-sm">High-level timelines help you spot resource gaps and project overlaps visually.</p>
+</div>
+<div class="mt-8 grid grid-cols-5 gap-1">
+<div class="h-16 bg-surface-container-low rounded"></div>
+<div class="h-16 bg-primary-fixed rounded"></div>
+<div class="h-16 bg-primary-fixed rounded flex items-center justify-center">
+<span class="w-1/2 h-2 bg-primary rounded-full"></span>
+</div>
+<div class="h-16 bg-surface-container-low rounded"></div>
+<div class="h-16 bg-tertiary/20 rounded"></div>
+</div>
+</div>
+<!-- Step 6: Streamlined Approvals -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-xl border border-surface-container-highest flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">approval_delegation</span>
+</div>
+<h4 class="font-headline font-bold text-xl">Streamlined Approvals</h4>
+<p class="text-on-surface-variant text-sm">Review leave requests and budget items in a single click with context.</p>
+</div>
+<div class="mt-8 bg-surface-container-low p-4 rounded-lg">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold">Leave Request</p>
+<p class="text-[10px] text-outline">Sarah J. • Oct 12-15</p>
+</div>
+<span class="text-[10px] px-2 py-0.5 bg-tertiary/10 text-tertiary font-bold rounded">Vacation</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 bg-white border border-outline-variant/30 text-[10px] font-bold rounded hover:bg-error/5 hover:text-error transition-colors">Deny</button>
+<button class="flex-1 py-1.5 bg-primary text-white text-[10px] font-bold rounded">Approve</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Manager vs Employee Comparison -->
+<section class="py-24 px-8 bg-on-background text-white relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="Abstract deep blue geometric background pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCGWdndl3WwllpHYdxyV4SipzPNuLpAbElJnnt8YwY2KcyafikX5JRyIobzpkcmdmD99OmZ64FZBGuD37afKserZEDQRzW1HK_bmhrZJ76zsM2-Qt8Y7qpB0I91Bva83Ll4NPzerRv3-IcpGzxBJWGGHH9WGO8rxgJVnq4DuJcBaRfY1584jp8LN4udqAaaqTnUZW2_DZyWJZ7dhn6ZkLYZFB9znTGT7oYou2-MFTW9HRlIqKxWcIQlyYZQnDWX6tDqxFmMzh0zkEo"/>
+</div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl font-extrabold mb-4">Tailored Perspectives</h2>
+<p class="text-surface-variant/70 max-w-2xl mx-auto">Different roles require different tools. See how Team Manage adapts to the needs of every team member.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-px bg-white/10 rounded-lg overflow-hidden border border-white/10">
+<!-- For Managers -->
+<div class="p-12 space-y-8 bg-on-background hover:bg-white/[0.02] transition-colors">
+<h3 class="font-headline text-2xl font-bold flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed">admin_panel_settings</span>
+                            For Managers
+                        </h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1">insights</span>
+<div>
+<p class="font-bold">Oversight &amp; Analysis</p>
+<p class="text-sm text-surface-variant/60">Global view of all active projects, department health, and resource utilization.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1">assignment</span>
+<div>
+<p class="font-bold">Work Orchestration</p>
+<p class="text-sm text-surface-variant/60">Delegate tasks with high granularity and automated recurring logic.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1">task_alt</span>
+<div>
+<p class="font-bold">Strategic Approvals</p>
+<p class="text-sm text-surface-variant/60">Centralized decision-making hub for requests, budget, and final deliveries.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- For Employees -->
+<div class="p-12 space-y-8 bg-on-background hover:bg-white/[0.02] transition-colors">
+<h3 class="font-headline text-2xl font-bold flex items-center gap-3 text-tertiary-fixed">
+<span class="material-symbols-outlined">person</span>
+                            For Employees
+                        </h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed mt-1">filter_center_focus</span>
+<div>
+<p class="font-bold">Radical Focus</p>
+<p class="text-sm text-surface-variant/60">A noise-free dashboard that highlights exactly what needs to be done next.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed mt-1">sync_alt</span>
+<div>
+<p class="font-bold">Status Autonomy</p>
+<p class="text-sm text-surface-variant/60">Easily update progress, request feedback, and log time without friction.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed mt-1">group</span>
+<div>
+<p class="font-bold">Direct Collaboration</p>
+<p class="text-sm text-surface-variant/60">In-line communication with peers and leads without context-switching.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Value Cards -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="p-8 rounded-lg bg-surface-container-low border border-surface-container-highest hover:shadow-lg transition-all text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">account_tree</span>
+<h4 class="font-bold mb-2">Clearer Operations</h4>
+<p class="text-xs text-on-surface-variant">Standardize workflows across departments effortlessly.</p>
+</div>
+<div class="p-8 rounded-lg bg-surface-container-low border border-surface-container-highest hover:shadow-lg transition-all text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">bolt</span>
+<h4 class="font-bold mb-2">Faster Execution</h4>
+<p class="text-xs text-on-surface-variant">Reduce decision latency and project cycle times.</p>
+</div>
+<div class="p-8 rounded-lg bg-surface-container-low border border-surface-container-highest hover:shadow-lg transition-all text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">visibility</span>
+<h4 class="font-bold mb-2">Enhanced Visibility</h4>
+<p class="text-xs text-on-surface-variant">Real-time data at every level of the organization.</p>
+</div>
+<div class="p-8 rounded-lg bg-surface-container-low border border-surface-container-highest hover:shadow-lg transition-all text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">hub</span>
+<h4 class="font-bold mb-2">Seamless Coordination</h4>
+<p class="text-xs text-on-surface-variant">Bridge the gap between strategy and day-to-day execution.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-5xl mx-auto bg-primary text-white rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10 space-y-8">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight">Ready to simplify your team's workflow?</h2>
+<p class="text-primary-fixed text-lg max-w-2xl mx-auto">Join 500+ high-performing teams who have revolutionized their management with Team Manage.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="px-10 py-5 rounded-full bg-white text-primary font-headline font-bold text-lg hover:scale-[1.05] transition-all duration-200 shadow-xl">Book a Demo</button>
+<button class="px-10 py-5 rounded-full border-2 border-white/30 bg-white/10 text-white font-headline font-bold text-lg hover:bg-white/20 transition-all duration-200">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f9f9ff]">
+<div class="max-w-7xl mx-auto px-8 py-16 grid grid-cols-2 md:grid-cols-5 gap-8">
+<div class="col-span-2">
+<div class="text-lg font-bold text-[#0d1c32] mb-4">Team Manage</div>
+<p class="text-sm text-slate-500 max-w-xs">Empowering high-performance teams with the world's most intuitive management platform.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-bold uppercase tracking-widest text-[#0d1c32]">Product</span>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">Features</a>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">Solutions</a>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">Security</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-bold uppercase tracking-widest text-[#0d1c32]">Resources</span>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">Documentation</a>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">API Reference</a>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">Community</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-bold uppercase tracking-widest text-[#0d1c32]">Company</span>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">About Us</a>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">Careers</a>
+<a class="text-sm text-slate-500 hover:text-[#0059bb] transition-all hover:translate-x-1" href="#">Contact</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200">
+<p class="text-xs text-slate-400">© 2024 Team Manage. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

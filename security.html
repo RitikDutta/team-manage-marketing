@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security | Team Manage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#d6e3ff",
+              "on-primary-fixed-variant": "#004493",
+              "tertiary": "#006768",
+              "on-tertiary-fixed": "#002020",
+              "secondary": "#515f78",
+              "on-surface": "#0d1c32",
+              "on-primary-fixed": "#001a41",
+              "surface-container-high": "#dfe8ff",
+              "on-secondary-fixed": "#0d1c32",
+              "tertiary-container": "#008284",
+              "surface-variant": "#d6e3ff",
+              "surface-container-highest": "#d6e3ff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#e8eeff",
+              "primary-fixed": "#d8e2ff",
+              "on-primary": "#ffffff",
+              "outline": "#717786",
+              "inverse-on-surface": "#ecf0ff",
+              "surface": "#f9f9ff",
+              "primary-fixed-dim": "#adc7ff",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#005bc0",
+              "primary": "#0059bb",
+              "error-container": "#ffdad6",
+              "primary-container": "#0070ea",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#5af8fb",
+              "surface-bright": "#f9f9ff",
+              "on-tertiary-container": "#f3fffe",
+              "background": "#f9f9ff",
+              "tertiary-fixed-dim": "#2ddbde",
+              "inverse-primary": "#adc7ff",
+              "on-tertiary-fixed-variant": "#004f51",
+              "on-surface-variant": "#414754",
+              "on-secondary-fixed-variant": "#39475f",
+              "on-background": "#0d1c32",
+              "inverse-surface": "#233148",
+              "surface-dim": "#ccdaf8",
+              "on-primary-container": "#fefcff",
+              "secondary-fixed-dim": "#b9c7e4",
+              "secondary-container": "#d2e0fe",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#55637d",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f0f3ff",
+              "outline-variant": "#c1c6d7",
+              "on-error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-blue-800">Team Manage</div>
+<div class="hidden md:flex items-center gap-8 font-plus-jakarta-sans font-medium text-sm tracking-tight">
+<a class="text-slate-600 hover:text-blue-600 transition-colors" href="#">Solutions</a>
+<a class="text-blue-700 border-b-2 border-blue-600 pb-1" href="#">Security</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors" href="#">Compliance</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors" href="#">Trust Center</a>
+<a class="text-slate-600 hover:text-blue-600 transition-colors" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 font-medium text-sm hover:scale-105 transition-all">Sign In</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm hover:scale-105 transition-all shadow-lg">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 overflow-hidden">
+<!-- Hero Section -->
+<section class="relative px-8 pt-20 pb-32 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6">Built-in Integrity</span>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface tracking-tight leading-[1.1] mb-6">
+                        Security built into <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">team operations</span>.
+                    </h1>
+<p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Control access at the atomic level. Every action within Team Manage is governed by sophisticated authentication and strict permission protocols, ensuring your workspace remains a secure fortress.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 active:scale-95 transition-all duration-200">Book a Demo</button>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-bold border border-outline-variant/20 shadow-sm hover:bg-surface-container-low transition-all">Contact Us</button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="glass-card p-4 rounded-lg shadow-2xl relative border border-white/40">
+<div class="bg-on-surface rounded-xl overflow-hidden shadow-inner aspect-[4/3] flex flex-col">
+<div class="h-12 border-b border-white/10 flex items-center px-4 justify-between">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary/40"></div>
+</div>
+<div class="text-[10px] text-white/40 font-mono">ENCRYPTED_SESSION_v4</div>
+</div>
+<div class="flex-1 p-6 grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="h-24 bg-white/5 rounded-lg p-4 border border-white/5">
+<span class="material-symbols-outlined text-primary text-2xl mb-2" data-icon="shield_person">shield_person</span>
+<div class="h-2 w-20 bg-white/20 rounded"></div>
+</div>
+<div class="h-24 bg-white/5 rounded-lg p-4 border border-white/5">
+<span class="material-symbols-outlined text-tertiary text-2xl mb-2" data-icon="key_visualizer">key_visualizer</span>
+<div class="h-2 w-16 bg-white/20 rounded"></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-lg p-4 border border-primary/20 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="text-xs text-white/60 font-medium">Access Verified</div>
+<div class="text-[10px] text-primary/80 mt-1">ID: 9284-SECURE</div>
+</div>
+</div>
+</div>
+<img alt="" class="absolute -bottom-8 -left-8 w-40 h-40 rounded-2xl object-cover shadow-2xl border-4 border-white" data-alt="Close up of high tech circuit board representing digital security" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbL3iGmabVpjLzN1nod30TI_LPHeWEiKgb51JXmq-VCGSKqzijei1NaGCO54LaUUKQOcGRHzceTKiocJlug5hIhrHJZIqhvu_wG18T1VaynN2_tVGfIZ40EWeNU31h3uNb2bi5kmkN4kQgfJEIjHDq6EWOTZukKCU1mZ4PXOqOm15FRB8w6UQiJQZ1wl7XOkwWtfncnSwfBEs6zYNNnYzWEt5NA9woBmvUG-iaaqk83UV_PHh95X9i-a-ecuWLFuC0tY4lF2qg6Hi5"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Philosophy -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline text-3xl md:text-4xl font-bold mb-8">Security as a core product consideration, not an afterthought.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12">
+                    We believe transparency is the foundation of trust. Our team treats security protocols with the same design rigor as our user interface. By building security into the very fabric of our operational workflows, we ensure that being secure doesn't mean being slow.
+                </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="text-left p-6">
+<div class="text-primary font-bold text-4xl mb-2">99.9%</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Uptime SLA</div>
+</div>
+<div class="text-left p-6">
+<div class="text-primary font-bold text-4xl mb-2">Zero</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Untracked Access</div>
+</div>
+<div class="text-left p-6">
+<div class="text-primary font-bold text-4xl mb-2">24/7</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Active Monitoring</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Pillars Grid -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-3xl font-bold mb-4">Core Security Pillars</h2>
+<div class="w-20 h-1.5 bg-primary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Pillar 1 -->
+<div class="group bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 text-on-surface">Authentication</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Secure sign-in protocols designed to verify identity without compromising user speed.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="group bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="key">key</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 text-on-surface">RBAC</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Granular role-based access control. Managers see what they need; employees access what they must.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="group bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="encrypted">encrypted</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 text-on-surface">Data Protection</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Responsible handling of operational data with multi-layer encryption at rest and in transit.</p>
+</div>
+<!-- Pillar 4 -->
+<div class="group bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 text-on-surface">Session Security</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Intelligent session management that monitors for anomalies and expires automatically.</p>
+</div>
+<!-- Pillar 5 -->
+<div class="group bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 text-on-surface">Input Validation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Rigorous server-side validation ensuring form integrity and preventing injection attempts.</p>
+</div>
+<!-- Pillar 6 -->
+<div class="group bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 text-on-surface">Activity Visibility</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Comprehensive audit trails for account-wide transparency and operational accountability.</p>
+</div>
+</div>
+</section>
+<!-- Detailed Trust Sections -->
+<section class="space-y-32 py-24">
+<!-- Section 1 -->
+<div class="px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1">
+<h3 class="font-headline text-3xl font-bold mb-6">Secure Access Protocols</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                        We implement hashing-aware protocols at every entry point. Your credentials never exist in plain text. By utilizing secure tokenization, we ensure that your account is protected even before you reach the dashboard.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="done_all">done_all</span>
+                            No plain-text storage
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="done_all">done_all</span>
+                            Secure session cookies
+                        </li>
+</ul>
+</div>
+<div class="flex-1 w-full">
+<div class="rounded-xl overflow-hidden shadow-2xl bg-surface-container-high p-8 border border-outline-variant/20">
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4 border-b pb-4">
+<span class="font-bold">Access Attempt</span>
+<span class="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">Authorized</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between text-sm"><span class="text-slate-500">IP:</span> 192.168.1.1</div>
+<div class="flex justify-between text-sm"><span class="text-slate-500">Method:</span> OAuth 2.0</div>
+<div class="flex justify-between text-sm"><span class="text-slate-500">Location:</span> San Francisco, US</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2 -->
+<div class="px-8 max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-16">
+<div class="flex-1">
+<h3 class="font-headline text-3xl font-bold mb-6">Permission-Aware Workflows</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                        Our interface adapts dynamically based on user roles. An employee's view doesn't just "hide" manager actions—it doesn't load them. This clean separation reduces the attack surface and minimizes accidental configuration changes.
+                    </p>
+<button class="text-primary font-bold hover:underline">Learn more about permissions →</button>
+</div>
+<div class="flex-1 w-full">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-highest p-4 rounded-lg border border-primary/20">
+<div class="text-[10px] font-bold uppercase text-primary mb-2">Manager View</div>
+<div class="h-2 w-full bg-primary/20 rounded mb-1"></div>
+<div class="h-2 w-2/3 bg-primary/20 rounded mb-4"></div>
+<div class="flex gap-1">
+<div class="h-4 w-10 bg-primary rounded"></div>
+<div class="h-4 w-10 bg-error rounded"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/30">
+<div class="text-[10px] font-bold uppercase text-slate-400 mb-2">Member View</div>
+<div class="h-2 w-full bg-slate-200 rounded mb-1"></div>
+<div class="h-2 w-2/3 bg-slate-200 rounded mb-4"></div>
+<div class="h-4 w-10 bg-slate-200 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3 -->
+<div class="px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1">
+<h3 class="font-headline text-3xl font-bold mb-6">Monitoring &amp; Accountability</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+                        Every significant action is logged. From data exports to setting changes, our activity tracking provides a clear map of your team's operations, ensuring you always know who changed what and when.
+                    </p>
+</div>
+<div class="flex-1 w-full">
+<div class="bg-on-surface p-6 rounded-2xl shadow-xl font-mono text-xs text-green-400 space-y-2">
+<div>[14:22:01] USER_ID:449 AUTH_SUCCESS</div>
+<div>[14:22:30] PERMISSION_CHECK: PASSED [READ_ONLY]</div>
+<div>[14:25:12] ACTION: EXPORT_REPORTS [INITIATED]</div>
+<div>[14:25:15] ACTION: EXPORT_REPORTS [COMPLETED] </div>
+<div class="animate-pulse">_</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Benefits -->
+<section class="bg-on-surface text-on-primary py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-20">
+<div>
+<h2 class="font-headline text-4xl font-bold mb-8 leading-tight">Operating with security means operating with clarity.</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="policy">policy</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-2">Controlled Access</h4>
+<p class="text-on-surface-variant/70">Reduce risk by ensuring only the right people have access to sensitive financial and team data.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="group">group</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-2">Clearer Accountability</h4>
+<p class="text-on-surface-variant/70">Eliminate the "I didn't do it" conversations with precise activity logs and audit trails.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="psychology_alt">psychology_alt</span>
+</div>
+<div>
+<h4 class="font-bold text-xl mb-2">Reduced Confusion</h4>
+<p class="text-on-surface-variant/70">By narrowing the interface to only what is relevant to a user's role, you decrease cognitive load and mistakes.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="relative glass-card bg-white/5 border border-white/10 p-10 rounded-3xl text-center w-full max-w-md backdrop-blur-md">
+<div class="w-20 h-20 bg-primary rounded-full mx-auto mb-8 flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined text-4xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="text-3xl font-bold mb-4">Peace of Mind</div>
+<p class="text-white/60">"Our security posture changed overnight after switching to Team Manage. The transparency is unparalleled."</p>
+<div class="mt-8 font-label text-[10px] tracking-widest uppercase text-primary">Certified Operational Design</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Practices -->
+<section class="py-24 px-8 max-w-5xl mx-auto">
+<h2 class="font-headline text-3xl font-bold mb-12 text-center">Implementation-Aware Practices</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex gap-4 p-4 rounded-xl hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+<div>
+<div class="font-bold mb-1">Least Necessary Access</div>
+<p class="text-sm text-on-surface-variant">We default permissions to the minimum required for a specific role.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="input">input</span>
+<div>
+<div class="font-bold mb-1">Validated Inputs</div>
+<p class="text-sm text-on-surface-variant">All data enters through strict filters to prevent system exploitation.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="update">update</span>
+<div>
+<div class="font-bold mb-1">Regular Rotations</div>
+<p class="text-sm text-on-surface-variant">Internal secrets and session tokens are rotated frequently and automatically.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-xl hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+<div>
+<div class="font-bold mb-1">Heuristic Monitoring</div>
+<p class="text-sm text-on-surface-variant">We watch for patterns that deviate from normal operational behavior.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Future Security Roadmap -->
+<section class="py-24 px-8 max-w-7xl mx-auto bg-surface-container-lowest rounded-3xl mb-24 border border-outline-variant/10 shadow-sm overflow-hidden relative">
+<div class="absolute top-0 right-0 p-8">
+<span class="text-[80px] font-black text-slate-100 leading-none select-none">ROADMAP</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-3xl font-bold mb-12">Building the Future of Secure Ops</h2>
+<div class="grid md:grid-cols-4 gap-8">
+<div class="space-y-4 opacity-50">
+<div class="text-xs font-bold text-primary">Q1 COMPLETED</div>
+<h4 class="font-bold">Enhanced Audit Logging</h4>
+<p class="text-sm">Granular export-level tracking for compliance readiness.</p>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-bold text-primary">Q2 IN PROGRESS</div>
+<h4 class="font-bold">SSO Integration</h4>
+<p class="text-sm">Direct integration with enterprise identity providers.</p>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-bold text-slate-400">Q3 PLANNED</div>
+<h4 class="font-bold">Native 2FA</h4>
+<p class="text-sm">App-based multi-factor authentication for all user tiers.</p>
+</div>
+<div class="space-y-4">
+<div class="text-xs font-bold text-slate-400">Q4 VISION</div>
+<h4 class="font-bold">AI Anomaly Alerts</h4>
+<p class="text-sm">Automated notifications for unusual access patterns.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="py-24 px-8 max-w-3xl mx-auto">
+<h2 class="font-headline text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+<div class="space-y-6">
+<div class="group border-b border-outline-variant/20 pb-6">
+<div class="flex justify-between items-center cursor-pointer group-hover:text-primary transition-colors">
+<h4 class="font-bold text-lg">Can I customize roles beyond defaults?</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<p class="mt-4 text-on-surface-variant leading-relaxed hidden group-hover:block transition-all">
+                        Yes. While we provide standard roles like Admin, Manager, and Employee, you can create custom permission sets to match your unique operational structure.
+                    </p>
+</div>
+<div class="group border-b border-outline-variant/20 pb-6">
+<div class="flex justify-between items-center cursor-pointer group-hover:text-primary transition-colors">
+<h4 class="font-bold text-lg">How long are audit logs stored?</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<p class="mt-4 text-on-surface-variant leading-relaxed hidden group-hover:block transition-all">
+                        Standard accounts retain 12 months of activity logs. Enterprise configurations can extend this retention indefinitely.
+                    </p>
+</div>
+<div class="group border-b border-outline-variant/20 pb-6">
+<div class="flex justify-between items-center cursor-pointer group-hover:text-primary transition-colors">
+<h4 class="font-bold text-lg">Where is my team's data stored?</h4>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<p class="mt-4 text-on-surface-variant leading-relaxed hidden group-hover:block transition-all">
+                        Data is hosted in top-tier facilities with physical and digital redundancies, ensuring high availability and regional compliance where applicable.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8 text-center bg-gradient-to-b from-surface to-surface-container-low">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline text-5xl font-extrabold mb-8 tracking-tight">Operate with more clarity <br/>and control.</h2>
+<p class="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto">Join thousands of teams who trust Team Manage to secure their operational DNA.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all">Start Free Trial</button>
+<button class="bg-surface-container-lowest text-on-surface px-10 py-5 rounded-full font-bold text-lg border border-outline-variant/30 hover:bg-surface-container-low transition-all">Talk to Security Expert</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t-0 tonal-shift bg-slate-100">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full max-w-7xl mx-auto">
+<div class="mb-6 md:mb-0">
+<div class="text-lg font-black text-slate-900 mb-2">Team Manage</div>
+<p class="text-slate-500 text-xs font-inter uppercase tracking-widest font-semibold">© 2024 Team Manage Inc. All rights reserved. Built for security-first teams.</p>
+</div>
+<div class="flex gap-6 font-inter text-xs uppercase tracking-widest font-semibold">
+<a class="text-slate-500 hover:text-blue-500 transition-all" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-500 transition-all" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-blue-500 transition-all" href="#">GDPR</a>
+<a class="text-slate-500 hover:text-blue-500 transition-all" href="#">SOC2 Report</a>
+<a class="text-slate-500 hover:text-blue-500 transition-all" href="#">Status</a>
+</div>
+</div>
+</footer>
+</body></html>

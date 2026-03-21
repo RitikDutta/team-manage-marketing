@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "secondary": "#515f78",
+              "surface-variant": "#d6e3ff",
+              "outline-variant": "#c1c6d7",
+              "on-error": "#ffffff",
+              "on-primary-container": "#fefcff",
+              "surface-container-highest": "#d6e3ff",
+              "secondary-container": "#d2e0fe",
+              "on-secondary-container": "#55637d",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#001a41",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#5af8fb",
+              "secondary-fixed": "#d6e3ff",
+              "inverse-surface": "#233148",
+              "on-tertiary-fixed": "#002020",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#004493",
+              "surface": "#f9f9ff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#39475f",
+              "surface-container": "#e8eeff",
+              "outline": "#717786",
+              "tertiary-container": "#008284",
+              "tertiary": "#006768",
+              "surface-container-high": "#dfe8ff",
+              "tertiary-fixed-dim": "#2ddbde",
+              "inverse-on-surface": "#ecf0ff",
+              "primary": "#0059bb",
+              "surface-tint": "#005bc0",
+              "on-background": "#0d1c32",
+              "inverse-primary": "#adc7ff",
+              "surface-dim": "#ccdaf8",
+              "primary-fixed-dim": "#adc7ff",
+              "primary-container": "#0070ea",
+              "on-tertiary-fixed-variant": "#004f51",
+              "surface-container-low": "#f0f3ff",
+              "on-secondary-fixed": "#0d1c32",
+              "primary-fixed": "#d8e2ff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#f9f9ff",
+              "on-tertiary-container": "#f3fffe",
+              "on-surface": "#0d1c32",
+              "secondary-fixed-dim": "#b9c7e4",
+              "on-surface-variant": "#414754",
+              "on-error-container": "#93000a",
+              "background": "#f9f9ff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 0%, #e8eeff 0%, #f9f9ff 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-[#f9f9ff]/70 backdrop-blur-xl shadow-[0_10px_30px_rgba(13,28,50,0.06)]">
+<div class="max-w-[1440px] mx-auto flex justify-between items-center px-8 py-4">
+<div class="text-2xl font-black tracking-tighter text-[#0d1c32] font-headline">Orchestrate</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-[#0d1c32]/70 hover:text-[#0059bb] transition-all duration-200" href="#">Features</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-[#0d1c32]/70 hover:text-[#0059bb] transition-all duration-200" href="#">Solutions</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-[#0d1c32]/70 hover:text-[#0059bb] transition-all duration-200" href="#">Security</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-[#0059bb] font-bold border-b-2 border-[#0059bb] pb-1" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight text-[#0d1c32]/70 hover:text-[#0059bb] transition-all duration-200">Login</button>
+<button class="bg-primary-container text-on-primary-container px-5 py-2.5 rounded-full font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight hover:scale-[1.02] active:scale-98 transition-all duration-200 shadow-md">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-32 px-8 overflow-hidden">
+<div class="max-w-5xl mx-auto text-center relative">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full mb-8 border border-outline-variant/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label text-[11px] font-bold uppercase tracking-[0.1em] text-on-surface-variant">Infrastructure Flexibility</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-8 leading-[1.1]">
+                Pricing built for every stage of <span class="text-primary italic">team operations</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto mb-12 leading-relaxed">
+                Choose between self-managed setup, guided implementation, or fully managed operational support. Scale your workforce coordination with the right level of infrastructure ownership.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-8 py-4 bg-primary text-white rounded-xl font-bold hover:scale-[1.02] active:scale-98 transition-all shadow-lg shadow-primary/20">Book a Demo</button>
+<button class="px-8 py-4 border border-outline-variant text-on-surface rounded-xl font-bold hover:bg-surface-container transition-all">Contact Sales</button>
+</div>
+</div>
+</section>
+<!-- Pricing Cards Section -->
+<section class="px-8 -mt-20 mb-32 relative z-10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- FREE CARD -->
+<div class="bg-surface-container-lowest p-10 rounded-lg shadow-[0_10px_30px_rgba(13,28,50,0.06)] border border-outline-variant/10 flex flex-col hover:scale-[1.01] transition-transform duration-300">
+<div class="mb-8">
+<span class="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">Entry Level</span>
+<h3 class="text-2xl font-headline font-extrabold mt-2">FREE</h3>
+<p class="text-on-surface-variant text-sm mt-1">Self-Managed</p>
+</div>
+<div class="mb-10">
+<span class="text-5xl font-headline font-black text-on-surface">$0</span>
+<span class="text-on-surface-variant text-sm font-medium">/forever</span>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-start gap-3 group">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">terminal</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Self-hosted/self-configured deployment environment.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">architecture</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Internal team handles workflow architecture/task logic.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">admin_panel_settings</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Admin handles all onboarding/permissions internally.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">dns</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Organization manages infrastructure and administration.</span>
+</li>
+</ul>
+<button class="w-full py-4 border-2 border-primary text-primary rounded-xl font-bold hover:bg-primary/5 transition-colors">Go Free</button>
+<p class="text-[11px] text-center mt-4 text-on-surface-variant/60 font-medium">Best for pilots or technically capable teams.</p>
+</div>
+<!-- PRO CARD -->
+<div class="bg-on-surface p-10 rounded-lg shadow-2xl shadow-primary/20 flex flex-col scale-105 relative border-2 border-primary overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-6 py-1 transform rotate-45 translate-x-6 translate-y-4 uppercase tracking-tighter">Recommended</div>
+<div class="mb-8">
+<span class="font-label text-[10px] font-bold uppercase tracking-widest text-primary-fixed-dim">Most Popular</span>
+<h3 class="text-2xl font-headline font-extrabold mt-2 text-white">PRO</h3>
+<p class="text-surface-variant text-sm mt-1">Guided Setup</p>
+</div>
+<div class="mb-10">
+<span class="text-5xl font-headline font-black text-white">$49</span>
+<span class="text-surface-variant text-sm font-medium">/seat/mo</span>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-xl mt-0.5">groups</span>
+<span class="text-sm text-surface-variant leading-relaxed">Guided setup for up to 100 employees.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-xl mt-0.5">settings_suggest</span>
+<span class="text-sm text-surface-variant leading-relaxed">We configure initial workflows and role mapping.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-xl mt-0.5">cloud_sync</span>
+<span class="text-sm text-surface-variant leading-relaxed">Deployed to your company server environment.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-xl mt-0.5">verified_user</span>
+<span class="text-sm text-surface-variant leading-relaxed">Professional implementation and structured onboarding.</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-primary text-white rounded-xl font-bold hover:scale-[1.02] transition-transform shadow-lg shadow-primary/40">Go Pro</button>
+<p class="text-[11px] text-center mt-4 text-surface-variant/60 font-medium">Best for teams wanting setup support.</p>
+</div>
+<!-- ENTERPRISE CARD -->
+<div class="bg-surface-container-lowest p-10 rounded-lg shadow-[0_10px_30px_rgba(13,28,50,0.06)] border border-outline-variant/10 flex flex-col hover:scale-[1.01] transition-transform duration-300">
+<div class="mb-8">
+<span class="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">High Performance</span>
+<h3 class="text-2xl font-headline font-extrabold mt-2">ENTERPRISE</h3>
+<p class="text-on-surface-variant text-sm mt-1">Fully Managed</p>
+</div>
+<div class="mb-10">
+<span class="text-3xl font-headline font-black text-on-surface">Custom</span>
+<p class="text-on-surface-variant text-sm font-medium mt-1">Tailored operational SLAs</p>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">handshake</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Fully managed onboarding and operational handling.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">storage</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Dedicated server/infrastructure model.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">update</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Continuous platform administration and updates.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">support_agent</span>
+<span class="text-sm text-on-surface-variant leading-relaxed">Reduced internal operational burden.</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-on-surface text-white rounded-xl font-bold hover:bg-on-surface/90 transition-colors">Contact Sales</button>
+<p class="text-[11px] text-center mt-4 text-on-surface-variant/60 font-medium">Best for large organizations requiring support.</p>
+</div>
+</div>
+</section>
+<!-- Operating Model Comparison -->
+<section class="px-8 py-24 bg-surface-container-low">
+<div class="max-w-6xl mx-auto">
+<h2 class="font-headline text-3xl font-extrabold text-center mb-16 text-on-surface">Operating Model Comparison</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1 px-8 rounded-lg overflow-hidden">
+<div class="bg-surface-container-lowest p-8 text-center border-r border-outline-variant/10">
+<div class="text-primary font-bold mb-4">Self-Managed</div>
+<p class="text-sm text-on-surface-variant mb-6">Full Internal Control</p>
+<div class="w-full h-2 bg-outline-variant/20 rounded-full mb-2 overflow-hidden">
+<div class="w-full h-full bg-primary/40"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Full Internal Ownership</span>
+</div>
+<div class="bg-surface-container-highest p-8 text-center border-r border-outline-variant/10">
+<div class="text-primary font-bold mb-4">Guided Setup</div>
+<p class="text-sm text-on-surface-variant mb-6">Expert Setup, Internal Ops</p>
+<div class="w-full h-2 bg-outline-variant/20 rounded-full mb-2 overflow-hidden">
+<div class="w-[50%] h-full bg-primary"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Shared Responsibility</span>
+</div>
+<div class="bg-on-surface p-8 text-center">
+<div class="text-primary-fixed-dim font-bold mb-4">Fully Managed</div>
+<p class="text-surface-variant text-sm mb-6">Dedicated Expert Oversight</p>
+<div class="w-full h-2 bg-white/10 rounded-full mb-2 overflow-hidden">
+<div class="w-[15%] h-full bg-primary-fixed-dim"></div>
+</div>
+<span class="text-[10px] font-bold text-surface-variant uppercase">Minimal Internal Effort</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Section -->
+<section class="px-8 py-32">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1">
+<h2 class="font-headline text-4xl font-extrabold mb-8 text-on-surface">Choose the operating model that fits your team</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">layers</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-2">Implementation Depth</h4>
+<p class="text-on-surface-variant leading-relaxed">Whether you need a quick API key or a white-glove migration, we adjust our level of involvement based on your urgency and technical debt.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">lan</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-2">Infrastructure Responsibility</h4>
+<p class="text-on-surface-variant leading-relaxed">Control your data residency. Deploy on our high-performance cloud, your own VPC, or an air-gapped on-premise server cluster.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-2">Administrative Support</h4>
+<p class="text-on-surface-variant leading-relaxed">Offload the burden of user management, permission audits, and workflow optimizations to our dedicated platform success engineers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-surface-container rounded-lg p-1 overflow-hidden">
+<img class="rounded-[calc(2rem-4px)] w-full h-[500px] object-cover shadow-inner" data-alt="B2B dashboard analytics showing operational metrics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClEqMJesXg6K-tagPpYwv04fZwPQY221OxB7LTUxVNeO9LR3HiWXXiamvjLKq-DRqyo3Yte3f89fk_IvngSjvrX5g1UBigFG-Syk5Uq6JFhlxko1HK6DDKTg8NTcZd5dpn5vFTarCwlOffGoei_iYLctsm0GzsglEuxOteFNp6h6h00aZhrZjx7cPu0ueQBkxlryCIctjF5wqfIggmFp3ISiu_v1vJrtJH-Afch-pOCYdN-NP0ybWOHn8GZ8a4TFfoZDWJnQ2OEj_F"/>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="px-8 py-32 bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline text-3xl font-extrabold text-center mb-16">Operational FAQ</h2>
+<div class="space-y-4">
+<div class="p-6 bg-surface-container-low rounded-xl">
+<h5 class="font-bold mb-2">What does guided setup include?</h5>
+<p class="text-on-surface-variant text-sm">Guided setup involves four weekly consultation sessions with our implementation engineers, where we map your existing CSV/Excel workflows into Orchestrate logic and train your team leads.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<h5 class="font-bold mb-2">Who manages infrastructure in Pro?</h5>
+<p class="text-on-surface-variant text-sm">In the Pro model, you maintain ownership of the server environment (AWS/Azure/GCP), while we handle the containerized deployment of the application via our CI/CD pipelines.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl">
+<h5 class="font-bold mb-2">Can we upgrade from Pro to Enterprise later?</h5>
+<p class="text-on-surface-variant text-sm">Absolutely. Migration from self-managed or guided setups to our fully managed model is seamless and typically involves a 48-hour data transition period with zero downtime.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-8 py-24 mb-32">
+<div class="max-w-5xl mx-auto bg-on-surface rounded-lg p-16 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-10">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary rounded-full blur-[100px]"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-tertiary rounded-full blur-[100px]"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl font-extrabold text-white mb-6">Need a pricing model aligned to your team structure?</h2>
+<p class="text-surface-variant text-lg mb-10 max-w-2xl mx-auto">Contact our enterprise architecture team for a custom assessment of your operational needs and infrastructure requirements.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-10 py-4 bg-primary text-white rounded-xl font-bold hover:scale-[1.05] transition-transform">Go Pro</button>
+<button class="px-10 py-4 border border-white/20 text-white rounded-xl font-bold hover:bg-white/10 transition-colors">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0d1c32] py-12 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-bold text-[#f9f9ff]">Orchestrate</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#d6e3ff]/60 hover:text-[#f9f9ff] transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#d6e3ff]/60 hover:text-[#f9f9ff] transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#d6e3ff]/60 hover:text-[#f9f9ff] transition-colors duration-200" href="#">Security Compliance</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#d6e3ff]/60 hover:text-[#f9f9ff] transition-colors duration-200" href="#">SLA</a>
+<a class="font-['Inter'] text-xs tracking-wide uppercase text-[#d6e3ff]/60 hover:text-[#f9f9ff] transition-colors duration-200" href="#">Status</a>
+</div>
+<p class="font-['Inter'] text-xs tracking-wide uppercase text-[#d6e3ff]/60">© 2024 Orchestrate Technologies Inc.</p>
+</div>
+</footer>
+</body></html>
