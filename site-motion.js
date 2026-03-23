@@ -243,12 +243,25 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const getHeroVideoTargetRect = () => {
+    const gutter = window.innerWidth < 768 ? 12 : 28;
+    const maxWidth = Math.min(window.innerWidth - gutter * 2, 1480);
+    const maxHeight = Math.min(window.innerHeight - gutter * 2, window.innerHeight * 0.9);
+    const aspectRatio = 16 / 9;
+
+    let width = maxWidth;
+    let height = width / aspectRatio;
+
+    if (height > maxHeight) {
+      height = maxHeight;
+      width = height * aspectRatio;
+    }
+
     return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-      radius: 0
+      top: Math.round((window.innerHeight - height) / 2),
+      left: Math.round((window.innerWidth - width) / 2),
+      width: Math.round(width),
+      height: Math.round(height),
+      radius: window.innerWidth < 768 ? 22 : 28
     };
   };
 
