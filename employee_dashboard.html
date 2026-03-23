@@ -93,34 +93,34 @@
 <a class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50" href="index.html">Team Manage</a>
 <p class="text-xs text-slate-500 font-medium uppercase tracking-widest mt-1">Management Hub</p>
 </div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 font-semibold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl hover:scale-[1.02] transition-all duration-200" href="#">
+<nav aria-label="Employee navigation" class="flex-1 space-y-1" role="tablist">
+<a aria-controls="panel-dashboard" aria-selected="true" class="employee-tab flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 font-semibold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl hover:scale-[1.02] transition-all duration-200" data-tab-target="dashboard" href="#dashboard" role="tab">
 <span class="material-symbols-outlined">dashboard</span>
 <span>Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200" href="#">
+<a aria-controls="panel-my-tasks" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="my-tasks" href="#my-tasks" role="tab">
 <span class="material-symbols-outlined">assignment</span>
 <span>My Tasks</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200" href="#">
+<a aria-controls="panel-calendar" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="calendar" href="#calendar" role="tab">
 <span class="material-symbols-outlined">calendar_today</span>
 <span>Calendar</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200" href="#">
+<a aria-controls="panel-messages" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="messages" href="#messages" role="tab">
 <span class="material-symbols-outlined">chat</span>
 <span>Messages</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200" href="#">
+<a aria-controls="panel-leave-requests" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="leave-requests" href="#leave-requests" role="tab">
 <span class="material-symbols-outlined">event_busy</span>
 <span>Leave Requests</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200" href="#">
+<a aria-controls="panel-activity-logs" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="activity-logs" href="#activity-logs" role="tab">
 <span class="material-symbols-outlined">history</span>
 <span>Activity Logs</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span>Settings</span>
+<a aria-controls="panel-insights" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="insights" href="#insights" role="tab">
+<span class="material-symbols-outlined">insights</span>
+<span>Insights</span>
 </a>
 </nav>
 <div class="mt-auto">
@@ -160,10 +160,10 @@
 </header>
 <!-- Main Content -->
 <main class="ml-64 p-8 min-h-screen">
-<div class="max-w-[1400px] mx-auto space-y-8">
+<section aria-labelledby="panel-dashboard-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="dashboard" id="panel-dashboard" role="tabpanel">
 <!-- Welcome Header -->
 <header class="flex flex-col gap-2">
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight">Good Morning, Rohan!</h2>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-dashboard-title">Good Morning, Rohan!</h2>
 <div class="flex items-center gap-2 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">task_alt</span>
 <span class="text-lg font-medium">You have <span class="text-primary font-bold">3 tasks</span> due today. Stay focused!</span>
@@ -413,7 +413,501 @@
 </div>
 </div>
 </div>
+</section>
+<section aria-labelledby="panel-my-tasks-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="my-tasks" hidden="" id="panel-my-tasks" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-my-tasks-title">My Tasks</h2>
+<p class="text-on-surface-variant font-medium">A deeper view of Rohan's personal workload, deadlines, and next actions.</p>
 </div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">Sprint 14</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-on-surface-variant">3 due this week</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Assigned</p><h3 class="text-3xl font-extrabold text-on-surface">07</h3><p class="mt-3 text-xs text-on-surface-variant">Current tasks owned across development and operations support.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">In Progress</p><h3 class="text-3xl font-extrabold text-primary">03</h3><p class="mt-3 text-xs text-on-surface-variant">Main focus is operations deck, bug fix, and release notes.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Waiting Review</p><h3 class="text-3xl font-extrabold text-tertiary">02</h3><p class="mt-3 text-xs text-on-surface-variant">Items ready for Sarah's approval or team review.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Blocked</p><h3 class="text-3xl font-extrabold text-error">01</h3><p class="mt-3 text-xs text-on-surface-variant">One issue is still waiting on staging credentials.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 xl:col-span-8 bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="px-8 py-6 flex justify-between items-center bg-white">
+<div>
+<h3 class="text-xl font-extrabold font-headline">Task Queue</h3>
+<p class="text-sm text-on-surface-variant mt-1">Expanded task view for the current employee only.</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Export List</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant uppercase text-xs font-bold tracking-widest">
+<tr>
+<th class="px-8 py-4">Task</th>
+<th class="px-6 py-4">Project</th>
+<th class="px-6 py-4">Due</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4">Manager</th>
+<th class="px-8 py-4">Next Step</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-8 py-5"><p class="font-bold">Q3 Operations Review</p><p class="text-xs text-slate-400 mt-1">Finalize slides and attach updated metrics.</p></td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Operations</td>
+<td class="px-6 py-5 text-sm font-medium text-error">Today, 5:00 PM</td>
+<td class="px-6 py-5"><span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-extrabold rounded-full uppercase tracking-tighter">In Progress</span></td>
+<td class="px-6 py-5 text-sm font-semibold">Sarah J.</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Upload final deck and request review.</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-8 py-5"><p class="font-bold">Weekly Sync Docs</p><p class="text-xs text-slate-400 mt-1">Prepare notes and action summary for Friday handoff.</p></td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Documentation</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface-variant">Mar 25</td>
+<td class="px-6 py-5"><span class="px-3 py-1 bg-surface-container-high text-on-secondary-container text-[10px] font-extrabold rounded-full uppercase tracking-tighter">Assigned</span></td>
+<td class="px-6 py-5 text-sm font-semibold">Mark T.</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Collect meeting notes from product and support.</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-8 py-5"><p class="font-bold">Bug #402 Fix</p><p class="text-xs text-slate-400 mt-1">Resolve access check in the reporting module.</p></td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Development</td>
+<td class="px-6 py-5 text-sm font-medium text-error">Overdue</td>
+<td class="px-6 py-5"><span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-extrabold rounded-full uppercase tracking-tighter">Blocked</span></td>
+<td class="px-6 py-5 text-sm font-semibold">Sarah J.</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Retry after new staging credentials arrive.</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-8 py-5"><p class="font-bold">Release Notes Draft</p><p class="text-xs text-slate-400 mt-1">Summarize employee portal and leave-flow changes.</p></td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Product</td>
+<td class="px-6 py-5 text-sm font-medium text-on-surface-variant">Mar 27</td>
+<td class="px-6 py-5"><span class="px-3 py-1 bg-tertiary/10 text-tertiary text-[10px] font-extrabold rounded-full uppercase tracking-tighter">Review</span></td>
+<td class="px-6 py-5 text-sm font-semibold">Alex Rivera</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Incorporate QA notes and publish final copy.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-4 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Focus Today</h3>
+<div class="space-y-4 text-sm">
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+<p class="font-bold text-primary">1. Finish Q3 deck</p>
+<p class="text-on-surface-variant mt-1">Finalize the two open KPI slides and send to Sarah before 4:30 PM.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<p class="font-bold">2. Follow up on bug #402</p>
+<p class="text-on-surface-variant mt-1">Check staging access with Mark and retry the failing test case.</p>
+</div>
+<div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10">
+<p class="font-bold text-tertiary">3. Prepare Friday sync notes</p>
+<p class="text-on-surface-variant mt-1">Capture blockers, approvals, and handoff items from the week.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Review Queue</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-center justify-between"><span>Release Notes Draft</span><span class="font-bold text-tertiary">Waiting</span></div>
+<div class="flex items-center justify-between"><span>Ops Deck Final PDF</span><span class="font-bold text-primary">Ready</span></div>
+<div class="flex items-center justify-between"><span>Weekly Summary</span><span class="font-bold text-on-surface-variant">Drafting</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-calendar-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="calendar" hidden="" id="panel-calendar" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-calendar-title">My Calendar</h2>
+<p class="text-on-surface-variant font-medium">Only Rohan's own meetings, focus blocks, deadlines, and approved time away.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">Week of Mar 23</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-on-surface-variant">4 personal deadlines</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 xl:col-span-8 bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="text-xl font-extrabold font-headline">This Week</h3>
+<p class="text-sm text-on-surface-variant">Personal schedule view for the logged-in employee.</p>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Mar 23 to Mar 29</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+<div class="rounded-xl border border-primary/10 bg-primary/5 p-4 min-h-[11rem]">
+<p class="text-xs font-bold text-primary">Mon 23</p>
+<div class="mt-3 space-y-2">
+<span class="block rounded-lg bg-primary px-2 py-2 text-[10px] font-bold text-white">10:00 Standup</span>
+<span class="block rounded-lg bg-white px-2 py-2 text-[10px] font-bold text-on-surface">11:30 Deep work</span>
+<span class="block rounded-lg bg-tertiary/10 px-2 py-2 text-[10px] font-bold text-tertiary">02:00 Feedback session</span>
+</div>
+</div>
+<div class="rounded-xl border border-outline-variant/10 bg-surface-container-low p-4 min-h-[11rem]">
+<p class="text-xs font-bold">Tue 24</p>
+<div class="mt-3 space-y-2">
+<span class="block rounded-lg bg-white px-2 py-2 text-[10px] font-bold text-on-surface">09:30 Build review</span>
+<span class="block rounded-lg bg-primary/10 px-2 py-2 text-[10px] font-bold text-primary">05:00 Q3 deck due</span>
+</div>
+</div>
+<div class="rounded-xl border border-outline-variant/10 bg-surface-container-low p-4 min-h-[11rem]">
+<p class="text-xs font-bold">Wed 25</p>
+<div class="mt-3 space-y-2">
+<span class="block rounded-lg bg-white px-2 py-2 text-[10px] font-bold text-on-surface">11:00 QA sync</span>
+<span class="block rounded-lg bg-tertiary/10 px-2 py-2 text-[10px] font-bold text-tertiary">03:00 Notes handoff</span>
+</div>
+</div>
+<div class="rounded-xl border border-outline-variant/10 bg-surface-container-low p-4 min-h-[11rem]">
+<p class="text-xs font-bold">Thu 26</p>
+<div class="mt-3 space-y-2">
+<span class="block rounded-lg bg-white px-2 py-2 text-[10px] font-bold text-on-surface">01:00 Focus block</span>
+<span class="block rounded-lg bg-error-container px-2 py-2 text-[10px] font-bold text-on-error-container">Bug #402 retry</span>
+</div>
+</div>
+<div class="rounded-xl border border-outline-variant/10 bg-surface-container-low p-4 min-h-[11rem]">
+<p class="text-xs font-bold">Fri 27</p>
+<div class="mt-3 space-y-2">
+<span class="block rounded-lg bg-primary/10 px-2 py-2 text-[10px] font-bold text-primary">12:00 Weekly sync docs due</span>
+<span class="block rounded-lg bg-white px-2 py-2 text-[10px] font-bold text-on-surface">04:00 Release note review</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-4 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">My Meetings</h3>
+<div class="space-y-4 text-sm">
+<div class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-primary mt-1.5"></span><div><p class="font-bold">Daily Standup</p><p class="text-on-surface-variant">Mon to Fri, 10:00 AM</p></div></div>
+<div class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-tertiary mt-1.5"></span><div><p class="font-bold">1:1 with Sarah</p><p class="text-on-surface-variant">Monday, 2:00 PM</p></div></div>
+<div class="flex items-start gap-3"><span class="w-2 h-2 rounded-full bg-slate-400 mt-1.5"></span><div><p class="font-bold">QA Sync</p><p class="text-on-surface-variant">Wednesday, 11:00 AM</p></div></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Time Away</h3>
+<div class="space-y-3 text-sm text-on-surface-variant">
+<p>Approved PTO: Apr 18 to Apr 19</p>
+<p>Pending half-day request: Mar 31 afternoon</p>
+<p>Next company holiday: Apr 14, Founders Day</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-messages-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="messages" hidden="" id="panel-messages" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-messages-title">Messages</h2>
+<p class="text-on-surface-variant font-medium">Direct conversations and project replies relevant to the current employee.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">5 unread</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-on-surface-variant">2 awaiting reply</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Unread</p><h3 class="text-3xl font-extrabold text-primary">05</h3><p class="mt-3 text-xs text-on-surface-variant">Mostly manager follow-ups and team coordination threads.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Starred</p><h3 class="text-3xl font-extrabold text-on-surface">03</h3><p class="mt-3 text-xs text-on-surface-variant">Pinned instructions and one release checklist thread.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Mentions</p><h3 class="text-3xl font-extrabold text-tertiary">02</h3><p class="mt-3 text-xs text-on-surface-variant">Tagged in QA, docs, and release planning discussions.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 xl:col-span-4 bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Inbox</h3>
+<div class="space-y-3">
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+<div class="flex items-center justify-between gap-3"><p class="font-bold text-sm">Sarah Jenkins</p><span class="text-[10px] font-bold text-primary">Unread</span></div>
+<p class="text-xs text-on-surface-variant mt-2">Please send the final deck once the KPI slide is updated.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between gap-3"><p class="font-bold text-sm">Mark Thompson</p><span class="text-[10px] font-bold text-slate-400">2h ago</span></div>
+<p class="text-xs text-on-surface-variant mt-2">Sent you the credentials for the staging environment.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between gap-3"><p class="font-bold text-sm">Docs Channel</p><span class="text-[10px] font-bold text-slate-400">Yesterday</span></div>
+<p class="text-xs text-on-surface-variant mt-2">Need your summary for the weekly sync notes by Friday noon.</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<div class="flex items-center justify-between gap-4 mb-6">
+<div>
+<h3 class="font-extrabold font-headline text-lg">Thread Preview: Sarah Jenkins</h3>
+<p class="text-sm text-on-surface-variant">Operations deck review</p>
+</div>
+<button class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">Reply</button>
+</div>
+<div class="space-y-4">
+<div class="flex justify-start"><div class="max-w-xl rounded-2xl rounded-bl-md bg-surface-container-low px-4 py-3 text-sm text-on-surface-variant">The structure looks good. Please tighten the KPI slide and add the March comparison before sending.</div></div>
+<div class="flex justify-end"><div class="max-w-xl rounded-2xl rounded-br-md bg-primary px-4 py-3 text-sm text-white">Working on it now. I should have the revised version uploaded before 4:30 PM.</div></div>
+<div class="flex justify-start"><div class="max-w-xl rounded-2xl rounded-bl-md bg-surface-container-low px-4 py-3 text-sm text-on-surface-variant">Perfect. Once it's uploaded, tag me and I will review it before the leadership share.</div></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Pinned Notes</h3>
+<div class="space-y-3 text-sm text-on-surface-variant">
+<p>Release note template for all Friday updates.</p>
+<p>Bug escalation path for staging or prod blockers.</p>
+<p>Reminder: leave requests must be submitted three working days ahead.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-leave-requests-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="leave-requests" hidden="" id="panel-leave-requests" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-leave-requests-title">Leave Requests</h2>
+<p class="text-on-surface-variant font-medium">Personal leave balance, request history, and upcoming holidays for the current employee.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">12 days left</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-on-surface-variant">1 pending request</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Annual Allowance</p><h3 class="text-3xl font-extrabold text-on-surface">20 Days</h3><p class="mt-3 text-xs text-on-surface-variant">Standard paid leave allocation for the year.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Used</p><h3 class="text-3xl font-extrabold text-tertiary">08 Days</h3><p class="mt-3 text-xs text-on-surface-variant">Taken across two vacations and one personal day.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Pending</p><h3 class="text-3xl font-extrabold text-error">01 Request</h3><p class="mt-3 text-xs text-on-surface-variant">Half-day request submitted for March 31 afternoon.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 xl:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Current Request</h3>
+<div class="rounded-2xl bg-primary/5 border border-primary/10 p-5">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+<div>
+<p class="font-bold">Half-Day Leave, Mar 31</p>
+<p class="text-sm text-on-surface-variant mt-1">Requested for the afternoon to attend a family appointment.</p>
+<p class="text-xs text-on-surface-variant mt-3">Coverage note: Weekly sync docs will be sent before noon and release notes are already in review.</p>
+</div>
+<span class="rounded-full bg-primary px-3 py-1 text-[10px] font-bold text-white w-fit">Pending Manager Review</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="px-8 py-6 border-b border-surface-container-low">
+<h3 class="font-extrabold font-headline text-xl">Request History</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant uppercase text-xs font-bold tracking-widest">
+<tr>
+<th class="px-8 py-4">Dates</th>
+<th class="px-6 py-4">Type</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-8 py-4">Notes</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-sm">
+<tr><td class="px-8 py-5">Jan 15 to Jan 17</td><td class="px-6 py-5">Vacation</td><td class="px-6 py-5"><span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-extrabold uppercase tracking-tighter">Approved</span></td><td class="px-8 py-5 text-on-surface-variant">Family trip, approved by Sarah.</td></tr>
+<tr><td class="px-8 py-5">Feb 22</td><td class="px-6 py-5">Personal Day</td><td class="px-6 py-5"><span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-extrabold uppercase tracking-tighter">Approved</span></td><td class="px-8 py-5 text-on-surface-variant">Medical appointment.</td></tr>
+<tr><td class="px-8 py-5">Mar 31</td><td class="px-6 py-5">Half Day</td><td class="px-6 py-5"><span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-extrabold uppercase tracking-tighter">Pending</span></td><td class="px-8 py-5 text-on-surface-variant">Afternoon leave with early handoff planned.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-4 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Upcoming Holidays</h3>
+<div class="space-y-3 text-sm text-on-surface-variant">
+<p>Apr 14: Founders Day</p>
+<p>May 01: Labour Day</p>
+<p>Aug 15: Independence Day</p>
+</div>
+</div>
+<div class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-lg shadow-xl shadow-primary/20 text-white">
+<p class="text-[10px] uppercase font-bold tracking-widest opacity-80">Leave Balance</p>
+<h3 class="text-2xl font-extrabold font-headline mt-2">12 Days Remaining</h3>
+<div class="w-full bg-white/20 h-2 rounded-full overflow-hidden mt-4 mb-5"><div class="bg-white w-[60%] h-full rounded-full"></div></div>
+<button class="w-full rounded-xl bg-white py-3 font-bold text-primary transition-all hover:bg-opacity-90">Submit New Request</button>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-activity-logs-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="activity-logs" hidden="" id="panel-activity-logs" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-activity-logs-title">Activity Logs</h2>
+<p class="text-on-surface-variant font-medium">Personal login history, task updates, comments, and file activity for the employee account.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-primary">60 personal events</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-on-surface-variant">Last login 9:08 AM</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Logins</p><h3 class="text-3xl font-extrabold text-on-surface">18</h3><p class="mt-3 text-xs text-on-surface-variant">This month across laptop and mobile sessions.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Task Updates</p><h3 class="text-3xl font-extrabold text-primary">22</h3><p class="mt-3 text-xs text-on-surface-variant">Status changes, edits, and review submissions.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Comments</p><h3 class="text-3xl font-extrabold text-tertiary">14</h3><p class="mt-3 text-xs text-on-surface-variant">Notes added across docs and project threads.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Files Uploaded</p><h3 class="text-3xl font-extrabold text-on-surface">06</h3><p class="mt-3 text-xs text-on-surface-variant">Decks, notes, and release draft uploads.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 xl:col-span-8 bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="px-8 py-6 border-b border-surface-container-low">
+<h3 class="font-extrabold font-headline text-xl">Recent Personal Activity</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant uppercase text-xs font-bold tracking-widest">
+<tr>
+<th class="px-8 py-4">Time</th>
+<th class="px-6 py-4">Event</th>
+<th class="px-6 py-4">Context</th>
+<th class="px-8 py-4">Result</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-sm">
+<tr><td class="px-8 py-5">09:08 AM</td><td class="px-6 py-5">Logged in from primary laptop</td><td class="px-6 py-5 text-on-surface-variant">Chrome on macOS</td><td class="px-8 py-5"><span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-extrabold uppercase tracking-tighter">Success</span></td></tr>
+<tr><td class="px-8 py-5">10:42 AM</td><td class="px-6 py-5">Updated Q3 Operations Review</td><td class="px-6 py-5 text-on-surface-variant">Task progress to 80%</td><td class="px-8 py-5"><span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-extrabold uppercase tracking-tighter">Saved</span></td></tr>
+<tr><td class="px-8 py-5">12:15 PM</td><td class="px-6 py-5">Uploaded draft PDF</td><td class="px-6 py-5 text-on-surface-variant">Ops deck attachment</td><td class="px-8 py-5"><span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-extrabold uppercase tracking-tighter">Uploaded</span></td></tr>
+<tr><td class="px-8 py-5">02:03 PM</td><td class="px-6 py-5">Commented in Sarah thread</td><td class="px-6 py-5 text-on-surface-variant">Deck update confirmation</td><td class="px-8 py-5"><span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-extrabold uppercase tracking-tighter">Delivered</span></td></tr>
+<tr><td class="px-8 py-5">03:22 PM</td><td class="px-6 py-5">Retried bug #402 test case</td><td class="px-6 py-5 text-on-surface-variant">Staging build 14.2</td><td class="px-8 py-5"><span class="px-3 py-1 rounded-full bg-error-container text-on-error-container text-[10px] font-extrabold uppercase tracking-tighter">Failed</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-4 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Security Note</h3>
+<p class="text-sm text-on-surface-variant">All recent logins were from recognized devices. No suspicious sign-in attempts were detected on this account in the last 30 days.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Most Active Day</h3>
+<p class="text-2xl font-extrabold text-primary">Wednesday</p>
+<p class="text-sm text-on-surface-variant mt-2">Highest task-update volume and most review-ready submissions.</p>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-insights-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="insights" hidden="" id="panel-insights" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-insights-title">Insights</h2>
+<p class="text-on-surface-variant font-medium">Yearly performance, holiday usage, growth areas, and personal delivery trends for the current employee.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">2026 Overview</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-on-surface-variant">Top 10% for turnaround</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Completion Rate</p><h3 class="text-3xl font-extrabold text-primary">94%</h3><p class="mt-3 text-xs text-on-surface-variant">Tasks completed on or before expected dates this year.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Review Score</p><h3 class="text-3xl font-extrabold text-tertiary">4.7/5</h3><p class="mt-3 text-xs text-on-surface-variant">Average manager feedback score across quarterly reviews.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Holidays Used</p><h3 class="text-3xl font-extrabold text-on-surface">8 / 20</h3><p class="mt-3 text-xs text-on-surface-variant">Paid leave used so far this year, with 12 days remaining.</p></div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Recognition</p><h3 class="text-3xl font-extrabold text-on-surface">3</h3><p class="mt-3 text-xs text-on-surface-variant">Public kudos received in product and ops channels.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 xl:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-extrabold font-headline text-xl">Monthly Performance Trend</h3>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Last 6 months</span>
+</div>
+<div class="h-40 flex items-end gap-3">
+<div class="flex-1 bg-primary/15 rounded-t-lg h-[48%]"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[58%]"></div>
+<div class="flex-1 bg-primary/30 rounded-t-lg h-[63%]"></div>
+<div class="flex-1 bg-primary/50 rounded-t-lg h-[78%]"></div>
+<div class="flex-1 bg-tertiary/40 rounded-t-lg h-[84%]"></div>
+<div class="flex-1 bg-gradient-to-t from-primary to-tertiary rounded-t-lg h-[92%]"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span class="text-on-surface">Mar</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="px-8 py-6 border-b border-surface-container-low">
+<h3 class="font-extrabold font-headline text-xl">Annual Snapshot</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<tbody class="divide-y divide-surface-container-low">
+<tr><td class="px-8 py-5 font-bold">Strongest Area</td><td class="px-8 py-5 text-on-surface-variant">Fast turnaround on documentation and manager follow-up tasks.</td></tr>
+<tr><td class="px-8 py-5 font-bold">Growth Area</td><td class="px-8 py-5 text-on-surface-variant">Reduce blockers on staging issues by escalating earlier.</td></tr>
+<tr><td class="px-8 py-5 font-bold">Average Response Time</td><td class="px-8 py-5 text-on-surface-variant">1.8 hours on direct manager asks.</td></tr>
+<tr><td class="px-8 py-5 font-bold">Training Completed</td><td class="px-8 py-5 text-on-surface-variant">Security refresher, reporting basics, and release comms workshop.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-span-12 xl:col-span-4 space-y-8">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Holiday Summary</h3>
+<div class="space-y-3 text-sm">
+<div class="flex items-center justify-between"><span>Used</span><span class="font-bold">8 days</span></div>
+<div class="flex items-center justify-between"><span>Remaining</span><span class="font-bold text-primary">12 days</span></div>
+<div class="flex items-center justify-between"><span>Pending</span><span class="font-bold text-tertiary">0.5 day</span></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
+<h3 class="font-extrabold font-headline mb-4">Manager Feedback</h3>
+<div class="space-y-3 text-sm text-on-surface-variant">
+<p>Reliable with deadlines and very strong on documentation follow-through.</p>
+<p>Improved clarity in handoff notes compared with the last quarter.</p>
+<p>Needs earlier escalation when blocked by credentials or environment issues.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 </main>
 <script src="site-motion.js"></script>
+<script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabs = Array.from(document.querySelectorAll("[data-tab-target]"));
+        const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+
+        if (!tabs.length || !panels.length) {
+          return;
+        }
+
+        const activateTab = (target, updateHash = true) => {
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.tabTarget === target;
+
+            tab.setAttribute("aria-selected", String(isActive));
+            tab.classList.toggle("text-blue-600", isActive);
+            tab.classList.toggle("dark:text-blue-400", isActive);
+            tab.classList.toggle("font-semibold", isActive);
+            tab.classList.toggle("bg-blue-50/50", isActive);
+            tab.classList.toggle("dark:bg-blue-900/20", isActive);
+            tab.classList.toggle("text-slate-500", !isActive);
+            tab.classList.toggle("dark:text-slate-400", !isActive);
+            tab.classList.toggle("hover:text-slate-900", !isActive);
+            tab.classList.toggle("dark:hover:text-slate-100", !isActive);
+          });
+
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.tabPanel === target;
+            panel.hidden = !isActive;
+
+            if (isActive) {
+              panel.querySelectorAll("[data-reveal]").forEach((element) => element.classList.add("is-visible"));
+            }
+          });
+
+          if (updateHash) {
+            window.history.replaceState(null, "", `#${target}`);
+          }
+        };
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", (event) => {
+            event.preventDefault();
+            activateTab(tab.dataset.tabTarget);
+          });
+        });
+
+        const initialHash = window.location.hash.replace("#", "");
+        const initialTarget = panels.some((panel) => panel.dataset.tabPanel === initialHash) ? initialHash : "dashboard";
+
+        activateTab(initialTarget, Boolean(initialHash));
+      });
+    </script>
 </body></html>
