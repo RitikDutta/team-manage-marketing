@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Team Manage | Executive Dashboard</title>
-<!-- Fonts -->
+<title>Team Manage | Manager Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -70,303 +66,285 @@
               "body": ["Inter"],
               "label": ["Inter"]
             },
-            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-          },
-        },
-      }
+            borderRadius: {
+              "DEFAULT": "1rem",
+              "lg": "2rem",
+              "xl": "3rem",
+              "full": "9999px"
+            }
+          }
+        }
+      };
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-        }
-        .tonal-shift {
-            background-color: #f0f3ff;
-        }
-        .text-label-sm {
-            font-size: 0.6875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-        }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      .text-label-sm {
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+      }
     </style>
 <link href="site-motion.css" rel="stylesheet"/>
 </head>
 <body class="bg-background font-body text-on-background antialiased">
-<!-- SideNavBar (JSON Derived) -->
-<aside class="fixed left-0 top-0 h-full flex flex-col py-6 px-4 h-screen w-64 bg-slate-50 dark:bg-slate-900 font-['Plus_Jakarta_Sans'] text-sm font-medium z-50">
+<aside class="fixed left-0 top-0 z-50 flex h-screen w-64 flex-col bg-slate-50 px-4 py-6 font-['Plus_Jakarta_Sans'] text-sm font-medium">
 <div class="mb-10 px-4">
-<a class="text-xl font-bold text-slate-900 dark:text-white tracking-tight" href="index.html">Team Manage</a>
-<p class="text-xs text-slate-500 font-normal">Enterprise SaaS</p>
+<a class="text-xl font-bold tracking-tight text-slate-900" href="index.html">Team Manage</a>
+<p class="text-xs font-normal text-slate-500">Enterprise SaaS</p>
 </div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 font-bold border-r-4 border-blue-600 bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<nav aria-label="Manager navigation" class="flex-1 space-y-1" role="tablist">
+<a aria-controls="panel-dashboard" aria-selected="true" class="manager-tab flex items-center gap-3 border-r-4 border-blue-600 bg-blue-50/50 px-4 py-3 font-bold text-blue-600 transition-all duration-200" data-tab-target="dashboard" href="#dashboard" role="tab">
+<span class="material-symbols-outlined">dashboard</span>
                 Dashboard
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<a aria-controls="panel-team-tasks" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="team-tasks" href="#team-tasks" role="tab">
+<span class="material-symbols-outlined">assignment</span>
                 Team Tasks
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
+<a aria-controls="panel-employees" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="employees" href="#employees" role="tab">
+<span class="material-symbols-outlined">group</span>
                 Employees
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<a aria-controls="panel-calendar" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="calendar" href="#calendar" role="tab">
+<span class="material-symbols-outlined">calendar_today</span>
                 Calendar
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<a aria-controls="panel-messages" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="messages" href="#messages" role="tab">
+<span class="material-symbols-outlined">chat</span>
                 Messages
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<a aria-controls="panel-leave-approvals" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="leave-approvals" href="#leave-approvals" role="tab">
+<span class="material-symbols-outlined">event_busy</span>
                 Leave Approvals
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="history">history</span>
+<a aria-controls="panel-activity-logs" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="activity-logs" href="#activity-logs" role="tab">
+<span class="material-symbols-outlined">history</span>
                 Activity Logs
             </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-blue-50/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<a aria-controls="panel-reports" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="reports" href="#reports" role="tab">
+<span class="material-symbols-outlined">assessment</span>
                 Reports
             </a>
 </nav>
 <div class="mt-auto px-4">
-<button class="w-full flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-DEFAULT font-semibold shadow-lg hover:scale-105 transition-transform">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<button class="flex w-full items-center justify-center gap-2 rounded-DEFAULT bg-gradient-to-br from-primary to-primary-container py-3 font-semibold text-white shadow-lg transition-transform hover:scale-105">
+<span class="material-symbols-outlined text-sm">add</span>
                 Assign Task
             </button>
-<div class="mt-6 flex items-center gap-3 py-2 border-t border-slate-200 dark:border-slate-800 pt-6">
-<img alt="Manager Profile" class="w-8 h-8 rounded-full bg-surface-container-high" data-alt="User profile avatar of the manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4tQzHD6bKp_lYKAjKaAL6ypssGyr9VGfltdhhuYTM2oxqBHb6tQdsT8b8WgL2lnbDQ6M_Cjth3vhvVXo-zhN5O1UE8NER576_GfzXuu9dqyOU3LA_3xViQ2MxhqWUJOROxykrcpES6C--0B47zG9d-3-PpdTcFtf_nKWXjWAlG9nuWRLERU1gnbuiLiedyQ3ggsU9rxCfIO0MWVIE3wUKtzFlrysNaIxQat5jCnRaIMgK3BRAqyr57CiJIrG7WQSLgc5w0vbHjcpl"/>
+<div class="mt-6 flex items-center gap-3 border-t border-slate-200 pt-6">
+<span class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 font-bold text-primary">AR</span>
 <div>
-<p class="text-xs font-bold text-slate-900 dark:text-white">Alex Rivera</p>
+<p class="text-xs font-bold text-slate-900">Alex Rivera</p>
 <p class="text-[10px] text-slate-500">Operations Manager</p>
 </div>
 </div>
 </div>
 </aside>
-<!-- TopNavBar (JSON Derived) -->
-<header class="fixed top-0 right-0 left-64 h-16 flex justify-between items-center px-8 z-40 bg-white/70 dark:bg-slate-950/70 backdrop-blur-md shadow-sm dark:shadow-none font-['Plus_Jakarta_Sans'] text-sm">
-<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-full w-96">
-<span class="material-symbols-outlined text-slate-400 mr-2" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-xs w-full text-slate-600" placeholder="Search team, tasks, or messages..." type="text"/>
+<header class="fixed left-64 right-0 top-0 z-40 flex h-16 items-center justify-between bg-white/70 px-8 font-['Plus_Jakarta_Sans'] text-sm shadow-sm backdrop-blur-md">
+<div class="flex w-96 items-center rounded-full bg-surface-container-low px-4 py-2">
+<span class="material-symbols-outlined mr-2 text-slate-400">search</span>
+<input class="w-full border-none bg-transparent text-xs text-slate-600 focus:ring-0" placeholder="Search team, tasks, or messages..." type="text"/>
 </div>
 <div class="flex items-center gap-6">
 <div class="flex items-center gap-4 text-slate-600">
-<button class="hover:text-blue-600 relative transition-colors">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+<button class="relative transition-colors hover:text-blue-600">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute right-0 top-0 h-2 w-2 rounded-full bg-error ring-2 ring-white"></span>
 </button>
-<button class="hover:text-blue-600 transition-colors">
-<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<button class="transition-colors hover:text-blue-600">
+<span class="material-symbols-outlined">help_outline</span>
 </button>
 </div>
-<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="h-8 w-px bg-slate-200"></div>
 <button class="flex items-center gap-2 font-semibold text-slate-900">
-<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="material-symbols-outlined">bolt</span>
                 Quick Actions
             </button>
 </div>
 </header>
-<!-- Main Content Canvas -->
-<main class="ml-64 mt-16 p-8 min-h-screen">
-<!-- Executive Summary & Alerts -->
-<section class="mb-10 flex flex-col md:flex-row justify-between items-start gap-6">
+<main class="ml-64 mt-16 min-h-screen space-y-8 p-8">
+<section aria-labelledby="panel-dashboard-title" data-tab-panel="dashboard" id="panel-dashboard" role="tabpanel">
+<div class="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row">
 <div class="space-y-1">
-<h2 class="text-3xl font-extrabold font-headline tracking-tight text-on-background">Team Operations Overview</h2>
-<p class="text-secondary font-medium flex items-center gap-2">
-<span class="flex h-2 w-2 rounded-full bg-tertiary"></span>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight text-on-background" id="panel-dashboard-title">Team Operations Overview</h2>
+<p class="flex items-center gap-2 font-medium text-secondary">
+<span class="h-2 w-2 rounded-full bg-tertiary"></span>
                     System operational. 12 team members active across 4 projects.
                 </p>
 </div>
-<!-- Bottlenecks/Alerts Banner -->
-<div class="flex gap-4">
-<div class="bg-error-container/40 border border-error/10 p-4 rounded-lg flex items-center gap-4 animate-pulse">
-<div class="bg-error text-white p-2 rounded-full">
-<span class="material-symbols-outlined text-sm" data-icon="priority_high">priority_high</span>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-4 rounded-lg border border-error/10 bg-error-container/40 p-4">
+<div class="rounded-full bg-error p-2 text-white">
+<span class="material-symbols-outlined text-sm">priority_high</span>
 </div>
 <div>
 <p class="text-xs font-bold text-on-error-container">2 Overdue Tasks</p>
-<p class="text-[10px] text-on-error-container opacity-80">Requires immediate manager review</p>
+<p class="text-[10px] text-on-error-container/80">Requires immediate manager review</p>
 </div>
 </div>
-<div class="bg-tertiary-container/20 border border-tertiary/10 p-4 rounded-lg flex items-center gap-4">
-<div class="bg-tertiary text-white p-2 rounded-full">
-<span class="material-symbols-outlined text-sm" data-icon="person_off">person_off</span>
+<div class="flex items-center gap-4 rounded-lg border border-tertiary/10 bg-tertiary/10 p-4">
+<div class="rounded-full bg-tertiary p-2 text-white">
+<span class="material-symbols-outlined text-sm">person_off</span>
 </div>
 <div>
-<p class="text-xs font-bold text-on-tertiary-container">Inactive Employee</p>
-<p class="text-[10px] text-on-tertiary-container opacity-80">Marcus V. inactive for 3 days</p>
+<p class="text-xs font-bold text-on-background">Inactive Employee</p>
+<p class="text-[10px] text-secondary">Marcus V. inactive for 3 days</p>
 </div>
 </div>
 </div>
-</section>
-<!-- KPI Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-10">
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 group hover:shadow-md transition-all">
-<p class="text-label-sm text-secondary mb-2">Active Tasks</p>
-<div class="flex items-end justify-between">
+</div>
+<div class="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3 xl:grid-cols-6">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm">
+<p class="text-label-sm text-secondary">Active Tasks</p>
+<div class="mt-3 flex items-end justify-between">
 <span class="text-3xl font-extrabold font-headline">24</span>
-<span class="text-tertiary text-xs font-bold">+12%</span>
+<span class="text-xs font-bold text-tertiary">+12%</span>
 </div>
 </div>
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 group hover:shadow-md transition-all">
-<p class="text-label-sm text-secondary mb-2">Due Today</p>
-<div class="flex items-end justify-between">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm">
+<p class="text-label-sm text-secondary">Due Today</p>
+<div class="mt-3 flex items-end justify-between">
 <span class="text-3xl font-extrabold font-headline text-primary">8</span>
-<span class="material-symbols-outlined text-primary/30" data-icon="schedule">schedule</span>
+<span class="material-symbols-outlined text-primary/30">schedule</span>
 </div>
 </div>
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 group hover:shadow-md transition-all">
-<p class="text-label-sm text-secondary mb-2">Completed</p>
-<div class="flex items-end justify-between">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm">
+<p class="text-label-sm text-secondary">Completed</p>
+<div class="mt-3 flex items-end justify-between">
 <span class="text-3xl font-extrabold font-headline">42</span>
-<span class="text-tertiary text-xs font-bold">Week</span>
+<span class="text-xs font-bold text-tertiary">Week</span>
 </div>
 </div>
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 group hover:shadow-md transition-all">
-<p class="text-label-sm text-secondary mb-2">Pending Leave</p>
-<div class="flex items-end justify-between">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm">
+<p class="text-label-sm text-secondary">Pending Leave</p>
+<div class="mt-3 flex items-end justify-between">
 <span class="text-3xl font-extrabold font-headline text-error">3</span>
-<span class="material-symbols-outlined text-error/30" data-icon="event_note">event_note</span>
+<span class="material-symbols-outlined text-error/30">event_note</span>
 </div>
 </div>
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 group hover:shadow-md transition-all">
-<p class="text-label-sm text-secondary mb-2">Employees</p>
-<div class="flex items-end justify-between">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm">
+<p class="text-label-sm text-secondary">Employees</p>
+<div class="mt-3 flex items-end justify-between">
 <span class="text-3xl font-extrabold font-headline">12</span>
-<span class="material-symbols-outlined text-slate-300" data-icon="group">group</span>
+<span class="material-symbols-outlined text-slate-300">group</span>
 </div>
 </div>
-<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 group hover:shadow-md transition-all border-l-4 border-l-error">
-<p class="text-label-sm text-error mb-2">Overdue</p>
-<div class="flex items-end justify-between">
+<div class="rounded-lg border border-error/20 border-l-4 border-l-error bg-surface-container-lowest p-6 shadow-sm">
+<p class="text-label-sm text-error">Overdue</p>
+<div class="mt-3 flex items-end justify-between">
 <span class="text-3xl font-extrabold font-headline text-error">2</span>
-<span class="material-symbols-outlined text-error/30" data-icon="warning">warning</span>
+<span class="material-symbols-outlined text-error/30">warning</span>
 </div>
 </div>
 </div>
-<!-- Dashboard Layout Grid -->
 <div class="grid grid-cols-12 gap-8">
-<!-- Main Column: Charts and Tasks -->
-<div class="col-span-12 lg:col-span-8 space-y-8">
-<!-- Performance Overview -->
-<div class="bg-surface-container-lowest rounded-lg p-8 shadow-sm">
-<div class="flex justify-between items-center mb-8">
+<div class="col-span-12 space-y-8 xl:col-span-8">
+<div class="rounded-lg bg-surface-container-lowest p-8 shadow-sm">
+<div class="mb-8 flex items-center justify-between">
 <div>
 <h3 class="text-xl font-bold font-headline">Team Performance Overview</h3>
-<p class="text-sm text-secondary">Task completion vs Productivity benchmarks</p>
+<p class="text-sm text-secondary">Task completion vs productivity benchmarks</p>
 </div>
 <div class="flex gap-2">
-<button class="px-3 py-1 text-xs bg-surface-container-low rounded-full font-bold text-primary">Week</button>
-<button class="px-3 py-1 text-xs hover:bg-surface-container-low rounded-full font-bold text-secondary transition-colors">Month</button>
+<button class="rounded-full bg-surface-container-low px-3 py-1 text-xs font-bold text-primary">Week</button>
+<button class="rounded-full px-3 py-1 text-xs font-bold text-secondary transition-colors hover:bg-surface-container-low">Month</button>
 </div>
 </div>
-<div class="h-64 flex items-end justify-between gap-4 px-4 border-b border-slate-100">
-<!-- Abstract Visual Chart bars -->
-<div class="w-full flex items-end gap-2 h-full">
-<div class="flex-1 bg-surface-container-highest rounded-t-lg h-[40%] relative group">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">12</div>
-</div>
-<div class="flex-1 bg-primary/20 rounded-t-lg h-[60%]"></div>
-<div class="flex-1 bg-primary/40 rounded-t-lg h-[75%]"></div>
-<div class="flex-1 bg-primary rounded-t-lg h-[90%] relative group">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">42</div>
-</div>
-<div class="flex-1 bg-primary/60 rounded-t-lg h-[55%]"></div>
-<div class="flex-1 bg-primary/30 rounded-t-lg h-[45%]"></div>
-<div class="flex-1 bg-tertiary/20 rounded-t-lg h-[65%]"></div>
+<div class="h-64 border-b border-slate-100 px-4">
+<div class="flex h-full items-end gap-2">
+<div class="flex-1 rounded-t-lg bg-surface-container-highest h-[38%]"></div>
+<div class="flex-1 rounded-t-lg bg-primary/20 h-[56%]"></div>
+<div class="flex-1 rounded-t-lg bg-primary/40 h-[72%]"></div>
+<div class="flex-1 rounded-t-lg bg-primary h-[88%]"></div>
+<div class="flex-1 rounded-t-lg bg-primary/60 h-[62%]"></div>
+<div class="flex-1 rounded-t-lg bg-primary/30 h-[48%]"></div>
+<div class="flex-1 rounded-t-lg bg-tertiary/20 h-[68%]"></div>
 </div>
 </div>
-<div class="flex justify-between text-[10px] text-label-sm text-slate-400 mt-4 px-4">
+<div class="mt-4 flex justify-between px-4 text-[10px] text-slate-400">
 <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
 </div>
 </div>
-<!-- Task Management Panel -->
-<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
-<div class="p-8 pb-4 flex justify-between items-center">
+<div class="overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between p-6">
 <h3 class="text-xl font-bold font-headline">Task Management</h3>
-<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
-                            View All <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
-</button>
+<button class="flex items-center gap-1 text-sm font-bold text-primary hover:underline">
+                        View All <span class="material-symbols-outlined text-sm">chevron_right</span>
+                    </button>
 </div>
 <div class="overflow-x-auto">
 <table class="w-full text-left">
-<thead>
-<tr class="text-label-sm text-secondary bg-surface-container-low/50">
-<th class="px-8 py-4">Task Title</th>
+<thead class="bg-surface-container-low/60 text-label-sm text-secondary">
+<tr>
+<th class="px-6 py-4">Task Title</th>
 <th class="px-4 py-4">Assignee</th>
 <th class="px-4 py-4">Priority</th>
 <th class="px-4 py-4">Due Date</th>
 <th class="px-4 py-4">Status</th>
-<th class="px-4 py-4 text-right pr-8">Progress</th>
+<th class="px-6 py-4 text-right">Progress</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-slate-50">
-<tr class="hover:bg-slate-50 transition-colors">
-<td class="px-8 py-5 font-bold text-sm">Enterprise API Integration</td>
+<tbody class="divide-y divide-outline-variant/10">
+<tr>
+<td class="px-6 py-5">
+<p class="font-bold text-sm">Enterprise API Integration</p>
+<p class="mt-1 text-xs text-secondary">Client onboarding middleware and token sync.</p>
+</td>
 <td class="px-4 py-5">
 <div class="flex items-center gap-2">
-<img alt="Rahul" class="w-6 h-6 rounded-full bg-blue-100" data-alt="Avatar for Rahul S." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYqZGxt3uUmEeMuVAjDI0g73MJQmbzsCmuETPycei-CNF665R7rYJthiM8ENgAHlBBYJm5R400rJtPBqJaPZiq9r5xQqdBto71VGZYzSUGIFHcDy9owbm68EUCtV1CMmUHz8VtRA94C896ju4vN4fzPtIwF99DOAcNWj1Xg_0EAsYuxyUwy-7IIZ4omUNf1wtwkB0n9aolpU2VJM1t5Qsoyoc4LSdH4rgCkZKrJqjS-5uWv-NVh8QCTIMsgOkX5N75X97ZdOI5uJT2"/>
-<span class="text-xs">Rahul S.</span>
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-container text-xs font-bold text-primary">RS</span>
+<span class="text-xs font-semibold">Rahul S.</span>
 </div>
 </td>
-<td class="px-4 py-5"><span class="px-2 py-1 rounded-full bg-error-container text-on-error-container text-[10px] font-bold">HIGH</span></td>
-<td class="px-4 py-5 text-xs text-secondary">Today, 5PM</td>
-<td class="px-4 py-5 text-xs">
-<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span> In Progress</span>
-</td>
-<td class="px-4 py-5 pr-8">
-<div class="w-full bg-slate-100 rounded-full h-1.5 flex justify-end items-center">
-<div class="bg-primary h-full rounded-full w-[65%]"></div>
-</div>
-<p class="text-[10px] text-right mt-1 font-bold text-slate-500">65%</p>
+<td class="px-4 py-5"><span class="rounded-full bg-error-container px-2 py-1 text-[10px] font-bold text-on-error-container">HIGH</span></td>
+<td class="px-4 py-5 text-xs text-secondary">Today, 5:00 PM</td>
+<td class="px-4 py-5 text-xs"><span class="inline-flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-primary"></span>In Progress</span></td>
+<td class="px-6 py-5 text-right">
+<div class="ml-auto h-2 w-32 rounded-full bg-slate-100"><div class="h-full w-[65%] rounded-full bg-primary"></div></div>
+<p class="mt-2 text-[10px] font-bold text-secondary">65%</p>
 </td>
 </tr>
-<tr class="hover:bg-slate-50 transition-colors">
-<td class="px-8 py-5 font-bold text-sm">Security Audit Phase 2</td>
+<tr>
+<td class="px-6 py-5">
+<p class="font-bold text-sm">Security Audit Phase 2</p>
+<p class="mt-1 text-xs text-secondary">Permissions verification for admin and lead roles.</p>
+</td>
 <td class="px-4 py-5">
 <div class="flex items-center gap-2">
-<img alt="Sarah" class="w-6 h-6 rounded-full bg-tertiary-fixed" data-alt="Avatar for Sarah J." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1omKzXG23e9cPTWZL3_QHjwR-gznuo_AZ8h-qHtb8mU0rXfiEziVmky0cTJdVbr9WT0OfJ6tgTDWEEfkuGY3qHEqXFUtuOEmul8AQgN5b_ycFfGD3OOsQXAfxdSWWvJ51u54BEabV8p8hgqvlabwdfCKJkmJYK-Hfty7qukGCxOZXkUdcyq1rq3-1EXlFkf0SSX_N9NQyUaasN0ZR8Gr_uu7MO6iKp7EIByit4QKCqBlj1ZvpfWUONLrS78CKJo3dk-DgsESnJjnI"/>
-<span class="text-xs">Sarah J.</span>
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-error-container text-xs font-bold text-on-error-container">SJ</span>
+<span class="text-xs font-semibold">Sarah J.</span>
 </div>
 </td>
-<td class="px-4 py-5"><span class="px-2 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] font-bold">MEDIUM</span></td>
-<td class="px-4 py-5 text-xs text-secondary">Oct 24</td>
-<td class="px-4 py-5 text-xs">
-<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Assigned</span>
-</td>
-<td class="px-4 py-5 pr-8">
-<div class="w-full bg-slate-100 rounded-full h-1.5">
-<div class="bg-tertiary h-full rounded-full w-[20%]"></div>
-</div>
-<p class="text-[10px] text-right mt-1 font-bold text-slate-500">20%</p>
+<td class="px-4 py-5"><span class="rounded-full bg-surface-container-high px-2 py-1 text-[10px] font-bold text-on-surface-variant">MEDIUM</span></td>
+<td class="px-4 py-5 text-xs text-secondary">Mar 24</td>
+<td class="px-4 py-5 text-xs"><span class="inline-flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-tertiary"></span>Assigned</span></td>
+<td class="px-6 py-5 text-right">
+<div class="ml-auto h-2 w-32 rounded-full bg-slate-100"><div class="h-full w-[22%] rounded-full bg-tertiary"></div></div>
+<p class="mt-2 text-[10px] font-bold text-secondary">22%</p>
 </td>
 </tr>
-<tr class="hover:bg-slate-50 transition-colors">
-<td class="px-8 py-5 font-bold text-sm">Client Portal Revamp</td>
+<tr>
+<td class="px-6 py-5">
+<p class="font-bold text-sm">Client Portal Revamp</p>
+<p class="mt-1 text-xs text-secondary">Final polish for reporting cards and empty states.</p>
+</td>
 <td class="px-4 py-5">
 <div class="flex items-center gap-2">
-<img alt="Mark" class="w-6 h-6 rounded-full bg-secondary-fixed" data-alt="Avatar for Mark K." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyCdPxEW6uoRcY9wgZ5rIr7vTsgdQT831cxZ43f4lRbzcVmlGGVvuxrnMxWuOnPADXlxb7cbu-DJSiViPD6aNwlLLquVuaJW4fudqjIRINZ-FU1XEENONwl7XN1HEE6jRApVPit7VUGcL94PY5tTsrHIlLnNSRzZYn1S2ZFuTx9KYwbS-detI9UyP8FrInVsY-3AivHqUKWfwjEWejm8yXJkR8TwaC_-QpNgyyzaz9sJmiHxBZQ32KeUaEHX5TIfNLth0_iygSnP3Q"/>
-<span class="text-xs">Mark K.</span>
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-xs font-bold text-on-surface-variant">AM</span>
+<span class="text-xs font-semibold">Adam M.</span>
 </div>
 </td>
-<td class="px-4 py-5"><span class="px-2 py-1 rounded-full bg-slate-100 text-slate-500 text-[10px] font-bold">LOW</span></td>
-<td class="px-4 py-5 text-xs text-secondary">Tomorrow</td>
-<td class="px-4 py-5 text-xs">
-<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-error"></span> Blocked</span>
-</td>
-<td class="px-4 py-5 pr-8">
-<div class="w-full bg-slate-100 rounded-full h-1.5">
-<div class="bg-error h-full rounded-full w-[45%]"></div>
-</div>
-<p class="text-[10px] text-right mt-1 font-bold text-slate-500">45%</p>
+<td class="px-4 py-5"><span class="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-bold text-slate-500">LOW</span></td>
+<td class="px-4 py-5 text-xs text-secondary">Mar 25</td>
+<td class="px-4 py-5 text-xs"><span class="inline-flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-error"></span>Blocked</span></td>
+<td class="px-6 py-5 text-right">
+<div class="ml-auto h-2 w-32 rounded-full bg-slate-100"><div class="h-full w-[45%] rounded-full bg-error"></div></div>
+<p class="mt-2 text-[10px] font-bold text-secondary">45%</p>
 </td>
 </tr>
 </tbody>
@@ -374,137 +352,521 @@
 </div>
 </div>
 </div>
-<!-- Right Sidebar: Feed and Calendar -->
-<div class="col-span-12 lg:col-span-4 space-y-8">
-<!-- Pending Approvals -->
-<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm border border-l-4 border-l-primary">
-<h3 class="text-lg font-bold font-headline mb-4">Pending Approvals</h3>
+<div class="col-span-12 space-y-8 xl:col-span-4">
+<div class="rounded-lg border-l-4 border-l-primary bg-surface-container-lowest p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold font-headline">Pending Approvals</h3>
 <div class="space-y-4">
-<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-3">
 <div class="flex items-center gap-3">
-<img alt="Rahul" class="w-8 h-8 rounded-full" data-alt="Small profile for Rahul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUPxN9lZeb7hXxS1g0nqY-lcYPgTS-XrJFwXbaeG01FWrhFmEFSnlWQC-0T5QRwBjGHNSfqmaQgoaemWaLsWZ3N4nzQjjLD_x_OnrroYqb1Z5nbxH2Ne9GgYXTEYrDWv5LdlcJ6E_yTagdm5mv5QA8HEY0Tsz8yLabChixCmKQwaYgpxwMWXVQ3dKz6xIZIsmDLotLUKCt_f5v8bR-i1QxkUo4rQ_tJ5AKadz6q5_JtzJ-5am98EMMwJYzvjBRDeYEf_lZaeou_4M-"/>
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-container text-xs font-bold text-primary">RS</span>
 <div>
 <p class="text-xs font-bold">Rahul S.</p>
-<p class="text-[10px] text-secondary">Leave Request (2 Days)</p>
+<p class="text-[10px] text-secondary">Leave Request, 2 Days</p>
 </div>
 </div>
 <div class="flex gap-1">
-<button class="p-1 hover:bg-tertiary-container hover:text-white rounded transition-colors text-tertiary">
-<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
-</button>
-<button class="p-1 hover:bg-error-container hover:text-white rounded transition-colors text-error">
-<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
-</button>
+<button class="rounded p-1 text-tertiary transition-colors hover:bg-tertiary hover:text-white"><span class="material-symbols-outlined text-sm">check</span></button>
+<button class="rounded p-1 text-error transition-colors hover:bg-error hover:text-white"><span class="material-symbols-outlined text-sm">close</span></button>
 </div>
 </div>
-<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-3">
 <div class="flex items-center gap-3">
-<img alt="Sarah" class="w-8 h-8 rounded-full" data-alt="Small profile for Sarah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6aIplYT1zcCz3keo2FHND7KBVOW_u699I9IfQTyxy8WhxpJ-MR4Yhx6_6XDkKs_b8hqfR_WLzp4KvPHstKJdzdTuL9LAWuGg9b_yb0_8Lk2NjDdYaUcHoKqJCQRNvWlRnAb8RgANdgEodEMjN2pEulmSieRxLPulE_ZKf-YhP2u5iigm729XucIgmBM5gNWUqDuW_SjE2Q4pMQZdy7Voiq38YCNBXahKwlALKPNe1LKmRIiGnGrEZtTmAFOB7HcYBrFVtwnzPIhS1"/>
+<span class="flex h-8 w-8 items-center justify-center rounded-full bg-error-container text-xs font-bold text-on-error-container">SJ</span>
 <div>
 <p class="text-xs font-bold">Sarah J.</p>
 <p class="text-[10px] text-secondary">Hardware Reimbursement</p>
 </div>
 </div>
 <div class="flex gap-1">
-<button class="p-1 hover:bg-tertiary-container hover:text-white rounded transition-colors text-tertiary">
-<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
-</button>
-<button class="p-1 hover:bg-error-container hover:text-white rounded transition-colors text-error">
-<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
-</button>
+<button class="rounded p-1 text-tertiary transition-colors hover:bg-tertiary hover:text-white"><span class="material-symbols-outlined text-sm">check</span></button>
+<button class="rounded p-1 text-error transition-colors hover:bg-error hover:text-white"><span class="material-symbols-outlined text-sm">close</span></button>
 </div>
 </div>
 </div>
 </div>
-<!-- Team Calendar Preview -->
-<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm">
-<div class="flex justify-between items-center mb-6">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+<div class="mb-6 flex items-center justify-between">
 <h3 class="text-lg font-bold font-headline">Team Calendar</h3>
-<span class="text-[10px] font-bold text-secondary uppercase tracking-wider">October</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary">March 2026</span>
 </div>
-<div class="grid grid-cols-7 gap-2 text-center text-[10px] font-bold text-slate-400 mb-2">
+<div class="mb-2 grid grid-cols-7 gap-2 text-center text-[10px] font-bold text-slate-400">
 <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
 </div>
 <div class="grid grid-cols-7 gap-2">
-<!-- Simplified Calendar Visualization -->
-<div class="h-8 rounded bg-slate-50 flex items-center justify-center text-[10px]">19</div>
-<div class="h-8 rounded bg-slate-50 flex items-center justify-center text-[10px]">20</div>
-<div class="h-8 rounded bg-primary text-white flex items-center justify-center text-[10px] font-bold">21</div>
-<div class="h-8 rounded bg-slate-50 flex items-center justify-center text-[10px]">22</div>
-<div class="h-8 rounded bg-slate-50 flex items-center justify-center text-[10px]">23</div>
-<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px]">24</div>
-<div class="h-8 rounded bg-surface-container-highest flex items-center justify-center text-[10px]">25</div>
+<div class="flex h-8 items-center justify-center rounded bg-slate-50 text-[10px]">23</div>
+<div class="flex h-8 items-center justify-center rounded bg-primary text-[10px] font-bold text-white">24</div>
+<div class="flex h-8 items-center justify-center rounded bg-slate-50 text-[10px]">25</div>
+<div class="flex h-8 items-center justify-center rounded bg-surface-container-highest text-[10px]">26</div>
+<div class="flex h-8 items-center justify-center rounded bg-surface-container-highest text-[10px]">27</div>
+<div class="flex h-8 items-center justify-center rounded bg-slate-50 text-[10px]">28</div>
+<div class="flex h-8 items-center justify-center rounded bg-slate-50 text-[10px]">29</div>
 </div>
-<div class="mt-4 space-y-2">
-<div class="flex items-center gap-2 text-xs text-secondary">
-<span class="w-2 h-2 rounded-full bg-error"></span>
-<span>Sarah J. on leave</span>
-</div>
-<div class="flex items-center gap-2 text-xs text-secondary">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-<span>Project Milestone: Alpha</span>
+<div class="mt-4 space-y-2 text-xs text-secondary">
+<div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-error"></span>Sarah J. on leave</div>
+<div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-primary"></span>Alpha milestone review</div>
 </div>
 </div>
-</div>
-<!-- Communication Feed -->
-<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-bold font-headline mb-4">Recent Messages</h3>
-<div class="space-y-6">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold font-headline">Recent Messages</h3>
+<div class="space-y-5">
 <div class="flex gap-4">
-<img alt="Adam" class="w-8 h-8 rounded-full shrink-0" data-alt="Communication avatar for Adam M." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyhxdTtkm5vztzZwLuwqlCEmHV4Uugr_OA7O6zSIo58qL-v671uiXe_MpZO7VWHwFeVnfyKtizzvQNhAkAyZiB5XUkyeMiOY4BK4FlAozLTm13q7YeoG6k_f_AbpgdbUaRR8sej7DmMLlt2CZ-ER7NfadnpNWzGzM6a9yiT40q2FljJVEE0M8BxsXGmrRJv1vRi1yUTS9FazDBj9Fm_GdLUWLoAMRE_TbqcEyEjQrCfbIcc6AG7Ye57ugHYnYNRQQ34Rqk2jw6mi07"/>
+<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface-container-high text-xs font-bold text-on-surface-variant">AM</span>
 <div class="space-y-1">
-<p class="text-xs"><span class="font-bold">Adam M.</span> • <span class="text-slate-400">12m ago</span></p>
-<p class="text-xs text-secondary bg-slate-50 p-2 rounded-r-lg rounded-bl-lg">Finished the layout updates, waiting for review on Branch-X.</p>
+<p class="text-xs"><span class="font-bold">Adam M.</span> <span class="text-slate-400">12m ago</span></p>
+<p class="rounded-bl-lg rounded-r-lg bg-slate-50 p-2 text-xs text-secondary">Finished the layout updates, waiting for review on branch-x.</p>
 </div>
 </div>
 <div class="flex gap-4">
-<img alt="Lydia" class="w-8 h-8 rounded-full shrink-0" data-alt="Communication avatar for Lydia Y." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXiy_0AahrBWmJLWW_q2zxkuo2zMB66QI704s7p0TxouzKQJCf-Hm15GfRuERbyldFRuznA6cd6MsdeLs1PieEtejJv6sjMTcLhEBsrFV0TRW9aJITL-RXqh7lsfQIoBNfK_XOhwMh91ZsGaaiiIbxsrusHjvTFjWA5qMfTYhqquoGekYIBFE49sIbRJJ0CAKQCoDQ2P5G1G_-z8vav7F6OB7gNuVYLNz3M5Xl_W3tfqioLPKFWV5g39fEt5S5lNozETmAXYhPf3n2"/>
+<span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary-container text-xs font-bold text-primary">LY</span>
 <div class="space-y-1">
-<p class="text-xs"><span class="font-bold">Lydia Y.</span> • <span class="text-slate-400">1h ago</span></p>
-<p class="text-xs text-secondary bg-slate-50 p-2 rounded-r-lg rounded-bl-lg">Should we prioritize the legacy bug or move to the new dashboard tasks?</p>
+<p class="text-xs"><span class="font-bold">Lydia Y.</span> <span class="text-slate-400">1h ago</span></p>
+<p class="rounded-bl-lg rounded-r-lg bg-slate-50 p-2 text-xs text-secondary">Should we prioritize the legacy bug or move to the new dashboard tasks?</p>
 </div>
 </div>
 </div>
 </div>
-<!-- Activity Feed -->
-<div class="bg-surface-container-lowest rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-bold font-headline mb-4">Employee Activity</h3>
-<div class="space-y-4 border-l border-slate-100 ml-2 pl-6 relative">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold font-headline">Employee Activity</h3>
+<div class="ml-2 space-y-4 border-l border-slate-100 pl-6">
 <div class="relative">
-<span class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-primary border-4 border-white"></span>
+<span class="absolute -left-8 top-1 h-4 w-4 rounded-full border-4 border-white bg-primary"></span>
 <p class="text-xs font-bold">Mark K. logged in</p>
 <p class="text-[10px] text-slate-400">San Francisco, US • 10:45 AM</p>
 </div>
 <div class="relative">
-<span class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-slate-200 border-4 border-white"></span>
+<span class="absolute -left-8 top-1 h-4 w-4 rounded-full border-4 border-white bg-slate-200"></span>
 <p class="text-xs font-bold">Rahul S. completed "UI Fixes"</p>
 <p class="text-[10px] text-slate-400">9:30 AM</p>
 </div>
 <div class="relative">
-<span class="absolute -left-8 top-1 w-4 h-4 rounded-full bg-slate-200 border-4 border-white"></span>
-<p class="text-xs font-bold">System Backup complete</p>
+<span class="absolute -left-8 top-1 h-4 w-4 rounded-full border-4 border-white bg-slate-200"></span>
+<p class="text-xs font-bold">System backup complete</p>
 <p class="text-[10px] text-slate-400">4:00 AM</p>
 </div>
 </div>
 </div>
 </div>
 </div>
+</section>
+<section aria-labelledby="panel-team-tasks-title" class="space-y-8" data-tab-panel="team-tasks" hidden="" id="panel-team-tasks" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-team-tasks-title">Team Tasks</h2>
+<p class="font-medium text-secondary">Demo queue for the current sprint, priority review, and workload balance.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">Sprint 14</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-secondary">Product + Ops</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-secondary">9 tasks in review</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Backlog</p><p class="mt-3 text-3xl font-extrabold font-headline">14</p><p class="mt-3 text-xs text-secondary">New requests from support and leadership.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">In Progress</p><p class="mt-3 text-3xl font-extrabold font-headline text-primary">9</p><p class="mt-3 text-xs text-secondary">4 tasks are on track for same-day review.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">At Risk</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">3</p><p class="mt-3 text-xs text-secondary">Waiting on design feedback or infra access.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Ready For Review</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">5</p><p class="mt-3 text-xs text-secondary">Can be cleared in the next manager check-in.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm xl:col-span-8">
+<div class="flex flex-col gap-4 border-b border-outline-variant/10 p-6 md:flex-row md:items-center md:justify-between">
+<div>
+<h3 class="text-xl font-bold font-headline">Current Sprint Queue</h3>
+<p class="text-sm text-secondary">Static demo data showing different task states and owners.</p>
+</div>
+<span class="w-fit rounded-full bg-surface-container-low px-3 py-1 text-xs font-bold text-primary">Updated 15 minutes ago</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low/70 text-label-sm text-secondary">
+<tr>
+<th class="px-6 py-4">Task</th>
+<th class="px-4 py-4">Owner</th>
+<th class="px-4 py-4">Project</th>
+<th class="px-4 py-4">Due</th>
+<th class="px-4 py-4">Status</th>
+<th class="px-6 py-4 text-right">Progress</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr>
+<td class="px-6 py-5"><p class="font-bold text-sm">Launch onboarding checklist</p><p class="mt-1 text-xs text-secondary">Marketing site walkthrough for new client admins.</p></td>
+<td class="px-4 py-5"><div class="flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">LY</span><span class="text-xs font-semibold">Lydia Y.</span></div></td>
+<td class="px-4 py-5 text-xs text-secondary">Client Portal</td>
+<td class="px-4 py-5 text-xs text-secondary">Mar 24, 4:00 PM</td>
+<td class="px-4 py-5 text-xs"><span class="rounded-full bg-primary/10 px-2 py-1 font-bold text-primary">In Progress</span></td>
+<td class="px-6 py-5 text-right"><div class="ml-auto h-2 w-32 rounded-full bg-slate-100"><div class="h-full w-[72%] rounded-full bg-primary"></div></div><p class="mt-2 text-[10px] font-bold text-secondary">72%</p></td>
+</tr>
+<tr>
+<td class="px-6 py-5"><p class="font-bold text-sm">Verify SSO edge cases</p><p class="mt-1 text-xs text-secondary">Regression pass for enterprise sign-in and fallback messaging.</p></td>
+<td class="px-4 py-5"><div class="flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-error-container text-xs font-bold text-on-error-container">SJ</span><span class="text-xs font-semibold">Sarah J.</span></div></td>
+<td class="px-4 py-5 text-xs text-secondary">Security</td>
+<td class="px-4 py-5 text-xs text-secondary">Mar 24, 6:30 PM</td>
+<td class="px-4 py-5 text-xs"><span class="rounded-full bg-error-container px-2 py-1 font-bold text-on-error-container">Blocked</span></td>
+<td class="px-6 py-5 text-right"><div class="ml-auto h-2 w-32 rounded-full bg-slate-100"><div class="h-full w-[48%] rounded-full bg-error"></div></div><p class="mt-2 text-[10px] font-bold text-secondary">48%</p></td>
+</tr>
+<tr>
+<td class="px-6 py-5"><p class="font-bold text-sm">Payroll export QA</p><p class="mt-1 text-xs text-secondary">Validate CSV formatting for end-of-month finance handoff.</p></td>
+<td class="px-4 py-5"><div class="flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-container text-xs font-bold text-primary">RS</span><span class="text-xs font-semibold">Rahul S.</span></div></td>
+<td class="px-4 py-5 text-xs text-secondary">Finance Ops</td>
+<td class="px-4 py-5 text-xs text-secondary">Mar 25, 11:00 AM</td>
+<td class="px-4 py-5 text-xs"><span class="rounded-full bg-tertiary/10 px-2 py-1 font-bold text-tertiary">Review</span></td>
+<td class="px-6 py-5 text-right"><div class="ml-auto h-2 w-32 rounded-full bg-slate-100"><div class="h-full w-[88%] rounded-full bg-tertiary"></div></div><p class="mt-2 text-[10px] font-bold text-secondary">88%</p></td>
+</tr>
+<tr>
+<td class="px-6 py-5"><p class="font-bold text-sm">Refresh analytics widgets</p><p class="mt-1 text-xs text-secondary">Swap stale KPI tiles with March cohort metrics.</p></td>
+<td class="px-4 py-5"><div class="flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-high text-xs font-bold text-on-surface-variant">AM</span><span class="text-xs font-semibold">Adam M.</span></div></td>
+<td class="px-4 py-5 text-xs text-secondary">Dashboard</td>
+<td class="px-4 py-5 text-xs text-secondary">Mar 26, 2:00 PM</td>
+<td class="px-4 py-5 text-xs"><span class="rounded-full bg-surface-container-high px-2 py-1 font-bold text-on-surface-variant">Assigned</span></td>
+<td class="px-6 py-5 text-right"><div class="ml-auto h-2 w-32 rounded-full bg-slate-100"><div class="h-full w-[26%] rounded-full bg-slate-400"></div></div><p class="mt-2 text-[10px] font-bold text-secondary">26%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="col-span-12 space-y-8 xl:col-span-4">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold font-headline">Priority Queue</h3>
+<div class="space-y-4">
+<div class="rounded-lg border border-error/10 bg-error-container/50 p-4">
+<p class="text-xs font-bold text-on-error-container">Security review stalled</p>
+<p class="mt-1 text-[11px] text-on-error-container/80">Waiting on sandbox credentials from infrastructure.</p>
+</div>
+<div class="rounded-lg bg-surface-container-low p-4">
+<p class="text-xs font-bold">2 reviews due before noon</p>
+<p class="mt-1 text-[11px] text-secondary">Payroll export QA and mobile layout polish are ready.</p>
+</div>
+<div class="rounded-lg bg-tertiary/10 p-4">
+<p class="text-xs font-bold text-tertiary">Client milestone on track</p>
+<p class="mt-1 text-[11px] text-secondary">Onboarding checklist is pacing ahead of the March 28 target.</p>
+</div>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+<h3 class="mb-4 text-lg font-bold font-headline">Workload Split</h3>
+<div class="space-y-4 text-xs">
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Product</span><span class="text-secondary">38%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[38%] rounded-full bg-primary"></div></div></div>
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Operations</span><span class="text-secondary">24%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[24%] rounded-full bg-tertiary"></div></div></div>
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Security</span><span class="text-secondary">21%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[21%] rounded-full bg-error"></div></div></div>
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Support Enablement</span><span class="text-secondary">17%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[17%] rounded-full bg-slate-400"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-employees-title" class="space-y-8" data-tab-panel="employees" hidden="" id="panel-employees" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-employees-title">Employees</h2>
+<p class="font-medium text-secondary">Demo staff directory with workload, availability, and current focus areas.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-primary">12 total staff</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-secondary">9 available today</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Available Today</p><p class="mt-3 text-3xl font-extrabold font-headline text-primary">9</p><p class="mt-3 text-xs text-secondary">3 in meetings or on leave during the first half.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Remote</p><p class="mt-3 text-3xl font-extrabold font-headline">5</p><p class="mt-3 text-xs text-secondary">Distributed across Bengaluru, London, and Austin.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Needs Support</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">2</p><p class="mt-3 text-xs text-secondary">Blockers flagged on security and client data imports.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">This Week Output</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">42</p><p class="mt-3 text-xs text-secondary">Tasks completed across the current delivery window.</p></div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">RS</span><div><p class="font-bold">Rahul S.</p><p class="text-xs text-secondary">Frontend Engineer</p></div></div><span class="rounded-full bg-tertiary/10 px-3 py-1 text-[10px] font-bold text-tertiary">Available</span></div><p class="mt-4 text-xs text-secondary">Current focus: Payroll export QA and responsive pricing cleanup.</p><div class="mt-4"><div class="mb-2 flex justify-between text-[11px] font-bold"><span>Capacity</span><span>78%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[78%] rounded-full bg-primary"></div></div></div></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-error-container text-sm font-bold text-on-error-container">SJ</span><div><p class="font-bold">Sarah J.</p><p class="text-xs text-secondary">Security Analyst</p></div></div><span class="rounded-full bg-error-container px-3 py-1 text-[10px] font-bold text-on-error-container">Needs Review</span></div><p class="mt-4 text-xs text-secondary">Current focus: SSO regression checklist and permission matrix sign-off.</p><div class="mt-4"><div class="mb-2 flex justify-between text-[11px] font-bold"><span>Capacity</span><span>91%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[91%] rounded-full bg-error"></div></div></div></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-surface-container-high text-sm font-bold text-on-surface-variant">AM</span><div><p class="font-bold">Adam M.</p><p class="text-xs text-secondary">Product Designer</p></div></div><span class="rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold text-primary">In Review</span></div><p class="mt-4 text-xs text-secondary">Current focus: Dashboard widgets refresh and approval flows polish.</p><div class="mt-4"><div class="mb-2 flex justify-between text-[11px] font-bold"><span>Capacity</span><span>64%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[64%] rounded-full bg-tertiary"></div></div></div></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container text-sm font-bold text-primary">LY</span><div><p class="font-bold">Lydia Y.</p><p class="text-xs text-secondary">Project Coordinator</p></div></div><span class="rounded-full bg-tertiary/10 px-3 py-1 text-[10px] font-bold text-tertiary">On Track</span></div><p class="mt-4 text-xs text-secondary">Current focus: Launch onboarding checklist and vendor handoff notes.</p><div class="mt-4"><div class="mb-2 flex justify-between text-[11px] font-bold"><span>Capacity</span><span>58%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[58%] rounded-full bg-primary"></div></div></div></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-tertiary-fixed text-sm font-bold text-tertiary">NP</span><div><p class="font-bold">Nina P.</p><p class="text-xs text-secondary">Operations Specialist</p></div></div><span class="rounded-full bg-surface-container-low px-3 py-1 text-[10px] font-bold text-secondary">Hybrid</span></div><p class="mt-4 text-xs text-secondary">Current focus: Q2 support playbook and policy docs refresh.</p><div class="mt-4"><div class="mb-2 flex justify-between text-[11px] font-bold"><span>Capacity</span><span>67%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[67%] rounded-full bg-primary/70"></div></div></div></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex items-start justify-between gap-4"><div class="flex items-center gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-fixed text-sm font-bold text-on-primary-fixed-variant">MK</span><div><p class="font-bold">Mark K.</p><p class="text-xs text-secondary">Backend Engineer</p></div></div><span class="rounded-full bg-error-container px-3 py-1 text-[10px] font-bold text-on-error-container">Offline</span></div><p class="mt-4 text-xs text-secondary">Current focus: API cleanup. Last activity was 3 days ago in staging.</p><div class="mt-4"><div class="mb-2 flex justify-between text-[11px] font-bold"><span>Capacity</span><span>42%</span></div><div class="h-2 rounded-full bg-slate-100"><div class="h-full w-[42%] rounded-full bg-slate-400"></div></div></div></div>
+</div>
+<div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Coverage Snapshot</h3><div class="space-y-4 text-sm"><div class="flex items-center justify-between"><span>Support Window Coverage</span><span class="font-bold text-tertiary">Green</span></div><div class="flex items-center justify-between"><span>Security Escalation Coverage</span><span class="font-bold text-error">Thin</span></div><div class="flex items-center justify-between"><span>Design Review Capacity</span><span class="font-bold text-primary">Healthy</span></div><div class="flex items-center justify-between"><span>Onboarding Specialists</span><span class="font-bold text-primary">2 assigned</span></div></div></div>
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Manager Notes</h3><div class="space-y-3 text-sm text-secondary"><p>Reassign one low-priority dashboard task away from Sarah until SSO review is cleared.</p><p>Mark requires a direct check-in before the next deployment window.</p><p>Rahul and Lydia can cover tomorrow's client walkthrough without overtime risk.</p></div></div>
+</div>
+</section>
+<section aria-labelledby="panel-calendar-title" class="space-y-8" data-tab-panel="calendar" hidden="" id="panel-calendar" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-calendar-title">Calendar</h2>
+<p class="font-medium text-secondary">Demo planning board for the week of March 23, 2026.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">Week 13</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-secondary">11 events scheduled</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Meetings</p><p class="mt-3 text-3xl font-extrabold font-headline">7</p><p class="mt-3 text-xs text-secondary">Standups, reviews, and one client checkpoint.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Leave Booked</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">2</p><p class="mt-3 text-xs text-secondary">Thursday and Friday coverage needs confirmation.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Milestones</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">3</p><p class="mt-3 text-xs text-secondary">Alpha sign-off, payroll export QA, support playbook draft.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 rounded-lg bg-surface-container-lowest p-6 shadow-sm xl:col-span-8">
+<div class="mb-6 flex items-center justify-between">
+<div>
+<h3 class="text-xl font-bold font-headline">Sprint Calendar</h3>
+<p class="text-sm text-secondary">March 23 to March 29, 2026</p>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">Manager demo view</span>
+</div>
+<div class="mb-3 grid grid-cols-7 gap-3 text-[11px] font-bold text-secondary">
+<span>Mon 23</span><span>Tue 24</span><span>Wed 25</span><span>Thu 26</span><span>Fri 27</span><span>Sat 28</span><span>Sun 29</span>
+</div>
+<div class="grid grid-cols-1 gap-3 md:grid-cols-7">
+<div class="min-h-[9rem] rounded-lg border border-primary/10 bg-primary/5 p-3"><p class="text-xs font-bold text-primary">Today</p><div class="mt-3 space-y-2"><span class="block rounded bg-primary px-2 py-1 text-[10px] font-bold text-white">09:30 Daily standup</span><span class="block rounded bg-surface-container-low px-2 py-1 text-[10px] font-bold text-secondary">02:00 Review payroll QA</span><span class="block rounded bg-tertiary/15 px-2 py-1 text-[10px] font-bold text-tertiary">04:30 Client walkthrough prep</span></div></div>
+<div class="min-h-[9rem] rounded-lg border border-outline-variant/10 bg-surface-container-low p-3"><p class="text-xs font-bold">Mar 24</p><div class="mt-3 space-y-2"><span class="block rounded bg-error-container px-2 py-1 text-[10px] font-bold text-on-error-container">SSO review checkpoint</span><span class="block rounded bg-surface-container-high px-2 py-1 text-[10px] font-bold text-on-surface-variant">1:1 with Mark</span></div></div>
+<div class="min-h-[9rem] rounded-lg border border-outline-variant/10 bg-surface-container-low p-3"><p class="text-xs font-bold">Mar 25</p><div class="mt-3 space-y-2"><span class="block rounded bg-tertiary/15 px-2 py-1 text-[10px] font-bold text-tertiary">Payroll export sign-off</span><span class="block rounded bg-primary/10 px-2 py-1 text-[10px] font-bold text-primary">Design review</span></div></div>
+<div class="min-h-[9rem] rounded-lg border border-outline-variant/10 bg-surface-container-low p-3"><p class="text-xs font-bold">Mar 26</p><div class="mt-3 space-y-2"><span class="block rounded bg-error-container/70 px-2 py-1 text-[10px] font-bold text-on-error-container">Sarah PTO</span><span class="block rounded bg-surface-container-high px-2 py-1 text-[10px] font-bold text-on-surface-variant">Ops sync</span></div></div>
+<div class="min-h-[9rem] rounded-lg border border-outline-variant/10 bg-surface-container-low p-3"><p class="text-xs font-bold">Mar 27</p><div class="mt-3 space-y-2"><span class="block rounded bg-primary px-2 py-1 text-[10px] font-bold text-white">Alpha milestone review</span><span class="block rounded bg-tertiary/15 px-2 py-1 text-[10px] font-bold text-tertiary">Playbook draft handoff</span></div></div>
+<div class="min-h-[9rem] rounded-lg border border-outline-variant/10 bg-slate-50 p-3"><p class="text-xs font-bold">Mar 28</p><div class="mt-3 space-y-2"><span class="block rounded bg-surface-container-high px-2 py-1 text-[10px] font-bold text-on-surface-variant">Buffer day</span></div></div>
+<div class="min-h-[9rem] rounded-lg border border-outline-variant/10 bg-slate-50 p-3"><p class="text-xs font-bold">Mar 29</p><div class="mt-3 space-y-2"><span class="block rounded bg-surface-container-high px-2 py-1 text-[10px] font-bold text-on-surface-variant">Weekly planning reset</span></div></div>
+</div>
+</div>
+<div class="col-span-12 space-y-8 xl:col-span-4">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Today's Schedule</h3><div class="space-y-4 text-sm"><div class="flex items-start gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-primary"></span><div><p class="font-bold">09:30 AM</p><p class="text-secondary">Cross-functional standup</p></div></div><div class="flex items-start gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-error"></span><div><p class="font-bold">02:00 PM</p><p class="text-secondary">Review payroll export QA with Rahul</p></div></div><div class="flex items-start gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-tertiary"></span><div><p class="font-bold">04:30 PM</p><p class="text-secondary">Client walkthrough prep with Lydia</p></div></div></div></div>
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Coverage Notes</h3><div class="space-y-3 text-sm text-secondary"><p>Sarah is out on Thursday. Nina will cover policy escalations.</p><p>Friday milestone review needs Mark or Rahul present for data export sign-off.</p><p>Saturday is intentionally light to preserve launch buffer.</p></div></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-messages-title" class="space-y-8" data-tab-panel="messages" hidden="" id="panel-messages" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-messages-title">Messages</h2>
+<p class="font-medium text-secondary">Demo conversations between the manager, staff, and project channels.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">8 unread</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-secondary">3 mentions</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Awaiting Reply</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">4</p><p class="mt-3 text-xs text-secondary">Vendor, security, and onboarding threads need answers.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Announcements</p><p class="mt-3 text-3xl font-extrabold font-headline">2</p><p class="mt-3 text-xs text-secondary">Launch reminder and PTO policy update are queued.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Escalations</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">1</p><p class="mt-3 text-xs text-secondary">Only the SSO thread is marked high urgency.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 rounded-lg bg-surface-container-lowest p-6 shadow-sm xl:col-span-4">
+<div class="mb-4 flex items-center justify-between"><h3 class="text-lg font-bold font-headline">Inbox</h3><span class="text-[10px] font-bold uppercase tracking-wider text-secondary">Live demo</span></div>
+<div class="space-y-3">
+<div class="rounded-lg border border-primary/10 bg-primary/5 p-4"><div class="flex items-center justify-between gap-3"><p class="text-sm font-bold">Lydia Y. • Client walkthrough</p><span class="rounded-full bg-primary px-2 py-1 text-[10px] font-bold text-white">Unread</span></div><p class="mt-2 text-xs text-secondary">Can you confirm which dashboard examples we should present tomorrow?</p></div>
+<div class="rounded-lg bg-surface-container-low p-4"><div class="flex items-center justify-between gap-3"><p class="text-sm font-bold">Security channel</p><span class="text-[10px] font-bold text-error">Urgent</span></div><p class="mt-2 text-xs text-secondary">Sandbox credentials are still missing for the SSO regression pass.</p></div>
+<div class="rounded-lg bg-surface-container-low p-4"><div class="flex items-center justify-between gap-3"><p class="text-sm font-bold">Rahul S. • QA handoff</p><span class="text-[10px] font-bold text-secondary">2:14 PM</span></div><p class="mt-2 text-xs text-secondary">Payroll export files are ready once finance signs off on labels.</p></div>
+<div class="rounded-lg bg-surface-container-low p-4"><div class="flex items-center justify-between gap-3"><p class="text-sm font-bold">Leadership updates</p><span class="text-[10px] font-bold text-secondary">12:40 PM</span></div><p class="mt-2 text-xs text-secondary">Need a short note on launch readiness before the board packet closes.</p></div>
+</div>
+</div>
+<div class="col-span-12 space-y-8 xl:col-span-8">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+<div class="mb-6 flex items-center justify-between gap-4"><div><h3 class="text-lg font-bold font-headline">Thread Preview: Lydia Y.</h3><p class="text-sm text-secondary">Client walkthrough planning</p></div><button class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">Reply</button></div>
+<div class="space-y-4">
+<div class="flex justify-start"><div class="max-w-xl rounded-2xl rounded-bl-md bg-surface-container-low px-4 py-3 text-sm text-secondary">The client wants to see how managers handle task approvals, messages, and reports in one place.</div></div>
+<div class="flex justify-end"><div class="max-w-xl rounded-2xl rounded-br-md bg-primary px-4 py-3 text-sm text-white">Use the dashboard overview first, then switch to Team Tasks and Reports so the demo feels realistic.</div></div>
+<div class="flex justify-start"><div class="max-w-xl rounded-2xl rounded-bl-md bg-surface-container-low px-4 py-3 text-sm text-secondary">Understood. I will also call out the leave approval queue because they asked about coverage planning.</div></div>
+<div class="flex justify-end"><div class="max-w-xl rounded-2xl rounded-br-md bg-primary px-4 py-3 text-sm text-white">Good. Keep the examples operational, not too technical, and show that the data is demo-only.</div></div>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Announcement Drafts</h3><div class="space-y-3 text-sm"><div class="rounded-lg bg-surface-container-low p-4"><p class="font-bold">Launch week expectations</p><p class="mt-1 text-secondary">Reminder draft covering support coverage, ownership, and response times.</p></div><div class="rounded-lg bg-surface-container-low p-4"><p class="font-bold">Friday PTO note</p><p class="mt-1 text-secondary">Short internal update about Sarah's leave coverage and escalation contacts.</p></div></div></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-leave-approvals-title" class="space-y-8" data-tab-panel="leave-approvals" hidden="" id="panel-leave-approvals" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-leave-approvals-title">Leave Approvals</h2>
+<p class="font-medium text-secondary">Demo requests awaiting manager approval, with coverage notes and conflicts.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-error-container px-4 py-2 text-on-error-container">3 pending</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-secondary">11 approved this month</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Pending</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">3</p><p class="mt-3 text-xs text-secondary">Two PTO requests and one remote-work exception.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Coverage Conflicts</p><p class="mt-3 text-3xl font-extrabold font-headline">1</p><p class="mt-3 text-xs text-secondary">Thursday security coverage becomes thin if approved.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Average Response</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">6h</p><p class="mt-3 text-xs text-secondary">Approval turnaround for March requests so far.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 space-y-6 xl:col-span-8">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between"><div class="flex items-start gap-4"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-error-container text-sm font-bold text-on-error-container">SJ</span><div><p class="font-bold">Sarah J.</p><p class="text-sm text-secondary">PTO request for March 26 to March 27</p><p class="mt-2 text-xs text-secondary">Reason: Family travel. Backup suggested: Nina handles policy escalations, Rahul covers release triage.</p></div></div><div class="flex gap-2"><button class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">Approve</button><button class="rounded-full bg-error-container px-4 py-2 text-xs font-bold text-on-error-container">Decline</button></div></div></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between"><div class="flex items-start gap-4"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container text-sm font-bold text-primary">RS</span><div><p class="font-bold">Rahul S.</p><p class="text-sm text-secondary">Remote work request for March 25</p><p class="mt-2 text-xs text-secondary">Reason: Home internet maintenance. No meeting conflicts. Available online for all scheduled reviews.</p></div></div><div class="flex gap-2"><button class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">Approve</button><button class="rounded-full bg-error-container px-4 py-2 text-xs font-bold text-on-error-container">Decline</button></div></div></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between"><div class="flex items-start gap-4"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-tertiary-fixed text-sm font-bold text-tertiary">NP</span><div><p class="font-bold">Nina P.</p><p class="text-sm text-secondary">Half-day leave for March 27</p><p class="mt-2 text-xs text-secondary">Reason: Medical appointment. Coverage depends on whether Friday milestone review moves forward.</p></div></div><div class="flex gap-2"><button class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">Approve</button><button class="rounded-full bg-error-container px-4 py-2 text-xs font-bold text-on-error-container">Decline</button></div></div></div>
+</div>
+<div class="col-span-12 space-y-8 xl:col-span-4">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Already Approved</h3><div class="space-y-3 text-sm"><div class="flex items-center justify-between"><span>Marcus V. • Mar 29</span><span class="font-bold text-tertiary">Approved</span></div><div class="flex items-center justify-between"><span>Adam M. • Apr 02</span><span class="font-bold text-tertiary">Approved</span></div><div class="flex items-center justify-between"><span>Lydia Y. • Apr 04</span><span class="font-bold text-tertiary">Approved</span></div></div></div>
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Policy Reminder</h3><p class="text-sm text-secondary">Security coverage cannot drop below one primary and one backup approver during launch week. Sarah's PTO is valid, but coverage needs to be explicitly assigned before approval.</p></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-activity-logs-title" class="space-y-8" data-tab-panel="activity-logs" hidden="" id="panel-activity-logs" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-activity-logs-title">Activity Logs</h2>
+<p class="font-medium text-secondary">Demo audit trail across logins, approvals, task activity, and system actions.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-primary">148 events today</span>
+<span class="rounded-full bg-error-container px-4 py-2 text-on-error-container">2 security flags</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Logins</p><p class="mt-3 text-3xl font-extrabold font-headline">23</p><p class="mt-3 text-xs text-secondary">Most recent from London and Bengaluru.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Task Events</p><p class="mt-3 text-3xl font-extrabold font-headline">61</p><p class="mt-3 text-xs text-secondary">Status changes, comments, and review submissions.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Approvals</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">9</p><p class="mt-3 text-xs text-secondary">Leave, reimbursement, and content release approvals.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Critical Alerts</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">2</p><p class="mt-3 text-xs text-secondary">Repeated failed access on admin routes.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm xl:col-span-8">
+<div class="border-b border-outline-variant/10 p-6"><h3 class="text-xl font-bold font-headline">Audit Timeline</h3><p class="mt-1 text-sm text-secondary">Representative sample records for a manager demo.</p></div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low/70 text-label-sm text-secondary">
+<tr>
+<th class="px-6 py-4">Time</th>
+<th class="px-4 py-4">Actor</th>
+<th class="px-4 py-4">Event</th>
+<th class="px-4 py-4">Source</th>
+<th class="px-6 py-4">Severity</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 text-sm">
+<tr><td class="px-6 py-4">03:12 PM</td><td class="px-4 py-4">Alex Rivera</td><td class="px-4 py-4">Approved reimbursement request for Sarah J.</td><td class="px-4 py-4 text-secondary">Manager dashboard</td><td class="px-6 py-4"><span class="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-bold text-primary">Normal</span></td></tr>
+<tr><td class="px-6 py-4">02:47 PM</td><td class="px-4 py-4">Rahul S.</td><td class="px-4 py-4">Uploaded payroll export sample for review</td><td class="px-4 py-4 text-secondary">Web app</td><td class="px-6 py-4"><span class="rounded-full bg-tertiary/10 px-2 py-1 text-[10px] font-bold text-tertiary">Reviewed</span></td></tr>
+<tr><td class="px-6 py-4">01:58 PM</td><td class="px-4 py-4">Unknown device</td><td class="px-4 py-4">Failed admin route access repeated 3 times</td><td class="px-4 py-4 text-secondary">IP 185.24.18.77</td><td class="px-6 py-4"><span class="rounded-full bg-error-container px-2 py-1 text-[10px] font-bold text-on-error-container">High</span></td></tr>
+<tr><td class="px-6 py-4">11:34 AM</td><td class="px-4 py-4">Lydia Y.</td><td class="px-4 py-4">Commented on client walkthrough checklist</td><td class="px-4 py-4 text-secondary">Project messages</td><td class="px-6 py-4"><span class="rounded-full bg-surface-container-high px-2 py-1 text-[10px] font-bold text-on-surface-variant">Info</span></td></tr>
+<tr><td class="px-6 py-4">09:05 AM</td><td class="px-4 py-4">Mark K.</td><td class="px-4 py-4">Logged in from new browser fingerprint</td><td class="px-4 py-4 text-secondary">Chrome on macOS</td><td class="px-6 py-4"><span class="rounded-full bg-error-container px-2 py-1 text-[10px] font-bold text-on-error-container">Verify</span></td></tr>
+<tr><td class="px-6 py-4">04:00 AM</td><td class="px-4 py-4">System</td><td class="px-4 py-4">Nightly backup completed successfully</td><td class="px-4 py-4 text-secondary">Scheduled job</td><td class="px-6 py-4"><span class="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-bold text-primary">Normal</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="col-span-12 space-y-8 xl:col-span-4">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Audit Highlights</h3><div class="space-y-4 text-sm text-secondary"><p>Only one event requires immediate follow-up: failed admin route access from an unknown device.</p><p>Mark's new browser fingerprint should be confirmed because of recent inactivity.</p><p>Backups, approvals, and project comments are otherwise normal.</p></div></div>
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Retention</h3><p class="text-sm text-secondary">Standard demo policy keeps audit events for 12 months and preserves critical security events indefinitely in the exported report archive.</p></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="panel-reports-title" class="space-y-8" data-tab-panel="reports" hidden="" id="panel-reports" role="tabpanel">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-reports-title">Reports</h2>
+<p class="font-medium text-secondary">Demo manager reporting snapshot with delivery, utilization, and team health summaries.</p>
+</div>
+<div class="flex flex-wrap gap-3 text-xs font-bold">
+<span class="rounded-full bg-primary px-4 py-2 text-white">March summary</span>
+<span class="rounded-full bg-surface-container-low px-4 py-2 text-secondary">Auto-generated Monday 08:00 AM</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Completion Rate</p><p class="mt-3 text-3xl font-extrabold font-headline text-primary">92%</p><p class="mt-3 text-xs text-secondary">Ahead of the 88% internal benchmark.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Avg. Cycle Time</p><p class="mt-3 text-3xl font-extrabold font-headline">2.8d</p><p class="mt-3 text-xs text-secondary">Down from 3.4 days last month.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Utilization</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">78%</p><p class="mt-3 text-xs text-secondary">Healthy level without sustained overtime.</p></div>
+<div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">SLA Misses</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">2</p><p class="mt-3 text-xs text-secondary">Both tied to security approvals waiting on credentials.</p></div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 space-y-8 xl:col-span-8">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
+<h3 class="mb-6 text-xl font-bold font-headline">Department Output</h3>
+<div class="space-y-5 text-sm">
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Product Delivery</span><span class="text-secondary">34 completed tasks</span></div><div class="h-3 rounded-full bg-slate-100"><div class="h-full w-[86%] rounded-full bg-primary"></div></div></div>
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Operations</span><span class="text-secondary">19 completed tasks</span></div><div class="h-3 rounded-full bg-slate-100"><div class="h-full w-[72%] rounded-full bg-tertiary"></div></div></div>
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Security</span><span class="text-secondary">11 completed tasks</span></div><div class="h-3 rounded-full bg-slate-100"><div class="h-full w-[58%] rounded-full bg-error"></div></div></div>
+<div><div class="mb-2 flex justify-between"><span class="font-bold">Client Success</span><span class="text-secondary">15 completed tasks</span></div><div class="h-3 rounded-full bg-slate-100"><div class="h-full w-[64%] rounded-full bg-slate-400"></div></div></div>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="border-b border-outline-variant/10 p-6"><h3 class="text-xl font-bold font-headline">Project Health Matrix</h3><p class="mt-1 text-sm text-secondary">Representative report rows for a stakeholder review.</p></div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low/70 text-label-sm text-secondary">
+<tr>
+<th class="px-6 py-4">Project</th>
+<th class="px-4 py-4">Owner</th>
+<th class="px-4 py-4">Schedule</th>
+<th class="px-4 py-4">Budget</th>
+<th class="px-6 py-4">Risk</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 text-sm">
+<tr><td class="px-6 py-4 font-bold">Client Portal Refresh</td><td class="px-4 py-4">Adam M.</td><td class="px-4 py-4 font-bold text-tertiary">On Track</td><td class="px-4 py-4 font-bold text-primary">Healthy</td><td class="px-6 py-4 text-secondary">Minor review bottleneck</td></tr>
+<tr><td class="px-6 py-4 font-bold">Enterprise Access Controls</td><td class="px-4 py-4">Sarah J.</td><td class="px-4 py-4 font-bold text-error">At Risk</td><td class="px-4 py-4 font-bold text-primary">Healthy</td><td class="px-6 py-4 text-secondary">Credential delays impacting test coverage</td></tr>
+<tr><td class="px-6 py-4 font-bold">Support Playbook Q2</td><td class="px-4 py-4">Nina P.</td><td class="px-4 py-4 font-bold text-primary">On Track</td><td class="px-4 py-4 font-bold text-primary">Healthy</td><td class="px-6 py-4 text-secondary">Needs Friday approval for final draft</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-span-12 space-y-8 xl:col-span-4">
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Executive Summary</h3><div class="space-y-3 text-sm text-secondary"><p>Delivery pace is strong, but security work needs faster unblock paths from infrastructure.</p><p>Utilization is high enough to maintain velocity without overloading most of the team.</p><p>Client-facing work is healthy and ready for demo use in sales or onboarding walkthroughs.</p></div></div>
+<div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm"><h3 class="mb-4 text-lg font-bold font-headline">Available Exports</h3><div class="space-y-3 text-sm"><div class="flex items-center justify-between"><span>Weekly Ops Summary.pdf</span><span class="font-bold text-primary">Ready</span></div><div class="flex items-center justify-between"><span>Team Utilization.csv</span><span class="font-bold text-primary">Ready</span></div><div class="flex items-center justify-between"><span>Audit Exceptions.xlsx</span><span class="font-bold text-error">Pending</span></div></div></div>
+</div>
+</div>
+</section>
 </main>
-<!-- Floating Action Buttons -->
-<div class="fixed bottom-8 right-8 flex flex-col items-end gap-3 z-50">
+<div class="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
 <div class="hidden mb-4 space-y-2" id="quick-actions-menu">
-<button class="flex items-center gap-3 bg-white px-4 py-2 rounded-full shadow-lg border border-slate-100 text-sm font-semibold text-on-background hover:bg-slate-50 transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+<button class="flex items-center gap-3 rounded-full border border-slate-100 bg-white px-4 py-2 text-sm font-semibold text-on-background shadow-lg transition-colors hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">mail</span>
                 Broadcast Message
             </button>
-<button class="flex items-center gap-3 bg-white px-4 py-2 rounded-full shadow-lg border border-slate-100 text-sm font-semibold text-on-background hover:bg-slate-50 transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="fact_check">fact_check</span>
+<button class="flex items-center gap-3 rounded-full border border-slate-100 bg-white px-4 py-2 text-sm font-semibold text-on-background shadow-lg transition-colors hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">fact_check</span>
                 Approve Requests
             </button>
 </div>
-<button class="w-14 h-14 bg-primary text-white rounded-full shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group">
-<span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform" data-icon="add">add</span>
+<button class="group flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-xl transition-all hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-2xl transition-transform group-hover:rotate-90">add</span>
 </button>
 </div>
 <script src="site-motion.js"></script>
-</body></html>
+<script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabs = Array.from(document.querySelectorAll("[data-tab-target]"));
+        const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+
+        if (!tabs.length || !panels.length) {
+          return;
+        }
+
+        const activateTab = (target, updateHash = true) => {
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.tabTarget === target;
+
+            tab.setAttribute("aria-selected", String(isActive));
+            tab.classList.toggle("text-blue-600", isActive);
+            tab.classList.toggle("font-bold", isActive);
+            tab.classList.toggle("bg-blue-50/50", isActive);
+            tab.classList.toggle("border-blue-600", isActive);
+            tab.classList.toggle("text-slate-500", !isActive);
+            tab.classList.toggle("hover:text-slate-900", !isActive);
+            tab.classList.toggle("hover:bg-blue-50/50", !isActive);
+            tab.classList.toggle("border-transparent", !isActive);
+          });
+
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.tabPanel === target;
+            panel.hidden = !isActive;
+
+            if (isActive) {
+              panel.querySelectorAll("[data-reveal]").forEach((element) => element.classList.add("is-visible"));
+            }
+          });
+
+          if (updateHash) {
+            window.history.replaceState(null, "", `#${target}`);
+          }
+        };
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", (event) => {
+            event.preventDefault();
+            activateTab(tab.dataset.tabTarget);
+          });
+        });
+
+        const initialHash = window.location.hash.replace("#", "");
+        const initialTarget = panels.some((panel) => panel.dataset.tabPanel === initialHash) ? initialHash : "dashboard";
+
+        activateTab(initialTarget, Boolean(initialHash));
+      });
+    </script>
+</body>
+</html>
