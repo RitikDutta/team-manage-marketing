@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Compliance | Team Manage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#d6e3ff",
+              "on-primary-fixed-variant": "#004493",
+              "tertiary": "#006768",
+              "on-tertiary-fixed": "#002020",
+              "secondary": "#515f78",
+              "on-surface": "#0d1c32",
+              "on-primary-fixed": "#001a41",
+              "surface-container-high": "#dfe8ff",
+              "on-secondary-fixed": "#0d1c32",
+              "tertiary-container": "#008284",
+              "surface-variant": "#d6e3ff",
+              "surface-container-highest": "#d6e3ff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#e8eeff",
+              "primary-fixed": "#d8e2ff",
+              "on-primary": "#ffffff",
+              "outline": "#717786",
+              "inverse-on-surface": "#ecf0ff",
+              "surface": "#f9f9ff",
+              "primary-fixed-dim": "#adc7ff",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#005bc0",
+              "primary": "#0059bb",
+              "error-container": "#ffdad6",
+              "primary-container": "#0070ea",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#5af8fb",
+              "surface-bright": "#f9f9ff",
+              "on-tertiary-container": "#f3fffe",
+              "background": "#f9f9ff",
+              "tertiary-fixed-dim": "#2ddbde",
+              "inverse-primary": "#adc7ff",
+              "on-tertiary-fixed-variant": "#004f51",
+              "on-surface-variant": "#414754",
+              "on-secondary-fixed-variant": "#39475f",
+              "on-background": "#0d1c32",
+              "inverse-surface": "#233148",
+              "surface-dim": "#ccdaf8",
+              "on-primary-container": "#fefcff",
+              "secondary-fixed-dim": "#b9c7e4",
+              "secondary-container": "#d2e0fe",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#55637d",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f0f3ff",
+              "outline-variant": "#c1c6d7",
+              "on-error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0d1c32 0%, #0059bb 55%, #0070ea 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+    </style>
+<link href="site-motion.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white font-headline" href="index.html">Team Manage</a>
+<div class="hidden md:flex items-center space-gap-8 gap-8 font-headline font-semibold text-sm tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform duration-200" href="features.html">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform duration-200" href="product_tour.html">Project Tour</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform duration-200" href="security.html">Security</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 hover:scale-105 transition-transform duration-200" href="pricing.html">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center justify-center bg-primary hover:scale-102 active:scale-95 transition-all text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm shadow-lg shadow-primary/20" href="pricing.html#contact-sales">Book a Demo</a>
+</div>
+</div>
+</nav>
+<main class="pt-24 overflow-hidden">
+<section class="hero-gradient px-8 pt-20 pb-24 text-white">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+<div>
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-primary-fixed text-xs font-bold tracking-[0.2em] uppercase">Trust & Compliance</span>
+<h1 class="mt-6 font-headline text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">Security controls and compliance support built for modern team operations.</h1>
+<p class="mt-6 max-w-3xl text-lg text-white/75 leading-relaxed">This page summarizes the security practices, control themes, and customer support capabilities Team Manage uses to help organizations evaluate the platform for professional and enterprise use. It is intended as a high-level compliance overview and does not replace a signed security addendum, DPA, or audit report.</p>
+<div class="mt-8 flex flex-wrap gap-4">
+<div class="rounded-full bg-white/10 px-5 py-3 text-sm font-semibold border border-white/15">Last reviewed: March 23, 2026</div>
+<div class="rounded-full bg-white/10 px-5 py-3 text-sm font-semibold border border-white/15">Applies to hosted Team Manage services</div>
+</div>
+</div>
+<div class="glass-card rounded-[2rem] border border-white/15 p-8 shadow-2xl">
+<div class="space-y-6">
+<div class="rounded-2xl bg-white/5 p-5 border border-white/10">
+<div class="text-xs font-bold uppercase tracking-[0.2em] text-primary-fixed mb-2">Core controls</div>
+<p class="text-sm text-white/70 leading-relaxed">Least privilege access, auditability, configuration review, session protection, and infrastructure safeguards are foundational design requirements.</p>
+</div>
+<div class="rounded-2xl bg-white/5 p-5 border border-white/10">
+<div class="text-xs font-bold uppercase tracking-[0.2em] text-primary-fixed mb-2">Operational readiness</div>
+<p class="text-sm text-white/70 leading-relaxed">Monitoring, incident handling, vendor oversight, and change management are applied to reduce risk and improve service resilience.</p>
+</div>
+<div class="rounded-2xl bg-white/5 p-5 border border-white/10">
+<div class="text-xs font-bold uppercase tracking-[0.2em] text-primary-fixed mb-2">Enterprise support</div>
+<p class="text-sm text-white/70 leading-relaxed">Security questionnaires, contractual reviews, and plan-specific documentation may be provided during procurement and onboarding.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="px-8 py-20">
+<div class="max-w-6xl mx-auto grid gap-8">
+<article class="bg-white rounded-[2rem] border border-outline-variant/20 shadow-sm p-8 md:p-10">
+<h2 class="font-headline text-3xl font-bold mb-4">1. Security program overview</h2>
+<p class="text-on-surface-variant leading-relaxed mb-4">Team Manage follows a layered security model designed around confidentiality, integrity, availability, and accountability. Controls are selected to support business collaboration features without weakening role separation or system visibility. Security considerations are incorporated into access design, deployment workflows, support practices, and operational reviews.</p>
+<p class="text-on-surface-variant leading-relaxed">This page describes control categories and program intent. Formal attestations, customer-specific commitments, or contractual security obligations apply only when expressly stated in executed documents.</p>
+</article>
+
+<article class="bg-white rounded-[2rem] border border-outline-variant/20 shadow-sm p-8 md:p-10">
+<h2 class="font-headline text-3xl font-bold mb-4">2. Access management and administrative controls</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="rounded-2xl bg-surface-container-low p-6">
+<h3 class="font-bold mb-3">Platform controls</h3>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li>Role-based access patterns designed to limit exposure of operational and administrative functions.</li>
+<li>Authentication and session safeguards intended to reduce unauthorized account access.</li>
+<li>Logging of relevant administrative and security-sensitive actions for investigation and accountability.</li>
+</ul>
+</div>
+<div class="rounded-2xl bg-surface-container-low p-6">
+<h3 class="font-bold mb-3">Customer controls</h3>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li>Workspace administrators control permissions, invited users, and workflow-level access boundaries.</li>
+<li>Customers are responsible for reviewing role assignments and promptly removing outdated access.</li>
+<li>Security posture depends in part on customer-managed devices, integrations, and local identity practices.</li>
+</ul>
+</div>
+</div>
+</article>
+
+<article class="bg-white rounded-[2rem] border border-outline-variant/20 shadow-sm p-8 md:p-10">
+<h2 class="font-headline text-3xl font-bold mb-4">3. Application, infrastructure, and data safeguards</h2>
+<p class="text-on-surface-variant leading-relaxed mb-4">Team Manage applies secure development and deployment practices intended to reduce defects and operational risk. These practices may include structured change review, environment separation, dependency oversight, input validation, and controlled deployment workflows.</p>
+<p class="text-on-surface-variant leading-relaxed mb-4">Customer data is protected through layered technical controls such as encryption in transit, access restrictions, backup handling, and infrastructure-level review practices appropriate to the hosted environment. Specific architectural details may vary by plan, deployment model, and service arrangement.</p>
+<p class="text-on-surface-variant leading-relaxed">No hosted environment can eliminate all risk. Team Manage therefore pairs preventative safeguards with monitoring, response, and recovery procedures designed to reduce impact when issues occur.</p>
+</article>
+
+<article class="bg-white rounded-[2rem] border border-outline-variant/20 shadow-sm p-8 md:p-10">
+<h2 class="font-headline text-3xl font-bold mb-4">4. Monitoring, incident response, and continuity</h2>
+<p class="text-on-surface-variant leading-relaxed mb-4">Operational telemetry, audit events, and service health signals are used to identify unusual behavior, investigate incidents, and support restoration activities. Incident handling processes are designed to support containment, assessment, remediation, and follow-up review.</p>
+<p class="text-on-surface-variant leading-relaxed mb-4">Where applicable and contractually required, Team Manage may provide customer notifications regarding confirmed incidents affecting customer data or material service disruption within the timelines described in the governing agreement.</p>
+<p class="text-on-surface-variant leading-relaxed">Backup and continuity practices are maintained to support recovery objectives, although restoration capabilities and commitments vary by service tier and deployment arrangement.</p>
+</article>
+
+<article class="bg-white rounded-[2rem] border border-outline-variant/20 shadow-sm p-8 md:p-10">
+<h2 class="font-headline text-3xl font-bold mb-4">5. Compliance support and customer evaluation</h2>
+<p class="text-on-surface-variant leading-relaxed mb-4">Team Manage is designed to help customers support internal security, privacy, and governance programs through features such as audit history, role separation, workflow visibility, and administrative oversight. Many customers also require procurement documentation, legal review, or policy mapping before rollout.</p>
+<p class="text-on-surface-variant leading-relaxed mb-4">Depending on the relationship stage and plan, Team Manage may support these requests with questionnaires, architecture summaries, privacy documentation, implementation notes, or negotiated contractual language. Availability of any formal report, attestation, or addendum is subject to commercial agreement and internal approval.</p>
+<p class="text-on-surface-variant leading-relaxed">Customers remain responsible for determining whether Team Manage is suitable for their regulatory environment, internal policies, records retention standards, and sector-specific requirements.</p>
+</article>
+
+<article class="bg-on-surface text-white rounded-[2rem] p-8 md:p-10">
+<h2 class="font-headline text-3xl font-bold mb-4">6. Scope limitations and contact path</h2>
+<p class="text-white/75 leading-relaxed mb-4">This page is informational and does not create independent legal obligations. Security features and compliance support described here should be read together with the applicable Terms of Service, Privacy Policy, order form, and any signed security or data processing documentation.</p>
+<p class="text-white/75 leading-relaxed">If your team needs a security review package, vendor questionnaire response, or procurement clarification, route the request through your Team Manage commercial or implementation contact so the appropriate materials can be provided.</p>
+</article>
+</div>
+</section>
+
+<section class="px-8 pb-24">
+<div class="max-w-6xl mx-auto rounded-[2rem] bg-surface-container-low border border-outline-variant/20 p-10 md:p-14">
+<div class="grid md:grid-cols-3 gap-8">
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-3">Access</p>
+<h3 class="font-headline text-2xl font-bold mb-3">Least-privilege by design</h3>
+<p class="text-on-surface-variant leading-relaxed">Role-aware workflows help reduce unnecessary visibility and administrative drift.</p>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-3">Visibility</p>
+<h3 class="font-headline text-2xl font-bold mb-3">Auditability for operations</h3>
+<p class="text-on-surface-variant leading-relaxed">Action history and monitoring support investigations, oversight, and internal governance reviews.</p>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-3">Review</p>
+<h3 class="font-headline text-2xl font-bold mb-3">Procurement-ready support</h3>
+<p class="text-on-surface-variant leading-relaxed">Enterprise teams can request additional security documentation during evaluation and onboarding.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-50 border-t border-slate-200/80">
+<div class="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+<div>
+<a class="inline-block text-xl font-bold text-slate-900 mb-4 font-headline" href="index.html">Team Manage</a>
+<p class="text-slate-500 text-sm leading-relaxed max-w-xs">Clear policies and practical safeguards for teams evaluating Team Manage.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-sm text-slate-900">Explore</h4>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="index.html">Home</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="features.html">Features</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="pricing.html">Pricing</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-sm text-slate-900">Legal</h4>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="privacy-policy.html">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="terms-of-service.html">Terms of Service</a>
+<a aria-current="page" class="text-primary font-semibold transition-colors text-sm" href="security-compliance.html">Security Compliance</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline font-bold text-sm text-slate-900">Trust</h4>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="security.html">Security Overview</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="product_tour.html">Product Tour</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors text-sm" href="pricing.html#contact-sales">Contact Sales</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 pt-8 pb-10 border-t border-slate-200 text-center">
+<p class="text-slate-500 text-sm">© 2024 Team Manage. All rights reserved.</p>
+</div>
+</footer>
+<script src="site-motion.js"></script>
+</body></html>
