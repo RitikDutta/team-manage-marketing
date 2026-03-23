@@ -147,7 +147,7 @@
 <p class="mt-1 text-[10px] font-medium uppercase tracking-[0.24em] text-slate-500">Employee Hub</p>
 </div>
 <button aria-controls="employee-mobile-tab-menu" aria-expanded="false" class="flex items-center gap-3 rounded-full border border-outline-variant/60 bg-white px-4 py-2 text-left shadow-sm transition-colors hover:bg-surface-container-low" id="employee-mobile-menu-button" type="button">
-<span class="material-symbols-outlined text-slate-600" id="employee-mobile-menu-icon">menu</span>
+<span class="material-symbols-outlined text-slate-600 transition-transform duration-300" id="employee-mobile-menu-icon">menu</span>
 <span class="min-w-0">
 <span class="block text-[10px] font-bold uppercase tracking-[0.24em] text-slate-400">Sections</span>
 <span class="block truncate text-sm font-semibold text-slate-900" id="employee-mobile-current-tab">Dashboard</span>
@@ -176,7 +176,7 @@
 </div>
 </div>
 </div>
-<nav aria-label="Employee sections" class="hidden gap-1 rounded-3xl border border-outline-variant/50 bg-white/90 p-2 shadow-sm lg:hidden" hidden="" id="employee-mobile-tab-menu" role="tablist">
+<nav aria-label="Employee sections" class="employee-mobile-menu grid gap-1 rounded-3xl border border-outline-variant/50 bg-white/90 shadow-sm lg:hidden" hidden="" id="employee-mobile-tab-menu" role="tablist">
 <a aria-controls="panel-dashboard" aria-selected="true" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-blue-600 font-semibold bg-blue-50/50 transition-all duration-200" data-tab-label="Dashboard" data-tab-target="dashboard" href="#dashboard" role="tab">
 <span class="material-symbols-outlined">dashboard</span>
 <span>Dashboard</span>
@@ -918,6 +918,9 @@
         const mobileMenuIcon = document.getElementById("employee-mobile-menu-icon");
         const mobileCurrentTab = document.getElementById("employee-mobile-current-tab");
         const desktopBreakpoint = window.matchMedia("(min-width: 1024px)");
+        const mobileMenuTabs = mobileMenu ? Array.from(mobileMenu.querySelectorAll("[data-tab-target]")) : [];
+        const mobileMenuTransitionMs = 320;
+        let mobileMenuHideTimeout = null;
 
         if (!tabs.length || !panels.length) {
           return;
@@ -928,14 +931,17 @@
           return matchingTab?.dataset.tabLabel || target;
         };
 
+        const setMobileMenuFocusable = (isOpen) => {
+          mobileMenuTabs.forEach((tab) => {
+            tab.tabIndex = isOpen ? 0 : -1;
+          });
+        };
+
         const setMobileMenuOpen = (isOpen) => {
           if (!mobileMenuButton || !mobileMenu) {
             return;
           }
 
-          mobileMenu.hidden = !isOpen;
-          mobileMenu.classList.toggle("hidden", !isOpen);
-          mobileMenu.classList.toggle("grid", isOpen);
           mobileMenu.setAttribute("aria-hidden", String(!isOpen));
           mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
           mobileMenuButton.classList.toggle("bg-surface-container-low", isOpen);
@@ -943,7 +949,40 @@
 
           if (mobileMenuIcon) {
             mobileMenuIcon.textContent = isOpen ? "close" : "menu";
+            mobileMenuIcon.classList.toggle("rotate-90", isOpen);
           }
+
+          if (mobileMenuHideTimeout) {
+            window.clearTimeout(mobileMenuHideTimeout);
+            mobileMenuHideTimeout = null;
+          }
+
+          if (isOpen) {
+            mobileMenu.hidden = false;
+            setMobileMenuFocusable(true);
+
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                if (mobileMenuButton.getAttribute("aria-expanded") === "true") {
+                  mobileMenu.classList.add("is-open");
+                }
+              });
+            });
+
+            return;
+          }
+
+          setMobileMenuFocusable(false);
+          mobileMenu.classList.remove("is-open");
+
+          if (mobileMenu.hidden) {
+            return;
+          }
+
+          mobileMenuHideTimeout = window.setTimeout(() => {
+            mobileMenu.hidden = true;
+            mobileMenuHideTimeout = null;
+          }, mobileMenuTransitionMs);
         };
 
         const activateTab = (target, updateHash = true) => {
