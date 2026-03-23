@@ -88,37 +88,37 @@
 </head>
 <body class="bg-background text-on-surface antialiased">
 <!-- SideNavBar -->
-<aside class="fixed left-0 top-0 h-full z-40 flex flex-col p-4 h-screen w-64 border-r-0 bg-slate-50 dark:bg-slate-950 font-['Plus_Jakarta_Sans'] antialiased">
+<aside class="hidden lg:fixed lg:left-0 lg:top-0 lg:z-40 lg:flex lg:h-screen lg:w-64 lg:flex-col lg:bg-slate-50 lg:p-4 lg:font-['Plus_Jakarta_Sans'] lg:antialiased">
 <div class="mb-8 px-4 py-2">
 <a class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50" href="index.html">Team Manage</a>
 <p class="text-xs text-slate-500 font-medium uppercase tracking-widest mt-1">Management Hub</p>
 </div>
 <nav aria-label="Employee navigation" class="flex-1 space-y-1" role="tablist">
-<a aria-controls="panel-dashboard" aria-selected="true" class="employee-tab flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 font-semibold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl hover:scale-[1.02] transition-all duration-200" data-tab-target="dashboard" href="#dashboard" role="tab">
+<a aria-controls="panel-dashboard" aria-selected="true" class="employee-tab flex items-center gap-3 px-4 py-3 text-blue-600 dark:text-blue-400 font-semibold bg-blue-50/50 dark:bg-blue-900/20 rounded-xl hover:scale-[1.02] transition-all duration-200" data-tab-label="Dashboard" data-tab-target="dashboard" href="#dashboard" role="tab">
 <span class="material-symbols-outlined">dashboard</span>
 <span>Dashboard</span>
 </a>
-<a aria-controls="panel-my-tasks" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="my-tasks" href="#my-tasks" role="tab">
+<a aria-controls="panel-my-tasks" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-label="My Tasks" data-tab-target="my-tasks" href="#my-tasks" role="tab">
 <span class="material-symbols-outlined">assignment</span>
 <span>My Tasks</span>
 </a>
-<a aria-controls="panel-calendar" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="calendar" href="#calendar" role="tab">
+<a aria-controls="panel-calendar" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-label="Calendar" data-tab-target="calendar" href="#calendar" role="tab">
 <span class="material-symbols-outlined">calendar_today</span>
 <span>Calendar</span>
 </a>
-<a aria-controls="panel-messages" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="messages" href="#messages" role="tab">
+<a aria-controls="panel-messages" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-label="Messages" data-tab-target="messages" href="#messages" role="tab">
 <span class="material-symbols-outlined">chat</span>
 <span>Messages</span>
 </a>
-<a aria-controls="panel-leave-requests" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="leave-requests" href="#leave-requests" role="tab">
+<a aria-controls="panel-leave-requests" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-label="Leave Requests" data-tab-target="leave-requests" href="#leave-requests" role="tab">
 <span class="material-symbols-outlined">event_busy</span>
 <span>Leave Requests</span>
 </a>
-<a aria-controls="panel-activity-logs" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="activity-logs" href="#activity-logs" role="tab">
+<a aria-controls="panel-activity-logs" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-label="Activity Logs" data-tab-target="activity-logs" href="#activity-logs" role="tab">
 <span class="material-symbols-outlined">history</span>
 <span>Activity Logs</span>
 </a>
-<a aria-controls="panel-insights" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-target="insights" href="#insights" role="tab">
+<a aria-controls="panel-insights" aria-selected="false" class="employee-tab flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-[1.02] transition-all duration-200 rounded-xl" data-tab-label="Insights" data-tab-target="insights" href="#insights" role="tab">
 <span class="material-symbols-outlined">insights</span>
 <span>Insights</span>
 </a>
@@ -137,13 +137,30 @@
 </div>
 </div>
 </aside>
+<div class="min-h-screen lg:ml-64">
 <!-- TopNavBar -->
-<header class="sticky top-0 right-0 z-30 flex justify-between items-center px-8 h-16 w-[calc(100%-16rem)] ml-64 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-[0_10px_30px_rgba(13,28,50,0.06)] font-['Plus_Jakarta_Sans'] text-sm">
-<div class="flex items-center gap-4 bg-surface-container-low px-4 py-2 rounded-full w-96">
+<header class="sticky top-0 z-30 border-b border-white/60 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-[0_10px_30px_rgba(13,28,50,0.06)] font-['Plus_Jakarta_Sans'] text-sm">
+<div class="flex flex-col gap-3 px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between gap-3 lg:hidden">
+<div>
+<a class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50" href="index.html">Team Manage</a>
+<p class="mt-1 text-[10px] font-medium uppercase tracking-[0.24em] text-slate-500">Employee Hub</p>
+</div>
+<button aria-controls="employee-mobile-tab-menu" aria-expanded="false" class="flex items-center gap-3 rounded-full border border-outline-variant/60 bg-white px-4 py-2 text-left shadow-sm transition-colors hover:bg-surface-container-low" id="employee-mobile-menu-button" type="button">
+<span class="material-symbols-outlined text-slate-600" id="employee-mobile-menu-icon">menu</span>
+<span class="min-w-0">
+<span class="block text-[10px] font-bold uppercase tracking-[0.24em] text-slate-400">Sections</span>
+<span class="block truncate text-sm font-semibold text-slate-900" id="employee-mobile-current-tab">Dashboard</span>
+</span>
+</button>
+</div>
+<div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+<div class="flex w-full items-center gap-3 rounded-full bg-surface-container-low px-4 py-2 lg:w-96">
 <span class="material-symbols-outlined text-slate-400">search</span>
 <input class="bg-transparent border-none outline-none text-on-surface-variant w-full placeholder:text-slate-400 text-sm" placeholder="Search tasks, docs, or people..." type="text"/>
 </div>
-<div class="flex items-center gap-4">
+<div class="flex items-center justify-between gap-3 sm:gap-4 lg:justify-end">
+<div class="flex items-center gap-2 sm:gap-4">
 <button class="hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 transition-colors relative">
 <span class="material-symbols-outlined text-slate-600 dark:text-slate-300">notifications</span>
 <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
@@ -151,30 +168,63 @@
 <button class="hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 transition-colors">
 <span class="material-symbols-outlined text-slate-600 dark:text-slate-300">help_outline</span>
 </button>
-<div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
-<div class="flex items-center gap-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 py-1.5 px-3 rounded-full transition-colors">
-<span class="font-medium text-slate-700 dark:text-slate-200">Profile</span>
+</div>
+<div class="hidden h-6 w-px bg-slate-200 dark:bg-slate-700 sm:block"></div>
+<div class="flex min-w-0 items-center gap-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 py-1.5 px-3 rounded-full transition-colors">
+<span class="hidden font-medium text-slate-700 dark:text-slate-200 sm:block">Profile</span>
 <img alt="Employee Avatar" class="w-8 h-8 rounded-full border-2 border-white shadow-sm" data-alt="Professional avatar of the current user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD53GmYBhTe8mz0Crw7RB01BDASiCdpOIdP2RTiA5Th0u3p7sGeR2M117NoQSg6lMrQeOOTiIrgiMU_BTtTsfzhHpw_CUmuOwuB-lAjfeRNfaKK9c2wDPGzH4wBwSJ8rS9foWmDCF6w3MbJcrop0s_6qFXrpSv2Uu3oSXUv5bM0JJLHKYXt67Uz49ty9W2V4heFpDSFRZgx5e8s8Ik3Pdg9QRAsA3wwdTFdjwS-1vL0D95W4d5Dipf-nYjnE0alTHYXV6_yIlBOOWSx"/>
 </div>
 </div>
+</div>
+<nav aria-label="Employee sections" class="hidden gap-1 rounded-3xl border border-outline-variant/50 bg-white/90 p-2 shadow-sm lg:hidden" hidden="" id="employee-mobile-tab-menu" role="tablist">
+<a aria-controls="panel-dashboard" aria-selected="true" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-blue-600 font-semibold bg-blue-50/50 transition-all duration-200" data-tab-label="Dashboard" data-tab-target="dashboard" href="#dashboard" role="tab">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a aria-controls="panel-my-tasks" aria-selected="false" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-slate-50 hover:text-slate-900" data-tab-label="My Tasks" data-tab-target="my-tasks" href="#my-tasks" role="tab">
+<span class="material-symbols-outlined">assignment</span>
+<span>My Tasks</span>
+</a>
+<a aria-controls="panel-calendar" aria-selected="false" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-slate-50 hover:text-slate-900" data-tab-label="Calendar" data-tab-target="calendar" href="#calendar" role="tab">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Calendar</span>
+</a>
+<a aria-controls="panel-messages" aria-selected="false" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-slate-50 hover:text-slate-900" data-tab-label="Messages" data-tab-target="messages" href="#messages" role="tab">
+<span class="material-symbols-outlined">chat</span>
+<span>Messages</span>
+</a>
+<a aria-controls="panel-leave-requests" aria-selected="false" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-slate-50 hover:text-slate-900" data-tab-label="Leave Requests" data-tab-target="leave-requests" href="#leave-requests" role="tab">
+<span class="material-symbols-outlined">event_busy</span>
+<span>Leave Requests</span>
+</a>
+<a aria-controls="panel-activity-logs" aria-selected="false" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-slate-50 hover:text-slate-900" data-tab-label="Activity Logs" data-tab-target="activity-logs" href="#activity-logs" role="tab">
+<span class="material-symbols-outlined">history</span>
+<span>Activity Logs</span>
+</a>
+<a aria-controls="panel-insights" aria-selected="false" class="employee-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-slate-50 hover:text-slate-900" data-tab-label="Insights" data-tab-target="insights" href="#insights" role="tab">
+<span class="material-symbols-outlined">insights</span>
+<span>Insights</span>
+</a>
+</nav>
+</div>
 </header>
 <!-- Main Content -->
-<main class="ml-64 p-8 min-h-screen">
+<main class="min-h-screen p-4 sm:p-6 lg:p-8">
 <section aria-labelledby="panel-dashboard-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="dashboard" id="panel-dashboard" role="tabpanel">
 <!-- Welcome Header -->
 <header class="flex flex-col gap-2">
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-dashboard-title">Good Morning, Rohan!</h2>
-<div class="flex items-center gap-2 text-on-surface-variant">
+<h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-dashboard-title">Good Morning, Rohan!</h2>
+<div class="flex flex-wrap items-center gap-2 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">task_alt</span>
 <span class="text-lg font-medium">You have <span class="text-primary font-bold">3 tasks</span> due today. Stay focused!</span>
 </div>
 </header>
 <!-- Main Layout Grid -->
-<div class="grid grid-cols-12 gap-8 items-start">
+<div class="grid grid-cols-12 gap-6 lg:gap-8 items-start">
 <!-- Center Column (Main Content) -->
 <div class="col-span-12 lg:col-span-8 space-y-8">
 <!-- Task Summary Bento Grid -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-b-4 border-primary/20 group hover:shadow-md transition-shadow">
 <p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Total</p>
 <h3 class="text-3xl font-extrabold text-on-surface">12</h3>
@@ -198,7 +248,7 @@
 </div>
 <!-- My Tasks List Section -->
 <div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
-<div class="px-8 py-6 flex justify-between items-center bg-white">
+<div class="bg-white px-6 py-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:px-8">
 <h3 class="text-xl font-extrabold font-headline">My Tasks</h3>
 <button class="text-primary font-bold text-sm hover:underline">View All</button>
 </div>
@@ -417,7 +467,7 @@
 <section aria-labelledby="panel-my-tasks-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="my-tasks" hidden="" id="panel-my-tasks" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-my-tasks-title">My Tasks</h2>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-my-tasks-title">My Tasks</h2>
 <p class="text-on-surface-variant font-medium">A deeper view of Rohan's personal workload, deadlines, and next actions.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -431,9 +481,9 @@
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Waiting Review</p><h3 class="text-3xl font-extrabold text-tertiary">02</h3><p class="mt-3 text-xs text-on-surface-variant">Items ready for Sarah's approval or team review.</p></div>
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Blocked</p><h3 class="text-3xl font-extrabold text-error">01</h3><p class="mt-3 text-xs text-on-surface-variant">One issue is still waiting on staging credentials.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 xl:col-span-8 bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
-<div class="px-8 py-6 flex justify-between items-center bg-white">
+<div class="bg-white px-6 py-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:px-8">
 <div>
 <h3 class="text-xl font-extrabold font-headline">Task Queue</h3>
 <p class="text-sm text-on-surface-variant mt-1">Expanded task view for the current employee only.</p>
@@ -521,7 +571,7 @@
 <section aria-labelledby="panel-calendar-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="calendar" hidden="" id="panel-calendar" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-calendar-title">My Calendar</h2>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-calendar-title">My Calendar</h2>
 <p class="text-on-surface-variant font-medium">Only Rohan's own meetings, focus blocks, deadlines, and approved time away.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -529,7 +579,7 @@
 <span class="rounded-full bg-surface-container-low px-4 py-2 text-on-surface-variant">4 personal deadlines</span>
 </div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 xl:col-span-8 bg-surface-container-lowest p-6 rounded-lg shadow-sm">
 <div class="flex justify-between items-center mb-6">
 <div>
@@ -600,7 +650,7 @@
 <section aria-labelledby="panel-messages-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="messages" hidden="" id="panel-messages" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-messages-title">Messages</h2>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-messages-title">Messages</h2>
 <p class="text-on-surface-variant font-medium">Direct conversations and project replies relevant to the current employee.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -613,7 +663,7 @@
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Starred</p><h3 class="text-3xl font-extrabold text-on-surface">03</h3><p class="mt-3 text-xs text-on-surface-variant">Pinned instructions and one release checklist thread.</p></div>
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Mentions</p><h3 class="text-3xl font-extrabold text-tertiary">02</h3><p class="mt-3 text-xs text-on-surface-variant">Tagged in QA, docs, and release planning discussions.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 xl:col-span-4 bg-surface-container-lowest p-6 rounded-lg shadow-sm">
 <h3 class="font-extrabold font-headline mb-4">Inbox</h3>
 <div class="space-y-3">
@@ -660,7 +710,7 @@
 <section aria-labelledby="panel-leave-requests-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="leave-requests" hidden="" id="panel-leave-requests" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-leave-requests-title">Leave Requests</h2>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-leave-requests-title">Leave Requests</h2>
 <p class="text-on-surface-variant font-medium">Personal leave balance, request history, and upcoming holidays for the current employee.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -673,7 +723,7 @@
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Used</p><h3 class="text-3xl font-extrabold text-tertiary">08 Days</h3><p class="mt-3 text-xs text-on-surface-variant">Taken across two vacations and one personal day.</p></div>
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Pending</p><h3 class="text-3xl font-extrabold text-error">01 Request</h3><p class="mt-3 text-xs text-on-surface-variant">Half-day request submitted for March 31 afternoon.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 xl:col-span-8 space-y-8">
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
 <h3 class="font-extrabold font-headline mb-4">Current Request</h3>
@@ -732,7 +782,7 @@
 <section aria-labelledby="panel-activity-logs-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="activity-logs" hidden="" id="panel-activity-logs" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-activity-logs-title">Activity Logs</h2>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-activity-logs-title">Activity Logs</h2>
 <p class="text-on-surface-variant font-medium">Personal login history, task updates, comments, and file activity for the employee account.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -746,7 +796,7 @@
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Comments</p><h3 class="text-3xl font-extrabold text-tertiary">14</h3><p class="mt-3 text-xs text-on-surface-variant">Notes added across docs and project threads.</p></div>
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Files Uploaded</p><h3 class="text-3xl font-extrabold text-on-surface">06</h3><p class="mt-3 text-xs text-on-surface-variant">Decks, notes, and release draft uploads.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 xl:col-span-8 bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
 <div class="px-8 py-6 border-b border-surface-container-low">
 <h3 class="font-extrabold font-headline text-xl">Recent Personal Activity</h3>
@@ -787,7 +837,7 @@
 <section aria-labelledby="panel-insights-title" class="max-w-[1400px] mx-auto space-y-8" data-tab-panel="insights" hidden="" id="panel-insights" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-insights-title">Insights</h2>
+<h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-on-surface tracking-tight" id="panel-insights-title">Insights</h2>
 <p class="text-on-surface-variant font-medium">Yearly performance, holiday usage, growth areas, and personal delivery trends for the current employee.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -801,7 +851,7 @@
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Holidays Used</p><h3 class="text-3xl font-extrabold text-on-surface">8 / 20</h3><p class="mt-3 text-xs text-on-surface-variant">Paid leave used so far this year, with 12 days remaining.</p></div>
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10"><p class="text-label-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Recognition</p><h3 class="text-3xl font-extrabold text-on-surface">3</h3><p class="mt-3 text-xs text-on-surface-variant">Public kudos received in product and ops channels.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 xl:col-span-8 space-y-8">
 <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
 <div class="flex justify-between items-center mb-6">
@@ -857,15 +907,44 @@
 </div>
 </section>
 </main>
+</div>
 <script src="site-motion.js"></script>
 <script>
       document.addEventListener("DOMContentLoaded", () => {
         const tabs = Array.from(document.querySelectorAll("[data-tab-target]"));
         const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+        const mobileMenuButton = document.getElementById("employee-mobile-menu-button");
+        const mobileMenu = document.getElementById("employee-mobile-tab-menu");
+        const mobileMenuIcon = document.getElementById("employee-mobile-menu-icon");
+        const mobileCurrentTab = document.getElementById("employee-mobile-current-tab");
+        const desktopBreakpoint = window.matchMedia("(min-width: 1024px)");
 
         if (!tabs.length || !panels.length) {
           return;
         }
+
+        const getTabLabel = (target) => {
+          const matchingTab = tabs.find((tab) => tab.dataset.tabTarget === target && tab.dataset.tabLabel);
+          return matchingTab?.dataset.tabLabel || target;
+        };
+
+        const setMobileMenuOpen = (isOpen) => {
+          if (!mobileMenuButton || !mobileMenu) {
+            return;
+          }
+
+          mobileMenu.hidden = !isOpen;
+          mobileMenu.classList.toggle("hidden", !isOpen);
+          mobileMenu.classList.toggle("grid", isOpen);
+          mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+          mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
+          mobileMenuButton.classList.toggle("bg-surface-container-low", isOpen);
+          mobileMenuButton.classList.toggle("border-primary/20", isOpen);
+
+          if (mobileMenuIcon) {
+            mobileMenuIcon.textContent = isOpen ? "close" : "menu";
+          }
+        };
 
         const activateTab = (target, updateHash = true) => {
           tabs.forEach((tab) => {
@@ -892,6 +971,14 @@
             }
           });
 
+          if (mobileCurrentTab) {
+            mobileCurrentTab.textContent = getTabLabel(target);
+          }
+
+          if (!desktopBreakpoint.matches) {
+            setMobileMenuOpen(false);
+          }
+
           if (updateHash) {
             window.history.replaceState(null, "", `#${target}`);
           }
@@ -904,9 +991,51 @@
           });
         });
 
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const isOpen = mobileMenuButton.getAttribute("aria-expanded") === "true";
+            setMobileMenuOpen(!isOpen);
+          });
+        }
+
+        document.addEventListener("click", (event) => {
+          const clickTarget = event.target;
+
+          if (!(clickTarget instanceof Node) || !mobileMenu || mobileMenu.hidden || !mobileMenuButton) {
+            return;
+          }
+
+          if (mobileMenu.contains(clickTarget) || mobileMenuButton.contains(clickTarget)) {
+            return;
+          }
+
+          setMobileMenuOpen(false);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            setMobileMenuOpen(false);
+          }
+        });
+
+        const handleBreakpointChange = (event) => {
+          if (event.matches) {
+            setMobileMenuOpen(false);
+          }
+        };
+
+        if (typeof desktopBreakpoint.addEventListener === "function") {
+          desktopBreakpoint.addEventListener("change", handleBreakpointChange);
+        } else if (typeof desktopBreakpoint.addListener === "function") {
+          desktopBreakpoint.addListener(handleBreakpointChange);
+        }
+
         const initialHash = window.location.hash.replace("#", "");
         const initialTarget = panels.some((panel) => panel.dataset.tabPanel === initialHash) ? initialHash : "dashboard";
 
+        setMobileMenuOpen(false);
         activateTab(initialTarget, Boolean(initialHash));
       });
     </script>
