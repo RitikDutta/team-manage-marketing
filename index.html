@@ -133,19 +133,28 @@
 </div>
 <div class="relative">
 <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
-<div class="relative bg-white rounded-lg shadow-2xl border border-outline-variant/10 overflow-hidden transform lg:rotate-2 hover:rotate-0 transition-transform duration-700">
-<img class="w-full h-auto" data-alt="High-fidelity SaaS dashboard mockup with analytics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx88Os4_YxG2KGurIGGISbl2F9hNRcd8oaN8-O4Ptlb-jbzVKiHzqWTSrHZTNL-o7MgYnxgGysBgSjk1LvEFLIwFZ1Z1MnsAbs2UC9dXM5b27SoFgy7R2FN2HSHPzuP3B-v-_mlmh-Y8L1CX3nBt9KKo836eGbxEFeJiLCaNKiHbHd34zAmOm0Uo1D_kQB_xSWv37edGpZN_ZjHiYdCk0SbbBaL4ZtJGy5TAyI6L1ZMWjulPYM00KG0Ld-HiW3qXNEgS8S4L7GyMvt"/>
-<div class="absolute top-4 left-4 glass-panel p-4 rounded-xl shadow-lg border border-white/40">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined" data-weight="fill">trending_up</span>
+<div class="hero-video-preview relative rounded-[2rem] shadow-2xl border border-outline-variant/10 overflow-hidden transform lg:rotate-2 hover:rotate-0 transition-transform duration-700" data-hero-video-preview="">
+<div class="hero-video-stage">
+<video autoplay="" class="hero-video-inline w-full h-full" data-hero-video-inline="" loop="" muted="" playsinline="" preload="metadata">
+<source src="https://res.cloudinary.com/dh4fnax0g/video/upload/v1774238876/Architecting_Clarity__The_Breaking_Point_of_Scaling_Teams_ywufpq.mp4" type="video/mp4"/>
+</video>
 </div>
-<div>
-<p class="text-[10px] font-label font-bold text-on-surface-variant uppercase">Efficiency</p>
-<p class="text-lg font-headline font-extrabold text-primary">+78%</p>
-</div>
-</div>
-</div>
+<button aria-controls="hero-video-overlay" aria-haspopup="dialog" aria-label="Play Team Manage overview video fullscreen with sound" class="hero-video-trigger block w-full text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/25" data-hero-video-trigger="" data-no-motion-button="" type="button">
+<span class="hero-video-overlay-copy">
+<span class="hero-video-chip">
+<span class="material-symbols-outlined">smart_display</span>
+<span>Overview</span>
+</span>
+<span class="hero-video-play-row">
+<span class="hero-video-play-icon material-symbols-outlined">play_arrow</span>
+</span>
+<span class="hero-video-meta">
+<span class="hero-video-kicker">Video preview</span>
+<span class="hero-video-title">Architecting Clarity</span>
+<span class="hero-video-caption">Preview runs silently here. Click to open the fullscreen version with sound from the start.</span>
+</span>
+</span>
+</button>
 </div>
 </div>
 </div>
@@ -471,5 +480,16 @@
 <p class="text-slate-500 dark:text-slate-400 text-sm font-body">© 2024 Team Manage. All rights reserved.</p>
 </div>
 </footer>
+<div aria-hidden="true" class="hero-video-lightbox" data-hero-video-overlay="" hidden="" id="hero-video-overlay">
+<button aria-label="Close overview video" class="hero-video-backdrop" data-hero-video-close="" data-no-motion-button="" type="button"></button>
+<div aria-label="Team Manage overview video" aria-modal="true" class="hero-video-shell" data-hero-video-shell="" role="dialog">
+<button aria-label="Close overview video" class="hero-video-close focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40" data-hero-video-close="" data-no-motion-button="" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+<video class="hero-video-expanded" controls="" data-hero-video-expanded="" data-no-motion-visual="" playsinline="" preload="metadata">
+<source src="https://res.cloudinary.com/dh4fnax0g/video/upload/v1774238876/Architecting_Clarity__The_Breaking_Point_of_Scaling_Teams_ywufpq.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
 <script src="site-motion.js"></script>
 </body></html>

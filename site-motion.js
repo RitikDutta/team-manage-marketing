@@ -10,6 +10,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const qsa = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
   const unique = (items) => Array.from(new Set(items.filter(Boolean)));
   const reveals = new Set();
+  const safePlay = (media) => {
+    if (!media) {
+      return;
+    }
+
+    const playAttempt = media.play();
+
+    if (playAttempt && typeof playAttempt.catch === "function") {
+      playAttempt.catch(() => {});
+    }
+  };
+
+  const setMediaTime = (media, nextTime) => {
+    if (!media || !Number.isFinite(nextTime)) {
+      return;
+    }
+
+    const applyTime = () => {
+      try {
+        media.currentTime = nextTime;
+      } catch (error) {
+        return;
+      }
+    };
+
+    if (media.readyState >= 1) {
+      applyTime();
+      return;
+    }
+
+    media.addEventListener("loadedmetadata", applyTime, { once: true });
+  };
 
   const isFixedLike = (element) => {
     const position = window.getComputedStyle(element).position;
@@ -76,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ...qsa("a.inline-flex"),
     ...qsa("a.flex.items-center.justify-center"),
     ...qsa("button")
-  ]).filter((element) => !element.closest("aside nav"));
+  ]).filter((element) => !element.closest("aside nav") && !element.matches("[data-no-motion-button]"));
 
   buttonLike.forEach((element) => element.classList.add("motion-button", "motion-transform"));
 
@@ -155,18 +187,220 @@ document.addEventListener("DOMContentLoaded", () => {
     ...qsa("body > header [class*='overflow-hidden']"),
     ...qsa("body > section:first-of-type [class*='overflow-hidden']"),
     ...qsa("main > section:first-child [class*='overflow-hidden']"),
-    ...surfaceCards.filter((element) => element.querySelector("img"))
+    ...surfaceCards.filter((element) => element.querySelector("img, video"))
   ]).filter((element) => isLargeEnough(element, 220, 160));
 
   mediaFrames.forEach((element) => element.classList.add("motion-media"));
 
-  const visuals = qsa("img").filter((image) => isLargeEnough(image, 120, 80));
-  visuals.forEach((image) => image.classList.add("motion-visual"));
+  const visuals = qsa("img, video").filter(
+    (media) => isLargeEnough(media, 120, 80) && !media.matches("[data-no-motion-visual]")
+  );
+  visuals.forEach((media) => media.classList.add("motion-visual"));
 
   const parallaxTargets = mediaFrames.slice(0, 12);
   parallaxTargets.forEach((element, index) => {
     element.classList.add("motion-transform");
     element.dataset.parallaxDepth = String(0.04 + (index % 4) * 0.015);
+  });
+
+  const heroVideoPreview = document.querySelector("[data-hero-video-preview]");
+  const heroVideoTrigger = document.querySelector("[data-hero-video-trigger]");
+  const heroVideoInline = document.querySelector("[data-hero-video-inline]");
+  const heroVideoOverlay = document.querySelector("[data-hero-video-overlay]");
+  const heroVideoShell = document.querySelector("[data-hero-video-shell]");
+  const heroVideoExpanded = document.querySelector("[data-hero-video-expanded]");
+  const heroVideoCloseButtons = qsa("[data-hero-video-close]");
+  const heroVideoPrimaryClose = document.querySelector(".hero-video-close");
+
+  let heroVideoIsOpen = false;
+  let heroVideoCleanupTimer = 0;
+  let heroVideoLastFocus = null;
+
+  const clearHeroVideoTimer = () => {
+    if (!heroVideoCleanupTimer) {
+      return;
+    }
+
+    window.clearTimeout(heroVideoCleanupTimer);
+    heroVideoCleanupTimer = 0;
+  };
+
+  const getHeroVideoPreviewRect = () => {
+    if (!heroVideoPreview) {
+      return null;
+    }
+
+    const rect = heroVideoPreview.getBoundingClientRect();
+    const radius = Number.parseFloat(window.getComputedStyle(heroVideoPreview).borderTopLeftRadius) || 32;
+
+    return {
+      top: rect.top,
+      left: rect.left,
+      width: rect.width,
+      height: rect.height,
+      radius
+    };
+  };
+
+  const getHeroVideoTargetRect = () => {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight,
+      radius: 0
+    };
+  };
+
+  const applyHeroVideoRect = (rect) => {
+    if (!heroVideoShell || !rect) {
+      return;
+    }
+
+    heroVideoShell.style.top = `${rect.top}px`;
+    heroVideoShell.style.left = `${rect.left}px`;
+    heroVideoShell.style.width = `${rect.width}px`;
+    heroVideoShell.style.height = `${rect.height}px`;
+    heroVideoShell.style.borderRadius = `${rect.radius}px`;
+  };
+
+  const cleanupHeroVideo = () => {
+    if (!heroVideoOverlay || !heroVideoShell || !heroVideoPreview) {
+      return;
+    }
+
+    clearHeroVideoTimer();
+    heroVideoOverlay.hidden = true;
+    heroVideoOverlay.setAttribute("aria-hidden", "true");
+    heroVideoOverlay.classList.remove("is-mounted");
+    body.classList.remove("hero-video-lock");
+    heroVideoPreview.classList.remove("is-active");
+    heroVideoShell.removeAttribute("style");
+
+    if (heroVideoLastFocus && typeof heroVideoLastFocus.focus === "function") {
+      heroVideoLastFocus.focus({ preventScroll: true });
+    }
+  };
+
+  const openHeroVideo = () => {
+    if (
+      heroVideoIsOpen ||
+      !heroVideoPreview ||
+      !heroVideoOverlay ||
+      !heroVideoShell ||
+      !heroVideoInline ||
+      !heroVideoExpanded
+    ) {
+      return;
+    }
+
+    const startRect = getHeroVideoPreviewRect();
+    const targetRect = getHeroVideoTargetRect();
+
+    if (!startRect || !targetRect) {
+      return;
+    }
+
+    heroVideoIsOpen = true;
+    clearHeroVideoTimer();
+    heroVideoLastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    heroVideoExpanded.pause();
+    setMediaTime(heroVideoExpanded, 0);
+
+    heroVideoOverlay.hidden = false;
+    heroVideoOverlay.setAttribute("aria-hidden", "false");
+    heroVideoOverlay.classList.add("is-mounted");
+    body.classList.add("hero-video-lock");
+    heroVideoPreview.classList.add("is-active");
+    applyHeroVideoRect(startRect);
+
+    heroVideoInline.pause();
+    heroVideoExpanded.muted = false;
+    heroVideoExpanded.volume = 1;
+
+    window.requestAnimationFrame(() => {
+      heroVideoOverlay.classList.add("is-open");
+
+      if (reducedMotion) {
+        applyHeroVideoRect(targetRect);
+      } else {
+        window.requestAnimationFrame(() => applyHeroVideoRect(targetRect));
+      }
+    });
+
+    safePlay(heroVideoExpanded);
+    window.setTimeout(() => {
+      if (heroVideoIsOpen) {
+        heroVideoPrimaryClose?.focus({ preventScroll: true });
+      }
+    }, reducedMotion ? 0 : 180);
+  };
+
+  const closeHeroVideo = () => {
+    if (
+      !heroVideoIsOpen ||
+      !heroVideoPreview ||
+      !heroVideoOverlay ||
+      !heroVideoShell ||
+      !heroVideoInline ||
+      !heroVideoExpanded
+    ) {
+      return;
+    }
+
+    const endRect = getHeroVideoPreviewRect();
+
+    heroVideoIsOpen = false;
+    clearHeroVideoTimer();
+    heroVideoOverlay.classList.remove("is-open");
+    heroVideoExpanded.pause();
+    heroVideoExpanded.muted = true;
+    heroVideoInline.muted = true;
+    safePlay(heroVideoInline);
+
+    if (endRect) {
+      applyHeroVideoRect(endRect);
+    }
+
+    heroVideoCleanupTimer = window.setTimeout(cleanupHeroVideo, reducedMotion ? 0 : 820);
+  };
+
+  if (heroVideoInline) {
+    heroVideoInline.defaultMuted = true;
+    heroVideoInline.muted = true;
+    safePlay(heroVideoInline);
+  }
+
+  if (heroVideoExpanded) {
+    heroVideoExpanded.muted = true;
+  }
+
+  if (heroVideoTrigger) {
+    heroVideoTrigger.addEventListener("click", openHeroVideo);
+  }
+
+  heroVideoCloseButtons.forEach((button) => button.addEventListener("click", closeHeroVideo));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && heroVideoIsOpen) {
+      closeHeroVideo();
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (!heroVideoInline) {
+      return;
+    }
+
+    if (document.hidden) {
+      heroVideoInline.pause();
+      return;
+    }
+
+    if (!heroVideoIsOpen) {
+      heroVideoInline.muted = true;
+      safePlay(heroVideoInline);
+    }
   });
 
   const revealItems = Array.from(reveals);
@@ -250,4 +484,9 @@ document.addEventListener("DOMContentLoaded", () => {
   requestFrameUpdate();
   window.addEventListener("scroll", requestFrameUpdate, { passive: true });
   window.addEventListener("resize", requestFrameUpdate, { passive: true });
+  window.addEventListener("resize", () => {
+    if (heroVideoIsOpen) {
+      applyHeroVideoRect(getHeroVideoTargetRect());
+    }
+  });
 });
