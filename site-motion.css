@@ -242,6 +242,10 @@ a.motion-nav-link:not([class*="px-"])::after {
   bottom: -0.35rem;
 }
 
+body > nav > div > a.motion-nav-link::after {
+  display: none;
+}
+
 .motion-nav-link:hover,
 .motion-nav-link:focus-visible {
   --hover-y: -2px;

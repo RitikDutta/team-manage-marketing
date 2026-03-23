@@ -58,15 +58,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navLinks = unique([
     ...qsa("nav a[href]"),
-    ...qsa("aside nav a[href]"),
-    ...qsa("footer a[href]")
+    ...qsa("aside nav a[href]")
   ]);
+  const footerLinks = qsa("footer a[href]");
+  const motionLinks = unique([...navLinks, ...footerLinks]);
 
-  navLinks.forEach((link) => {
+  motionLinks.forEach((link) => {
     const href = (link.getAttribute("href") || "").split("#")[0].toLowerCase();
     link.classList.add("motion-nav-link", "motion-transform");
 
-    if (href && href === currentPage) {
+    if (navLinks.includes(link) && href && href === currentPage) {
       link.classList.add("is-current");
     }
   });
