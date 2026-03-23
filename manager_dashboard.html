@@ -92,41 +92,41 @@
 <link href="site-motion.css" rel="stylesheet"/>
 </head>
 <body class="bg-background font-body text-on-background antialiased">
-<aside class="fixed left-0 top-0 z-50 flex h-screen w-64 flex-col bg-slate-50 px-4 py-6 font-['Plus_Jakarta_Sans'] text-sm font-medium">
+<aside class="hidden lg:fixed lg:left-0 lg:top-0 lg:z-50 lg:flex lg:h-screen lg:w-64 lg:flex-col lg:bg-slate-50 lg:px-4 lg:py-6 lg:font-['Plus_Jakarta_Sans'] lg:text-sm lg:font-medium">
 <div class="mb-10 px-4">
 <a class="text-xl font-bold tracking-tight text-slate-900" href="index.html">Team Manage</a>
 <p class="text-xs font-normal text-slate-500">Enterprise SaaS</p>
 </div>
 <nav aria-label="Manager navigation" class="flex-1 space-y-1" role="tablist">
-<a aria-controls="panel-dashboard" aria-selected="true" class="manager-tab flex items-center gap-3 border-r-4 border-blue-600 bg-blue-50/50 px-4 py-3 font-bold text-blue-600 transition-all duration-200" data-tab-target="dashboard" href="#dashboard" role="tab">
+<a aria-controls="panel-dashboard" aria-selected="true" class="manager-tab flex items-center gap-3 border-r-4 border-blue-600 bg-blue-50/50 px-4 py-3 font-bold text-blue-600 transition-all duration-200" data-tab-label="Dashboard" data-tab-target="dashboard" href="#dashboard" role="tab">
 <span class="material-symbols-outlined">dashboard</span>
                 Dashboard
             </a>
-<a aria-controls="panel-team-tasks" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="team-tasks" href="#team-tasks" role="tab">
+<a aria-controls="panel-team-tasks" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Team Tasks" data-tab-target="team-tasks" href="#team-tasks" role="tab">
 <span class="material-symbols-outlined">assignment</span>
                 Team Tasks
             </a>
-<a aria-controls="panel-employees" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="employees" href="#employees" role="tab">
+<a aria-controls="panel-employees" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Employees" data-tab-target="employees" href="#employees" role="tab">
 <span class="material-symbols-outlined">group</span>
                 Employees
             </a>
-<a aria-controls="panel-calendar" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="calendar" href="#calendar" role="tab">
+<a aria-controls="panel-calendar" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Calendar" data-tab-target="calendar" href="#calendar" role="tab">
 <span class="material-symbols-outlined">calendar_today</span>
                 Calendar
             </a>
-<a aria-controls="panel-messages" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="messages" href="#messages" role="tab">
+<a aria-controls="panel-messages" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Messages" data-tab-target="messages" href="#messages" role="tab">
 <span class="material-symbols-outlined">chat</span>
                 Messages
             </a>
-<a aria-controls="panel-leave-approvals" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="leave-approvals" href="#leave-approvals" role="tab">
+<a aria-controls="panel-leave-approvals" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Leave Approvals" data-tab-target="leave-approvals" href="#leave-approvals" role="tab">
 <span class="material-symbols-outlined">event_busy</span>
                 Leave Approvals
             </a>
-<a aria-controls="panel-activity-logs" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="activity-logs" href="#activity-logs" role="tab">
+<a aria-controls="panel-activity-logs" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Activity Logs" data-tab-target="activity-logs" href="#activity-logs" role="tab">
 <span class="material-symbols-outlined">history</span>
                 Activity Logs
             </a>
-<a aria-controls="panel-reports" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-target="reports" href="#reports" role="tab">
+<a aria-controls="panel-reports" aria-selected="false" class="manager-tab flex items-center gap-3 border-r-4 border-transparent px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Reports" data-tab-target="reports" href="#reports" role="tab">
 <span class="material-symbols-outlined">assessment</span>
                 Reports
             </a>
@@ -145,33 +145,85 @@
 </div>
 </div>
 </aside>
-<header class="fixed left-64 right-0 top-0 z-40 flex h-16 items-center justify-between bg-white/70 px-8 font-['Plus_Jakarta_Sans'] text-sm shadow-sm backdrop-blur-md">
-<div class="flex w-96 items-center rounded-full bg-surface-container-low px-4 py-2">
+<div class="min-h-screen lg:ml-64">
+<header class="sticky top-0 z-40 border-b border-white/60 bg-white/80 font-['Plus_Jakarta_Sans'] text-sm shadow-sm backdrop-blur-md">
+<div class="flex flex-col gap-3 px-4 py-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between gap-3 lg:hidden">
+<div>
+<a class="text-lg font-bold tracking-tight text-slate-900" href="index.html">Team Manage</a>
+<p class="mt-1 text-[10px] font-medium uppercase tracking-[0.24em] text-slate-500">Manager Hub</p>
+</div>
+<button aria-controls="manager-mobile-tab-menu" aria-expanded="false" class="flex items-center gap-3 rounded-full border border-outline-variant/60 bg-white px-4 py-2 text-left shadow-sm transition-colors hover:bg-surface-container-low" id="manager-mobile-menu-button" type="button">
+<span class="material-symbols-outlined text-slate-600 transition-transform duration-300" id="manager-mobile-menu-icon">menu</span>
+<span class="min-w-0">
+<span class="block text-[10px] font-bold uppercase tracking-[0.24em] text-slate-400">Sections</span>
+<span class="block truncate text-sm font-semibold text-slate-900" id="manager-mobile-current-tab">Dashboard</span>
+</span>
+</button>
+</div>
+<div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+<div class="flex w-full items-center rounded-full bg-surface-container-low px-4 py-2 lg:w-96">
 <span class="material-symbols-outlined mr-2 text-slate-400">search</span>
 <input class="w-full border-none bg-transparent text-xs text-slate-600 focus:ring-0" placeholder="Search team, tasks, or messages..." type="text"/>
 </div>
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-4 text-slate-600">
-<button class="relative transition-colors hover:text-blue-600">
+<div class="flex items-center justify-between gap-3 sm:gap-4 lg:justify-end">
+<div class="flex items-center gap-3 text-slate-600 sm:gap-4">
+<button class="relative rounded-full p-2 transition-colors hover:bg-slate-50 hover:text-blue-600">
 <span class="material-symbols-outlined">notifications</span>
-<span class="absolute right-0 top-0 h-2 w-2 rounded-full bg-error ring-2 ring-white"></span>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-error ring-2 ring-white"></span>
 </button>
-<button class="transition-colors hover:text-blue-600">
+<button class="rounded-full p-2 transition-colors hover:bg-slate-50 hover:text-blue-600">
 <span class="material-symbols-outlined">help_outline</span>
 </button>
 </div>
-<div class="h-8 w-px bg-slate-200"></div>
-<button class="flex items-center gap-2 font-semibold text-slate-900">
+<div class="hidden h-8 w-px bg-slate-200 sm:block"></div>
+<button class="flex items-center gap-2 rounded-full bg-white px-3 py-2 font-semibold text-slate-900 shadow-sm transition-colors hover:bg-slate-50">
 <span class="material-symbols-outlined">bolt</span>
-                Quick Actions
-            </button>
+<span class="hidden sm:inline">Quick Actions</span>
+</button>
+</div>
+</div>
+<nav aria-label="Manager sections" class="manager-mobile-menu grid gap-1 rounded-3xl border border-outline-variant/50 bg-white/90 shadow-sm lg:hidden" hidden="" id="manager-mobile-tab-menu" role="tablist">
+<a aria-controls="panel-dashboard" aria-selected="true" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 font-bold text-blue-600 bg-blue-50/50 transition-all duration-200" data-tab-label="Dashboard" data-tab-target="dashboard" href="#dashboard" role="tab">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a aria-controls="panel-team-tasks" aria-selected="false" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Team Tasks" data-tab-target="team-tasks" href="#team-tasks" role="tab">
+<span class="material-symbols-outlined">assignment</span>
+<span>Team Tasks</span>
+</a>
+<a aria-controls="panel-employees" aria-selected="false" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Employees" data-tab-target="employees" href="#employees" role="tab">
+<span class="material-symbols-outlined">group</span>
+<span>Employees</span>
+</a>
+<a aria-controls="panel-calendar" aria-selected="false" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Calendar" data-tab-target="calendar" href="#calendar" role="tab">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Calendar</span>
+</a>
+<a aria-controls="panel-messages" aria-selected="false" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Messages" data-tab-target="messages" href="#messages" role="tab">
+<span class="material-symbols-outlined">chat</span>
+<span>Messages</span>
+</a>
+<a aria-controls="panel-leave-approvals" aria-selected="false" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Leave Approvals" data-tab-target="leave-approvals" href="#leave-approvals" role="tab">
+<span class="material-symbols-outlined">event_busy</span>
+<span>Leave Approvals</span>
+</a>
+<a aria-controls="panel-activity-logs" aria-selected="false" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Activity Logs" data-tab-target="activity-logs" href="#activity-logs" role="tab">
+<span class="material-symbols-outlined">history</span>
+<span>Activity Logs</span>
+</a>
+<a aria-controls="panel-reports" aria-selected="false" class="manager-tab flex items-center gap-3 rounded-2xl px-4 py-3 text-slate-500 transition-all duration-200 hover:bg-blue-50/50 hover:text-slate-900" data-tab-label="Reports" data-tab-target="reports" href="#reports" role="tab">
+<span class="material-symbols-outlined">assessment</span>
+<span>Reports</span>
+</a>
+</nav>
 </div>
 </header>
-<main class="ml-64 mt-16 min-h-screen space-y-8 p-8">
+<main class="min-h-screen space-y-8 p-4 sm:p-6 lg:p-8">
 <section aria-labelledby="panel-dashboard-title" data-tab-panel="dashboard" id="panel-dashboard" role="tabpanel">
 <div class="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row">
 <div class="space-y-1">
-<h2 class="text-3xl font-extrabold font-headline tracking-tight text-on-background" id="panel-dashboard-title">Team Operations Overview</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight text-on-background" id="panel-dashboard-title">Team Operations Overview</h2>
 <p class="flex items-center gap-2 font-medium text-secondary">
 <span class="h-2 w-2 rounded-full bg-tertiary"></span>
                     System operational. 12 team members active across 4 projects.
@@ -242,7 +294,7 @@
 </div>
 </div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 space-y-8 xl:col-span-8">
 <div class="rounded-lg bg-surface-container-lowest p-8 shadow-sm">
 <div class="mb-8 flex items-center justify-between">
@@ -451,7 +503,7 @@
 <section aria-labelledby="panel-team-tasks-title" class="space-y-8" data-tab-panel="team-tasks" hidden="" id="panel-team-tasks" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-team-tasks-title">Team Tasks</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight" id="panel-team-tasks-title">Team Tasks</h2>
 <p class="font-medium text-secondary">Demo queue for the current sprint, priority review, and workload balance.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -466,7 +518,7 @@
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">At Risk</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">3</p><p class="mt-3 text-xs text-secondary">Waiting on design feedback or infra access.</p></div>
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Ready For Review</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">5</p><p class="mt-3 text-xs text-secondary">Can be cleared in the next manager check-in.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm xl:col-span-8">
 <div class="flex flex-col gap-4 border-b border-outline-variant/10 p-6 md:flex-row md:items-center md:justify-between">
 <div>
@@ -557,7 +609,7 @@
 <section aria-labelledby="panel-employees-title" class="space-y-8" data-tab-panel="employees" hidden="" id="panel-employees" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-employees-title">Employees</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight" id="panel-employees-title">Employees</h2>
 <p class="font-medium text-secondary">Demo staff directory with workload, availability, and current focus areas.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -587,7 +639,7 @@
 <section aria-labelledby="panel-calendar-title" class="space-y-8" data-tab-panel="calendar" hidden="" id="panel-calendar" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-calendar-title">Calendar</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight" id="panel-calendar-title">Calendar</h2>
 <p class="font-medium text-secondary">Demo planning board for the week of March 23, 2026.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -600,7 +652,7 @@
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Leave Booked</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">2</p><p class="mt-3 text-xs text-secondary">Thursday and Friday coverage needs confirmation.</p></div>
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Milestones</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">3</p><p class="mt-3 text-xs text-secondary">Alpha sign-off, payroll export QA, support playbook draft.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 rounded-lg bg-surface-container-lowest p-6 shadow-sm xl:col-span-8">
 <div class="mb-6 flex items-center justify-between">
 <div>
@@ -631,7 +683,7 @@
 <section aria-labelledby="panel-messages-title" class="space-y-8" data-tab-panel="messages" hidden="" id="panel-messages" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-messages-title">Messages</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight" id="panel-messages-title">Messages</h2>
 <p class="font-medium text-secondary">Demo conversations between the manager, staff, and project channels.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -644,7 +696,7 @@
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Announcements</p><p class="mt-3 text-3xl font-extrabold font-headline">2</p><p class="mt-3 text-xs text-secondary">Launch reminder and PTO policy update are queued.</p></div>
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Escalations</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">1</p><p class="mt-3 text-xs text-secondary">Only the SSO thread is marked high urgency.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 rounded-lg bg-surface-container-lowest p-6 shadow-sm xl:col-span-4">
 <div class="mb-4 flex items-center justify-between"><h3 class="text-lg font-bold font-headline">Inbox</h3><span class="text-[10px] font-bold uppercase tracking-wider text-secondary">Live demo</span></div>
 <div class="space-y-3">
@@ -671,7 +723,7 @@
 <section aria-labelledby="panel-leave-approvals-title" class="space-y-8" data-tab-panel="leave-approvals" hidden="" id="panel-leave-approvals" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-leave-approvals-title">Leave Approvals</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight" id="panel-leave-approvals-title">Leave Approvals</h2>
 <p class="font-medium text-secondary">Demo requests awaiting manager approval, with coverage notes and conflicts.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -684,7 +736,7 @@
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Coverage Conflicts</p><p class="mt-3 text-3xl font-extrabold font-headline">1</p><p class="mt-3 text-xs text-secondary">Thursday security coverage becomes thin if approved.</p></div>
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Average Response</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">6h</p><p class="mt-3 text-xs text-secondary">Approval turnaround for March requests so far.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 space-y-6 xl:col-span-8">
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between"><div class="flex items-start gap-4"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-error-container text-sm font-bold text-on-error-container">SJ</span><div><p class="font-bold">Sarah J.</p><p class="text-sm text-secondary">PTO request for March 26 to March 27</p><p class="mt-2 text-xs text-secondary">Reason: Family travel. Backup suggested: Nina handles policy escalations, Rahul covers release triage.</p></div></div><div class="flex gap-2"><button class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">Approve</button><button class="rounded-full bg-error-container px-4 py-2 text-xs font-bold text-on-error-container">Decline</button></div></div></div>
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between"><div class="flex items-start gap-4"><span class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container text-sm font-bold text-primary">RS</span><div><p class="font-bold">Rahul S.</p><p class="text-sm text-secondary">Remote work request for March 25</p><p class="mt-2 text-xs text-secondary">Reason: Home internet maintenance. No meeting conflicts. Available online for all scheduled reviews.</p></div></div><div class="flex gap-2"><button class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white">Approve</button><button class="rounded-full bg-error-container px-4 py-2 text-xs font-bold text-on-error-container">Decline</button></div></div></div>
@@ -699,7 +751,7 @@
 <section aria-labelledby="panel-activity-logs-title" class="space-y-8" data-tab-panel="activity-logs" hidden="" id="panel-activity-logs" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-activity-logs-title">Activity Logs</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight" id="panel-activity-logs-title">Activity Logs</h2>
 <p class="font-medium text-secondary">Demo audit trail across logins, approvals, task activity, and system actions.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -713,7 +765,7 @@
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Approvals</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">9</p><p class="mt-3 text-xs text-secondary">Leave, reimbursement, and content release approvals.</p></div>
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Critical Alerts</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">2</p><p class="mt-3 text-xs text-secondary">Repeated failed access on admin routes.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 overflow-hidden rounded-lg bg-surface-container-lowest shadow-sm xl:col-span-8">
 <div class="border-b border-outline-variant/10 p-6"><h3 class="text-xl font-bold font-headline">Audit Timeline</h3><p class="mt-1 text-sm text-secondary">Representative sample records for a manager demo.</p></div>
 <div class="overflow-x-auto">
@@ -747,7 +799,7 @@
 <section aria-labelledby="panel-reports-title" class="space-y-8" data-tab-panel="reports" hidden="" id="panel-reports" role="tabpanel">
 <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 <div>
-<h2 class="text-3xl font-extrabold font-headline tracking-tight" id="panel-reports-title">Reports</h2>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-headline tracking-tight" id="panel-reports-title">Reports</h2>
 <p class="font-medium text-secondary">Demo manager reporting snapshot with delivery, utilization, and team health summaries.</p>
 </div>
 <div class="flex flex-wrap gap-3 text-xs font-bold">
@@ -761,7 +813,7 @@
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">Utilization</p><p class="mt-3 text-3xl font-extrabold font-headline text-tertiary">78%</p><p class="mt-3 text-xs text-secondary">Healthy level without sustained overtime.</p></div>
 <div class="rounded-lg border border-outline-variant/10 bg-surface-container-lowest p-6 shadow-sm"><p class="text-label-sm text-secondary">SLA Misses</p><p class="mt-3 text-3xl font-extrabold font-headline text-error">2</p><p class="mt-3 text-xs text-secondary">Both tied to security approvals waiting on credentials.</p></div>
 </div>
-<div class="grid grid-cols-12 gap-8">
+<div class="grid grid-cols-12 gap-6 lg:gap-8">
 <div class="col-span-12 space-y-8 xl:col-span-8">
 <div class="rounded-lg bg-surface-container-lowest p-6 shadow-sm">
 <h3 class="mb-6 text-xl font-bold font-headline">Department Output</h3>
@@ -801,7 +853,8 @@
 </div>
 </section>
 </main>
-<div class="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3">
+</div>
+<div class="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-8 sm:right-8">
 <div class="hidden mb-4 space-y-2" id="quick-actions-menu">
 <button class="flex items-center gap-3 rounded-full border border-slate-100 bg-white px-4 py-2 text-sm font-semibold text-on-background shadow-lg transition-colors hover:bg-slate-50">
 <span class="material-symbols-outlined text-sm">mail</span>
@@ -821,10 +874,77 @@
       document.addEventListener("DOMContentLoaded", () => {
         const tabs = Array.from(document.querySelectorAll("[data-tab-target]"));
         const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+        const mobileMenuButton = document.getElementById("manager-mobile-menu-button");
+        const mobileMenu = document.getElementById("manager-mobile-tab-menu");
+        const mobileMenuIcon = document.getElementById("manager-mobile-menu-icon");
+        const mobileCurrentTab = document.getElementById("manager-mobile-current-tab");
+        const desktopBreakpoint = window.matchMedia("(min-width: 1024px)");
+        const mobileMenuTabs = mobileMenu ? Array.from(mobileMenu.querySelectorAll("[data-tab-target]")) : [];
+        const mobileMenuTransitionMs = 320;
+        let mobileMenuHideTimeout = null;
 
         if (!tabs.length || !panels.length) {
           return;
         }
+
+        const getTabLabel = (target) => {
+          const matchingTab = tabs.find((tab) => tab.dataset.tabTarget === target && tab.dataset.tabLabel);
+          return matchingTab?.dataset.tabLabel || target;
+        };
+
+        const setMobileMenuFocusable = (isOpen) => {
+          mobileMenuTabs.forEach((tab) => {
+            tab.tabIndex = isOpen ? 0 : -1;
+          });
+        };
+
+        const setMobileMenuOpen = (isOpen) => {
+          if (!mobileMenuButton || !mobileMenu) {
+            return;
+          }
+
+          mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+          mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
+          mobileMenuButton.classList.toggle("bg-surface-container-low", isOpen);
+          mobileMenuButton.classList.toggle("border-primary/20", isOpen);
+
+          if (mobileMenuIcon) {
+            mobileMenuIcon.textContent = isOpen ? "close" : "menu";
+            mobileMenuIcon.classList.toggle("rotate-90", isOpen);
+          }
+
+          if (mobileMenuHideTimeout) {
+            window.clearTimeout(mobileMenuHideTimeout);
+            mobileMenuHideTimeout = null;
+          }
+
+          if (isOpen) {
+            mobileMenu.hidden = false;
+            setMobileMenuFocusable(true);
+
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                if (mobileMenuButton.getAttribute("aria-expanded") === "true") {
+                  mobileMenu.classList.add("is-open");
+                }
+              });
+            });
+
+            return;
+          }
+
+          setMobileMenuFocusable(false);
+          mobileMenu.classList.remove("is-open");
+
+          if (mobileMenu.hidden) {
+            return;
+          }
+
+          mobileMenuHideTimeout = window.setTimeout(() => {
+            mobileMenu.hidden = true;
+            mobileMenuHideTimeout = null;
+          }, mobileMenuTransitionMs);
+        };
 
         const activateTab = (target, updateHash = true) => {
           tabs.forEach((tab) => {
@@ -850,6 +970,14 @@
             }
           });
 
+          if (mobileCurrentTab) {
+            mobileCurrentTab.textContent = getTabLabel(target);
+          }
+
+          if (!desktopBreakpoint.matches) {
+            setMobileMenuOpen(false);
+          }
+
           if (updateHash) {
             window.history.replaceState(null, "", `#${target}`);
           }
@@ -862,9 +990,51 @@
           });
         });
 
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const isOpen = mobileMenuButton.getAttribute("aria-expanded") === "true";
+            setMobileMenuOpen(!isOpen);
+          });
+        }
+
+        document.addEventListener("click", (event) => {
+          const clickTarget = event.target;
+
+          if (!(clickTarget instanceof Node) || !mobileMenu || mobileMenu.hidden || !mobileMenuButton) {
+            return;
+          }
+
+          if (mobileMenu.contains(clickTarget) || mobileMenuButton.contains(clickTarget)) {
+            return;
+          }
+
+          setMobileMenuOpen(false);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            setMobileMenuOpen(false);
+          }
+        });
+
+        const handleBreakpointChange = (event) => {
+          if (event.matches) {
+            setMobileMenuOpen(false);
+          }
+        };
+
+        if (typeof desktopBreakpoint.addEventListener === "function") {
+          desktopBreakpoint.addEventListener("change", handleBreakpointChange);
+        } else if (typeof desktopBreakpoint.addListener === "function") {
+          desktopBreakpoint.addListener(handleBreakpointChange);
+        }
+
         const initialHash = window.location.hash.replace("#", "");
         const initialTarget = panels.some((panel) => panel.dataset.tabPanel === initialHash) ? initialHash : "dashboard";
 
+        setMobileMenuOpen(false);
         activateTab(initialTarget, Boolean(initialHash));
       });
     </script>
